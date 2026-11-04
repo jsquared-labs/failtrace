@@ -8,7 +8,7 @@ Security fixes are made on a best-effort basis for the latest published `0.1.x` 
 
 ## Report a vulnerability privately
 
-Do not open a public issue or discussion for a suspected vulnerability. Use [GitHub's private vulnerability reporting form](https://github.com/oh-meh/failtrace/security/advisories/new) so maintainers can investigate before disclosure.
+Do not open a public issue or discussion for a suspected vulnerability. Use [GitHub's private vulnerability reporting form](https://github.com/jsquared-labs/failtrace/security/advisories/new) so maintainers can investigate before disclosure.
 
 Please include:
 

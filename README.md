@@ -1,7 +1,7 @@
 # failtrace
 
-[![CI](https://github.com/oh-meh/failtrace/actions/workflows/ci.yml/badge.svg)](https://github.com/oh-meh/failtrace/actions/workflows/ci.yml)
-[![release](https://img.shields.io/github/v/release/oh-meh/failtrace)](https://github.com/oh-meh/failtrace/releases)
+[![CI](https://github.com/jsquared-labs/failtrace/actions/workflows/ci.yml/badge.svg)](https://github.com/jsquared-labs/failtrace/actions/workflows/ci.yml)
+[![release](https://img.shields.io/github/v/release/jsquared-labs/failtrace)](https://github.com/jsquared-labs/failtrace/releases)
 [![license](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue)](#license)
 [![rust](https://img.shields.io/badge/rust-1.88%2B-orange)](https://www.rust-lang.org/)
 [![platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux-lightgrey)](docs/release-0.1.md#platform-support)
@@ -39,7 +39,7 @@ Failtrace writes a run-directory breadcrumb to stderr, then one structured JSON 
 Source installation is the current supported path and requires Rust 1.88 or newer:
 
 ```sh
-git clone https://github.com/oh-meh/failtrace.git
+git clone https://github.com/jsquared-labs/failtrace.git
 cd failtrace
 cargo install --path . --locked
 export FAILTRACE_BIN="${CARGO_HOME:-$HOME/.cargo}/bin/failtrace"

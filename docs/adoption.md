@@ -370,6 +370,6 @@ all three files (`log`, `meta.json`, and `output.json`) to understand what was
 captured, then share only the smallest sanitized excerpt and matching JSON
 fields needed for a synthetic reproduction. If the report cannot be made
 public safely, use [GitHub's private vulnerability reporting
-form](https://github.com/oh-meh/failtrace/security/advisories/new), or file a
+form](https://github.com/jsquared-labs/failtrace/security/advisories/new), or file a
 public issue without artifacts and ask maintainers how to transfer a synthetic
 reproduction.

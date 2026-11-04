@@ -11,7 +11,7 @@ description: >-
 
 # Failtrace
 
-Use Failtrace as the deterministic failure contract around supported test and typecheck commands. The JSON is the contract; terminal rendering is incidental. The current binary emits schema v1.6. See the normative schema at <https://github.com/oh-meh/failtrace/blob/main/docs/schema.md>.
+Use Failtrace as the deterministic failure contract around supported test and typecheck commands. The JSON is the contract; terminal rendering is incidental. The current binary emits schema v1.6. See the normative schema at <https://github.com/jsquared-labs/failtrace/blob/main/docs/schema.md>.
 
 ## Core workflow
 
@@ -125,7 +125,7 @@ The full result is always at `emission.full_output_path`; `raw_log_path` points 
 
 Run-directory selection uses this precedence: `--run-dir <path>`, `--here`, `FAILTRACE_RUNS_DIR`, `XDG_DATA_HOME`, then `$HOME/.failtrace/runs/` with `$cwd/.failtrace/runs/` as the unwritable-home fallback. Add `.failtrace/` to the project's ignore rules before using project-local storage. v0.x does not prune old runs automatically.
 
-Never attach a complete run directory to a public issue, even after editing it. Prefer a minimal synthetic reproduction and the smallest inspected, sanitized excerpt. Use [GitHub's private vulnerability reporting form](https://github.com/oh-meh/failtrace/security/advisories/new) when a safe public report is impossible.
+Never attach a complete run directory to a public issue, even after editing it. Prefer a minimal synthetic reproduction and the smallest inspected, sanitized excerpt. Use [GitHub's private vulnerability reporting form](https://github.com/jsquared-labs/failtrace/security/advisories/new) when a safe public report is impossible.
 
 ## Follow-up commands
 

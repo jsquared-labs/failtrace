@@ -9,7 +9,7 @@ By contributing, you agree that your contribution may be distributed under eithe
 You need Git, Python 3, and Rust 1.88 or newer. Some adapter and corpus work also needs the corresponding runner toolchain (Node.js, Go, or Xcode) and `uv`.
 
 ```sh
-git clone https://github.com/oh-meh/failtrace.git
+git clone https://github.com/jsquared-labs/failtrace.git
 cd failtrace
 cargo build --locked
 ```
