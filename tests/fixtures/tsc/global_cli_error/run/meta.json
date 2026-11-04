@@ -1,0 +1,41 @@
+{
+  "meta_schema_version": "1.2",
+  "schema_version": "1.6",
+  "failtrace_version": "0.1.0",
+  "adapters": [
+    {
+      "id": "tsc",
+      "version": "tsc@0.1.0",
+      "kind": "typechecker",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "command": "tsc --project tsconfig.json --notACompilerOption",
+  "cwd": "/Users/dev/failtrace/tests/fixtures/tsc/global_cli_error/source",
+  "started_at": "2026-05-15T12:00:00Z",
+  "duration_ms": 100,
+  "exit_code": 2,
+  "signal": null,
+  "early_exit": null,
+  "truncated": false,
+  "truncation_reason": null,
+  "path_case_folding": "case_sensitive",
+  "stream_merge": "stdout_stderr_interleaved",
+  "raw_log_sha256": "b42cc8b614f1fdf829357c15962896095b2938d988cdfea279f2b599ac177c0e",
+  "adapter_candidates": [
+    {
+      "id": "tsc",
+      "version": "tsc@0.1.0",
+      "kind": "typechecker",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "argv": [
+    "tsc",
+    "--project",
+    "tsconfig.json",
+    "--notACompilerOption"
+  ]
+}

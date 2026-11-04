@@ -1,0 +1,14 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test -project ExampleApp.xcodeproj -scheme ExampleApp
+
+/workspace/example-app/Sources/ExampleRepository.swift:10:13: error: property must be declared private because its type uses a private type
+/workspace/example-app/Sources/ExampleRepository.swift:11:10: error: method must be declared private because its result uses a private type
+/workspace/example-app/Sources/ExampleRepository.swift:12:10: error: method must be declared private because its result uses a private type
+/workspace/example-app/Sources/ExampleRepository.swift:13:17: error: method must be declared private because its parameter uses a private type
+/workspace/example-app/Sources/ExampleRepository.swift:20:54: error: 'try' cannot appear to the right of a non-assignment operator
+/workspace/example-app/Sources/ExampleRepository.swift:20:51: error: operator can throw but expression is not marked with 'try'
+
+Testing failed:
+	Swift compiler errors prevented the test bundle from building.
+
+** TEST FAILED **

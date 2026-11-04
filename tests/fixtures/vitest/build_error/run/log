@@ -1,0 +1,24 @@
+
+ RUN  v4.1.6 /Users/dev/failtrace/tests/fixtures/vitest/build_error/source
+
+ ❯ tests/build_error.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/build_error.test.ts [ tests/build_error.test.ts ]
+Error: Cannot find module './this-module-does-not-exist' imported from /Users/dev/failtrace/tests/fixtures/vitest/build_error/source/tests/build_error.test.ts
+ ❯ tests/build_error.test.ts:2:1
+      1| import { describe, it, expect } from "vitest";
+      2| import { nonexistent } from "./this-module-does-not-exist";
+       | ^
+      3|
+      4| describe("build error sample", () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  16:05:28
+   Duration  97ms (transform 7ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)
+

@@ -1,0 +1,18 @@
+{"Time":"2026-05-15T10:59:06.467603-04:00","Action":"start","Package":"corpus/basic_failure"}
+{"Time":"2026-05-15T10:59:06.651735-04:00","Action":"run","Package":"corpus/basic_failure","Test":"TestPasses"}
+{"Time":"2026-05-15T10:59:06.651794-04:00","Action":"output","Package":"corpus/basic_failure","Test":"TestPasses","Output":"=== RUN   TestPasses\n"}
+{"Time":"2026-05-15T10:59:06.651845-04:00","Action":"output","Package":"corpus/basic_failure","Test":"TestPasses","Output":"--- PASS: TestPasses (0.00s)\n"}
+{"Time":"2026-05-15T10:59:06.651855-04:00","Action":"pass","Package":"corpus/basic_failure","Test":"TestPasses","Elapsed":0}
+{"Time":"2026-05-15T10:59:06.651864-04:00","Action":"run","Package":"corpus/basic_failure","Test":"TestFails"}
+{"Time":"2026-05-15T10:59:06.65187-04:00","Action":"output","Package":"corpus/basic_failure","Test":"TestFails","Output":"=== RUN   TestFails\n"}
+{"Time":"2026-05-15T10:59:06.651875-04:00","Action":"output","Package":"corpus/basic_failure","Test":"TestFails","Output":"    foo_test.go:15: got 4, want 5\n"}
+{"Time":"2026-05-15T10:59:06.65189-04:00","Action":"output","Package":"corpus/basic_failure","Test":"TestFails","Output":"--- FAIL: TestFails (0.00s)\n"}
+{"Time":"2026-05-15T10:59:06.651896-04:00","Action":"fail","Package":"corpus/basic_failure","Test":"TestFails","Elapsed":0}
+{"Time":"2026-05-15T10:59:06.651901-04:00","Action":"run","Package":"corpus/basic_failure","Test":"TestAlsoFailsFatal"}
+{"Time":"2026-05-15T10:59:06.651906-04:00","Action":"output","Package":"corpus/basic_failure","Test":"TestAlsoFailsFatal","Output":"=== RUN   TestAlsoFailsFatal\n"}
+{"Time":"2026-05-15T10:59:06.651915-04:00","Action":"output","Package":"corpus/basic_failure","Test":"TestAlsoFailsFatal","Output":"    foo_test.go:20: forced fatal: boom\n"}
+{"Time":"2026-05-15T10:59:06.651921-04:00","Action":"output","Package":"corpus/basic_failure","Test":"TestAlsoFailsFatal","Output":"--- FAIL: TestAlsoFailsFatal (0.00s)\n"}
+{"Time":"2026-05-15T10:59:06.651926-04:00","Action":"fail","Package":"corpus/basic_failure","Test":"TestAlsoFailsFatal","Elapsed":0}
+{"Time":"2026-05-15T10:59:06.651932-04:00","Action":"output","Package":"corpus/basic_failure","Output":"FAIL\n"}
+{"Time":"2026-05-15T10:59:06.652192-04:00","Action":"output","Package":"corpus/basic_failure","Output":"FAIL\tcorpus/basic_failure\t0.184s\n"}
+{"Time":"2026-05-15T10:59:06.652211-04:00","Action":"fail","Package":"corpus/basic_failure","Elapsed":0.185}

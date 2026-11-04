@@ -1,0 +1,53 @@
+name: Feature request
+description: Propose a focused CLI, adapter, schema, or integration improvement.
+title: "[feature] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Explain the user problem before the implementation. Do not include private run artifacts or sensitive source. Security reports belong in [private vulnerability reporting](https://github.com/oh-meh/failtrace/security/advisories/new).
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Existing adapter
+        - New adapter
+        - CLI and storage
+        - Schema contract
+        - Agent integration
+        - Documentation or distribution
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What workflow is difficult today, and who encounters it?
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_outcome
+    attributes:
+      label: Desired outcome
+      description: Describe observable behavior rather than only an implementation.
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Public or synthetic example
+      description: Provide a small command/output shape without secrets, personal paths, private source, or proprietary test data.
+      render: text
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Contract and compatibility considerations
+      description: Note possible schema, determinism, completeness, platform, or migration effects.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: This request contains no unredacted run artifacts or private data.
+          required: true

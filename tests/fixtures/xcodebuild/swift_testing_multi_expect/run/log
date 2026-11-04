@@ -1,0 +1,14 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test -project ExampleApp.xcodeproj -scheme ExampleApp
+
+◇ Test run started.
+◇ Suite "ExampleSuite" started.
+✘ Test reportsTwoIssues() recorded an issue at ExampleTests.swift:13:9: Expectation failed: (left → 1) == (right → 2)
+↳ first failure
+✘ Test reportsTwoIssues() recorded an issue at ExampleTests.swift:14:9: Expectation failed: (left → "alpha") == (right → "beta")
+↳ second failure
+✘ Test reportsTwoIssues() failed after 0.002 seconds with 2 issues.
+✘ Suite "ExampleSuite" failed after 0.002 seconds with 2 issues.
+✘ Test run with 1 test in 1 suite failed after 0.002 seconds with 2 issues.
+
+** TEST FAILED **

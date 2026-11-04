@@ -1,0 +1,39 @@
+{
+  "meta_schema_version": "1.2",
+  "schema_version": "1.6",
+  "failtrace_version": "0.1.0",
+  "adapters": [
+    {
+      "id": "pytest",
+      "version": "pytest@0.1.0",
+      "kind": "runner",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "adapter_candidates": [
+    {
+      "id": "pytest",
+      "version": "pytest@0.1.0",
+      "kind": "runner",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "argv": [
+    "pytest",
+    "tests/test_records.py"
+  ],
+  "command": "pytest tests/test_records.py",
+  "cwd": "/workspace/example-service",
+  "started_at": "2026-01-01T00:00:00Z",
+  "duration_ms": 40,
+  "exit_code": 1,
+  "signal": null,
+  "early_exit": null,
+  "truncated": false,
+  "truncation_reason": null,
+  "path_case_folding": "case_sensitive",
+  "stream_merge": "stdout_stderr_interleaved",
+  "raw_log_sha256": "71af9e662f61b66ee63eeb2a8b4e175f9eb54f3d0da4553442685ba42d1cbd85"
+}

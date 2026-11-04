@@ -1,0 +1,9 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.15, pytest-8.4.2, pluggy-1.6.0
+rootdir: /tmp/proj
+collected 1 item
+
+tests/test_ok.py .                                                       [100%]
+
+============================== 1 passed in 0.01s ===============================
+coverage: error: No data was collected.

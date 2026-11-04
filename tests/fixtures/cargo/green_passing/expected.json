@@ -1,0 +1,74 @@
+{
+  "scenario": "green_passing",
+  "captured_environment": {
+    "cargo_reporter": "default",
+    "platform": "darwin"
+  },
+  "runner_argv": [
+    "cargo",
+    "test",
+    "--color",
+    "never"
+  ],
+  "exit_code": 0,
+  "hash_inputs": {
+    "schema_version": "1.6",
+    "normative": false,
+    "test_group_id": null,
+    "failures": []
+  },
+  "expected_subset": {
+    "schema_version": "1.6",
+    "document_kind": "analysis_result",
+    "failtrace_version": "0.1.0",
+    "emission": {
+      "channel": "file",
+      "mode": "full",
+      "max_failures": null,
+      "failures_emitted": 0,
+      "failures_total": 0,
+      "full_output_path": "<run-dir>/output.json"
+    },
+    "command": "cargo test --color never",
+    "cwd": "/Users/dev/failtrace/tests/fixtures/cargo/green_passing/source",
+    "started_at": "2026-05-14T12:00:00Z",
+    "duration_ms": 100,
+    "exit_code": 0,
+    "signal": null,
+    "runner_outcome": "passed",
+    "early_exit": null,
+    "adapters": [
+      {
+        "id": "cargo-test",
+        "version": "cargo-test@0.1.0",
+        "kind": "runner",
+        "selected": true,
+        "selection_reason": "argv_name_match"
+      }
+    ],
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "determinism_warnings": [],
+    "truncated": false,
+    "truncation_reason": null,
+    "failures_complete": true,
+    "failures": [],
+    "ranking": {
+      "strategy": "none",
+      "is_stable_across_runs": false
+    },
+    "counts": {
+      "tests_run": 1,
+      "tests_passed": 1,
+      "tests_failed": 0,
+      "tests_errored": 0,
+      "tests_skipped": 0,
+      "tests_not_run": null,
+      "files_failed": 0
+    },
+    "raw_log_path": "<run-dir>/log",
+    "raw_log_sha256": "56af94cfc5c7ff127328f0c76819092ed8d7e7bb1cfc6433ec6484a7a234259b",
+    "suggested_next_commands": [],
+    "extensions": {}
+  }
+}

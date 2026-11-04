@@ -1,0 +1,78 @@
+{
+  "captured_environment": {
+    "provenance": "Hand-authored synthetic log and sidecar; no runner capture or application source."
+  },
+  "exit_code": 0,
+  "expected_subset": {
+    "adapters": [
+      {
+        "id": "xcodebuild-test",
+        "kind": "runner",
+        "selected": true,
+        "selection_reason": "argv_name_match",
+        "version": "xcodebuild-test@0.1.1"
+      }
+    ],
+    "command": "xcodebuild test -project ExampleApp.xcodeproj -scheme ExampleApp -destination platform=macOS",
+    "counts": {
+      "files_failed": null,
+      "tests_errored": 0,
+      "tests_failed": 0,
+      "tests_not_run": null,
+      "tests_passed": 70,
+      "tests_run": 72,
+      "tests_skipped": 2
+    },
+    "cwd": "/Users/dev/ExampleApp",
+    "determinism_warnings": [],
+    "document_kind": "analysis_result",
+    "duration_ms": 4000,
+    "early_exit": null,
+    "emission": {
+      "channel": "file",
+      "failures_emitted": 0,
+      "failures_total": 0,
+      "full_output_path": "<run-dir>/output.json",
+      "max_failures": null,
+      "mode": "full"
+    },
+    "exit_code": 0,
+    "extensions": {},
+    "failtrace_version": "0.1.0",
+    "failures": [],
+    "failures_complete": true,
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "ranking": {
+      "is_stable_across_runs": true,
+      "strategy": "none"
+    },
+    "raw_log_path": "<run-dir>/log",
+    "raw_log_sha256": "892f9d88c7f9c5147bb742212702295666fe19e344bf52748162babd9d04ac76",
+    "runner_outcome": "passed",
+    "schema_version": "1.6",
+    "signal": null,
+    "started_at": "2026-01-01T00:00:00Z",
+    "suggested_next_commands": [],
+    "truncated": false,
+    "truncation_reason": null
+  },
+  "hash_inputs": {
+    "failure_order_stable": true,
+    "failures": [],
+    "normative": false,
+    "schema_version": "1.6",
+    "test_group_id": null
+  },
+  "runner_argv": [
+    "xcodebuild",
+    "test",
+    "-project",
+    "ExampleApp.xcodeproj",
+    "-scheme",
+    "ExampleApp",
+    "-destination",
+    "platform=macOS"
+  ],
+  "scenario": "multi_suite_skipped"
+}

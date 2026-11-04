@@ -1,0 +1,45 @@
+{
+  "meta_schema_version": "1.2",
+  "schema_version": "1.6",
+  "failtrace_version": "0.1.0",
+  "adapters": [
+    {
+      "id": "xcodebuild-test",
+      "version": "xcodebuild-test@0.1.1",
+      "kind": "runner",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "adapter_candidates": [
+    {
+      "id": "xcodebuild-test",
+      "version": "xcodebuild-test@0.1.1",
+      "kind": "runner",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "argv": [
+    "xcodebuild",
+    "test",
+    "-project",
+    "ExampleApp.xcodeproj",
+    "-scheme",
+    "ExampleApp",
+    "-destination",
+    "platform=macOS"
+  ],
+  "command": "xcodebuild test -project ExampleApp.xcodeproj -scheme ExampleApp -destination platform=macOS",
+  "cwd": "/Users/dev/ExampleApp",
+  "started_at": "2026-01-01T00:00:00Z",
+  "duration_ms": 1,
+  "exit_code": 0,
+  "signal": null,
+  "early_exit": null,
+  "truncated": false,
+  "truncation_reason": null,
+  "path_case_folding": "case_sensitive",
+  "stream_merge": "stdout_stderr_interleaved",
+  "raw_log_sha256": "cda81f600f2bfc5b824483c2bb23758cde95d273957f547cdc72268595d04c05"
+}

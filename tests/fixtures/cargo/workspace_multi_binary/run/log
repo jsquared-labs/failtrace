@@ -1,0 +1,30 @@
+   Compiling beta v0.1.0 (/Users/dev/failtrace/tests/fixtures/cargo/workspace_multi_binary/source/crates/beta)
+   Compiling alpha v0.1.0 (/Users/dev/failtrace/tests/fixtures/cargo/workspace_multi_binary/source/crates/alpha)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.12s
+     Running unittests src/lib.rs (target/debug/deps/alpha-315473597c478896)
+
+running 1 test
+test tests::alpha_passes ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/beta-0a427a03e1c2136a)
+
+running 1 test
+test tests::beta_fails ... FAILED
+
+failures:
+
+---- tests::beta_fails stdout ----
+
+thread 'tests::beta_fails' (6221204) panicked at crates/beta/src/lib.rs:9:9:
+assertion failed: super::beta()
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    tests::beta_fails
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `-p beta --lib`

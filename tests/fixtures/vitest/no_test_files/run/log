@@ -1,0 +1,9 @@
+
+ RUN  v4.1.6 /Users/dev/failtrace/tests/fixtures/vitest/green/source
+
+No test files found, exiting with code 1
+
+filter: does-not-exist.test.ts
+include: **/*.{test,spec}.?(c|m)[jt]s?(x)
+exclude:  **/node_modules/**, **/.git/**
+

@@ -1,0 +1,34 @@
+
+ RUN  v4.1.6 /Users/dev/failtrace/tests/fixtures/vitest/mixed_pass_fail/source
+
+ ❯ tests/basic.test.ts (2 tests | 1 failed) 3ms
+     ✓ adds two numbers 1ms
+     × multiplies two numbers 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/basic.test.ts > arithmetic > multiplies two numbers
+AssertionError: expected 6 to be 7 // Object.is equality
+
+- Expected
++ Received
+
+- 7
++ 6
+
+ ❯ tests/basic.test.ts:9:19
+      7|
+      8|   it("multiplies two numbers", () => {
+      9|     expect(2 * 3).toBe(7);
+       |                   ^
+     10|   });
+     11| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  09:30:27
+   Duration  122ms (transform 8ms, setup 0ms, import 13ms, tests 3ms, environment 0ms)
+

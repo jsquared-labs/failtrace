@@ -1,0 +1,77 @@
+{
+  "scenario": "clap_macros_assertion",
+  "captured_environment": {
+    "cargo_reporter": "default",
+    "platform": "darwin",
+    "upstream_repo": "clap-rs/clap@3030224d254dec52f5380592a8c8363081294aa2",
+    "license": "MIT OR Apache-2.0"
+  },
+  "runner_argv": [
+    "cargo",
+    "test",
+    "--test",
+    "macros",
+    "--",
+    "--test-threads=1",
+    "arg::name_explicit"
+  ],
+  "exit_code": 101,
+  "hash_inputs": {
+    "schema_version": "1.6",
+    "normative": false,
+    "test_group_id": null,
+    "failures": [
+      {
+        "failure_id": "5998b617019fa9d2",
+        "adapter_id": "cargo-test",
+        "phase": "test",
+        "kind": "assertion",
+        "runner_test_id": "arg::name_explicit",
+        "param_id": null,
+        "primary_location": {
+          "file": "tests/macros.rs",
+          "line": 5,
+          "column": 9
+        },
+        "normalized_message": "assertion `left == right` failed"
+      }
+    ]
+  },
+  "expected_subset": {
+    "schema_version": "1.6",
+    "document_kind": "analysis_result",
+    "runner_outcome": "failed",
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "adapters": [
+      {
+        "id": "cargo-test",
+        "selected": true,
+        "selection_reason": "argv_name_match"
+      }
+    ],
+    "failures": [
+      {
+        "failure_id": "5998b617019fa9d2",
+        "adapter_id": "cargo-test",
+        "phase": "test",
+        "kind": "assertion",
+        "runner_test_id": "arg::name_explicit",
+        "message": "assertion `left == right` failed",
+        "primary_location": {
+          "file": "tests/macros.rs",
+          "line": 5,
+          "role": "panic_site",
+          "in_user_code": true
+        }
+      }
+    ],
+    "counts": {
+      "tests_run": 1,
+      "tests_passed": 0,
+      "tests_failed": 1,
+      "tests_errored": 0,
+      "files_failed": 1
+    }
+  }
+}

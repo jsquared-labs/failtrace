@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "strict": true,
+    "noEmit": true,
+    "pretty": false
+  },
+  "files": ["src/index.ts"]
+}

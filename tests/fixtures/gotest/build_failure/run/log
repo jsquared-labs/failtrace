@@ -1,0 +1,7 @@
+{"ImportPath":"corpus/build_failure [corpus/build_failure.test]","Action":"build-output","Output":"# corpus/build_failure [corpus/build_failure.test]\n"}
+{"ImportPath":"corpus/build_failure [corpus/build_failure.test]","Action":"build-output","Output":"./broken_test.go:6:14: cannot use \"this is not an int\" (untyped string constant) as int value in variable declaration\n"}
+{"ImportPath":"corpus/build_failure [corpus/build_failure.test]","Action":"build-output","Output":"./broken_test.go:7:6: undefined: undefinedSymbol\n"}
+{"ImportPath":"corpus/build_failure [corpus/build_failure.test]","Action":"build-fail"}
+{"Time":"2026-05-15T10:59:07.583377-04:00","Action":"start","Package":"corpus/build_failure"}
+{"Time":"2026-05-15T10:59:07.583428-04:00","Action":"output","Package":"corpus/build_failure","Output":"FAIL\tcorpus/build_failure [build failed]\n"}
+{"Time":"2026-05-15T10:59:07.583437-04:00","Action":"fail","Package":"corpus/build_failure","Elapsed":0,"FailedBuild":"corpus/build_failure [corpus/build_failure.test]"}

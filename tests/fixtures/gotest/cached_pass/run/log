@@ -1,0 +1,12 @@
+{"Time":"2026-05-15T10:59:29.496402-04:00","Action":"start","Package":"corpus/green_passing"}
+{"Time":"2026-05-15T10:59:29.496487-04:00","Action":"run","Package":"corpus/green_passing","Test":"TestAdd"}
+{"Time":"2026-05-15T10:59:29.496491-04:00","Action":"output","Package":"corpus/green_passing","Test":"TestAdd","Output":"=== RUN   TestAdd\n"}
+{"Time":"2026-05-15T10:59:29.4965-04:00","Action":"output","Package":"corpus/green_passing","Test":"TestAdd","Output":"--- PASS: TestAdd (0.00s)\n"}
+{"Time":"2026-05-15T10:59:29.496502-04:00","Action":"pass","Package":"corpus/green_passing","Test":"TestAdd","Elapsed":0}
+{"Time":"2026-05-15T10:59:29.496506-04:00","Action":"run","Package":"corpus/green_passing","Test":"TestSub"}
+{"Time":"2026-05-15T10:59:29.496508-04:00","Action":"output","Package":"corpus/green_passing","Test":"TestSub","Output":"=== RUN   TestSub\n"}
+{"Time":"2026-05-15T10:59:29.49651-04:00","Action":"output","Package":"corpus/green_passing","Test":"TestSub","Output":"--- PASS: TestSub (0.00s)\n"}
+{"Time":"2026-05-15T10:59:29.496512-04:00","Action":"pass","Package":"corpus/green_passing","Test":"TestSub","Elapsed":0}
+{"Time":"2026-05-15T10:59:29.496514-04:00","Action":"output","Package":"corpus/green_passing","Output":"PASS\n"}
+{"Time":"2026-05-15T10:59:29.496518-04:00","Action":"output","Package":"corpus/green_passing","Output":"ok  \tcorpus/green_passing\t(cached)\n"}
+{"Time":"2026-05-15T10:59:29.496524-04:00","Action":"pass","Package":"corpus/green_passing","Elapsed":0}

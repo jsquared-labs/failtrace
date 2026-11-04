@@ -1,0 +1,4 @@
+ImportError while loading conftest '/Users/dev/failtrace/tests/fixtures/pytest/collection_error/source/tests/conftest.py'.
+tests/conftest.py:8: in <module>
+    from app.fixtures import sample_db
+E   ModuleNotFoundError: No module named 'app.fixtures'

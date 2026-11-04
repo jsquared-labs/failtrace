@@ -1,0 +1,11 @@
+[project]
+name = "failtrace-pytest-fixtures"
+version = "0.0.0"
+description = "Source projects used to generate failtrace's pytest adapter fixtures."
+requires-python = ">=3.11"
+dependencies = [
+    "pytest>=8.0,<9",
+]
+
+[tool.uv]
+package = false

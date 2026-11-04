@@ -1,0 +1,174 @@
+{
+  "scenario": "mixed_pass_fail",
+  "captured_environment": {
+    "jest_version": "30.4.1",
+    "node_package_manager": "npx",
+    "platform": "darwin"
+  },
+  "runner_argv": [
+    "npx",
+    "--yes",
+    "--package",
+    "jest@30.4",
+    "jest",
+    "--ci",
+    "--runInBand",
+    "--reporters=default",
+    "--colors=false",
+    "--no-coverage",
+    "--testLocationInResults=false"
+  ],
+  "exit_code": 1,
+  "hash_inputs": {
+    "schema_version": "1.6",
+    "normative": false,
+    "test_group_id": null,
+    "failures": [
+      {
+        "failure_id": "ec8940cf8327f903",
+        "adapter_id": "jest",
+        "phase": "test",
+        "kind": "assertion",
+        "runner_test_id": "tests/basic.test.js > arithmetic \u203a multiplies two numbers",
+        "param_id": null,
+        "primary_location": {
+          "file": "tests/basic.test.js",
+          "line": 7,
+          "column": 19
+        },
+        "normalized_message": "expect(received).toBe(expected)"
+      }
+    ]
+  },
+  "expected_subset": {
+    "schema_version": "1.6",
+    "document_kind": "analysis_result",
+    "failtrace_version": "0.1.0",
+    "emission": {
+      "channel": "file",
+      "mode": "full",
+      "max_failures": null,
+      "failures_emitted": 1,
+      "failures_total": 1,
+      "full_output_path": "<run-dir>/output.json"
+    },
+    "command": "npx --yes --package jest@30.4 jest --ci --runInBand --reporters=default --colors=false --no-coverage --testLocationInResults=false",
+    "cwd": "/Users/dev/failtrace/tests/fixtures/jest/mixed_pass_fail/source",
+    "started_at": "2026-05-14T12:00:00Z",
+    "duration_ms": 100,
+    "exit_code": 1,
+    "signal": null,
+    "runner_outcome": "failed",
+    "early_exit": null,
+    "adapters": [
+      {
+        "id": "jest",
+        "version": "jest@0.1.0",
+        "kind": "runner",
+        "selected": true,
+        "selection_reason": "argv_name_match"
+      }
+    ],
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "determinism_warnings": [],
+    "truncated": false,
+    "truncation_reason": null,
+    "failures_complete": true,
+    "failures": [
+      {
+        "failure_id": "ec8940cf8327f903",
+        "adapter_id": "jest",
+        "phase": "test",
+        "kind": "assertion",
+        "runner_package_id": null,
+        "runner_test_id": "tests/basic.test.js > arithmetic \u203a multiplies two numbers",
+        "test_segments": [],
+        "test_name": "arithmetic \u203a multiplies two numbers",
+        "param_id": null,
+        "test_group_id": null,
+        "primary_location": {
+          "file": "tests/basic.test.js",
+          "line": 7,
+          "column": 19,
+          "end_line": null,
+          "end_column": null,
+          "role": "primary",
+          "in_user_code": true
+        },
+        "extra_locations": [],
+        "message": "expect(received).toBe(expected)",
+        "diagnostic_code": null,
+        "diagnostic_severity": "error",
+        "details": {
+          "type": "assertion",
+          "expected": null,
+          "actual": null,
+          "diff": null
+        },
+        "raw_log_lines": [
+          6,
+          22
+        ],
+        "evidence": {
+          "byte_range": {
+            "start": 102,
+            "end": 464
+          },
+          "excerpts": [
+            {
+              "source": "raw_log",
+              "kind": "failure_block",
+              "byte_range": {
+                "start": 102,
+                "end": 464
+              },
+              "text": "  \u25cf arithmetic \u203a multiplies two numbers\n\n    expect(received).toBe(expected) // Object.is equality\n\n    Expected: 7\n    Received: 6\n\n       5 |\n       6 |   test(\"multiplies two numbers\", () => {\n    >  7 |     expect(2 * 3).toBe(7);\n         |                   ^\n       8 |   });\n       9 | });\n      10 |\n\n      at Object.toBe (tests/basic.test.js:7:19)\n\n",
+              "ansi_stripped": false,
+              "truncated": false
+            }
+          ]
+        },
+        "cascade_root": null,
+        "cascade_reason": null,
+        "dependent_failure_ids": [],
+        "retries": [],
+        "companion_diagnostics": [],
+        "extensions": {}
+      }
+    ],
+    "ranking": {
+      "strategy": "first_emitted",
+      "is_stable_across_runs": false
+    },
+    "counts": {
+      "tests_run": 2,
+      "tests_passed": 1,
+      "tests_failed": 1,
+      "tests_errored": 0,
+      "tests_skipped": 0,
+      "tests_not_run": null,
+      "files_failed": 1
+    },
+    "raw_log_path": "<run-dir>/log",
+    "raw_log_sha256": "d0877443028d0ebdb725c11972cb284c3cbfc3899c978adf3fcef7298ccf8407",
+    "suggested_next_commands": [
+      {
+        "argv": [
+          "jest",
+          "tests/basic.test.js",
+          "-t",
+          "arithmetic multiplies two numbers"
+        ],
+        "command": "jest tests/basic.test.js -t \"arithmetic multiplies two numbers\"",
+        "cwd": "/Users/dev/failtrace/tests/fixtures/jest/mixed_pass_fail/source",
+        "intent": "rerun_isolated",
+        "interactive": false,
+        "mutates_workspace": false,
+        "uses_network": false,
+        "requires_approval": false
+      }
+    ],
+    "extensions": {}
+  }
+}

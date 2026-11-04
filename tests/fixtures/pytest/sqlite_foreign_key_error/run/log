@@ -1,0 +1,18 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.9, pytest-8.4.2
+rootdir: /workspace/example-service
+collected 2 items
+
+tests/test_records.py .F                                                 [100%]
+
+=================================== FAILURES ===================================
+____________________ test_delete_record_with_children _____________________
+
+    def test_delete_record_with_children(db):
+>       db.execute("DELETE FROM records WHERE id = 1")
+E       sqlite3.IntegrityError: FOREIGN KEY constraint failed
+
+tests/test_records.py:18: IntegrityError
+=========================== short test summary info ============================
+FAILED tests/test_records.py::test_delete_record_with_children - sqlite3.IntegrityError: FOREIGN KEY constraint failed
+========================= 1 failed, 1 passed in 0.04s ==========================

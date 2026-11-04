@@ -1,0 +1,8 @@
+[96msrc/index.ts[0m:[93m1[0m:[93m7[0m - [91merror[0m[90m TS2322: [0mType 'string' is not assignable to type 'boolean'.
+
+[7m1[0m const enabled: boolean = "yes";
+[7m [0m [91m      ~~~~~~~[0m
+
+
+Found 1 error in src/index.ts[90m:1[0m
+

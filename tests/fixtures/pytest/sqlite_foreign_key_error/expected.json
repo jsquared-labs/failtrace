@@ -1,0 +1,155 @@
+{
+  "captured_environment": {
+    "format": "representative pytest output",
+    "provenance": "hand-authored synthetic log"
+  },
+  "exit_code": 1,
+  "expected_subset": {
+    "adapters": [
+      {
+        "id": "pytest",
+        "kind": "runner",
+        "selected": true,
+        "selection_reason": "argv_name_match",
+        "version": "pytest@0.1.0"
+      }
+    ],
+    "command": "pytest tests/test_records.py",
+    "counts": {
+      "files_failed": 1,
+      "tests_errored": 1,
+      "tests_failed": 0,
+      "tests_not_run": null,
+      "tests_passed": 1,
+      "tests_run": 2,
+      "tests_skipped": 0
+    },
+    "cwd": "/workspace/example-service",
+    "determinism_warnings": [],
+    "document_kind": "analysis_result",
+    "duration_ms": 40,
+    "early_exit": null,
+    "emission": {
+      "channel": "file",
+      "failures_emitted": 1,
+      "failures_total": 1,
+      "full_output_path": "<run-dir>/output.json",
+      "max_failures": null,
+      "mode": "full"
+    },
+    "exit_code": 1,
+    "extensions": {},
+    "failtrace_version": "0.1.0",
+    "failures": [
+      {
+        "adapter_id": "pytest",
+        "cascade_reason": null,
+        "cascade_root": null,
+        "companion_diagnostics": [],
+        "dependent_failure_ids": [],
+        "details": {
+          "exception_type": "sqlite3.IntegrityError",
+          "stack": [
+            {
+              "file": "tests/test_records.py",
+              "function": null,
+              "in_user_code": true,
+              "line": 18
+            }
+          ],
+          "type": "exception"
+        },
+        "diagnostic_code": null,
+        "diagnostic_severity": "error",
+        "evidence": {
+          "byte_range": {
+            "end": 626,
+            "start": 344
+          },
+          "excerpts": [
+            {
+              "ansi_stripped": false,
+              "byte_range": {
+                "end": 626,
+                "start": 344
+              },
+              "kind": "failure_block",
+              "source": "raw_log",
+              "text": "____________________ test_delete_record_with_children _____________________\n\n    def test_delete_record_with_children(db):\n>       db.execute(\"DELETE FROM records WHERE id = 1\")\nE       sqlite3.IntegrityError: FOREIGN KEY constraint failed\n\ntests/test_records.py:18: IntegrityError\n",
+              "truncated": false
+            }
+          ]
+        },
+        "extensions": {},
+        "extra_locations": [],
+        "failure_id": "29dc8e69aeb2978d",
+        "kind": "exception",
+        "message": "sqlite3.IntegrityError: FOREIGN KEY constraint failed",
+        "param_id": null,
+        "phase": "test",
+        "primary_location": {
+          "column": null,
+          "end_column": null,
+          "end_line": null,
+          "file": "tests/test_records.py",
+          "in_user_code": true,
+          "line": 18,
+          "role": "primary"
+        },
+        "raw_log_lines": [
+          9,
+          15
+        ],
+        "retries": [],
+        "runner_package_id": null,
+        "runner_test_id": "tests/test_records.py::test_delete_record_with_children",
+        "test_group_id": null,
+        "test_name": "test_delete_record_with_children",
+        "test_segments": []
+      }
+    ],
+    "failures_complete": true,
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "ranking": {
+      "is_stable_across_runs": true,
+      "strategy": "first_emitted"
+    },
+    "raw_log_path": "<run-dir>/log",
+    "raw_log_sha256": "71af9e662f61b66ee63eeb2a8b4e175f9eb54f3d0da4553442685ba42d1cbd85",
+    "runner_outcome": "failed",
+    "schema_version": "1.6",
+    "signal": null,
+    "started_at": "2026-01-01T00:00:00Z",
+    "suggested_next_commands": [],
+    "truncated": false,
+    "truncation_reason": null
+  },
+  "hash_inputs": {
+    "failures": [
+      {
+        "adapter_id": "pytest",
+        "failure_id": "29dc8e69aeb2978d",
+        "kind": "exception",
+        "normalized_message": "sqlite3.IntegrityError: FOREIGN KEY constraint failed",
+        "param_id": null,
+        "phase": "test",
+        "primary_location": {
+          "column": null,
+          "file": "tests/test_records.py",
+          "line": 18
+        },
+        "runner_test_id": "tests/test_records.py::test_delete_record_with_children"
+      }
+    ],
+    "normative": false,
+    "schema_version": "1.6",
+    "test_group_id": null
+  },
+  "notes": "Synthetic SQLite foreign-key exception in a test body.",
+  "runner_argv": [
+    "pytest",
+    "tests/test_records.py"
+  ],
+  "scenario": "sqlite_foreign_key_error"
+}

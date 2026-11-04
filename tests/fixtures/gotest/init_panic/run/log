@@ -1,0 +1,8 @@
+{"Time":"2026-05-15T11:21:31.241626-04:00","Action":"start","Package":"corpus/init_panic"}
+{"Time":"2026-05-15T11:21:31.508749-04:00","Action":"output","Package":"corpus/init_panic","Output":"panic: init-time boom\n"}
+{"Time":"2026-05-15T11:21:31.5089-04:00","Action":"output","Package":"corpus/init_panic","Output":"\n"}
+{"Time":"2026-05-15T11:21:31.508918-04:00","Action":"output","Package":"corpus/init_panic","Output":"goroutine 1 [running]:\n"}
+{"Time":"2026-05-15T11:21:31.509016-04:00","Action":"output","Package":"corpus/init_panic","Output":"corpus/init_panic.init.0()\n"}
+{"Time":"2026-05-15T11:21:31.509043-04:00","Action":"output","Package":"corpus/init_panic","Output":"\t/tmp/ft-gocorpus/init_panic/init_test.go:6 +0x2c\n"}
+{"Time":"2026-05-15T11:21:31.509576-04:00","Action":"output","Package":"corpus/init_panic","Output":"FAIL\tcorpus/init_panic\t0.268s\n"}
+{"Time":"2026-05-15T11:21:31.509614-04:00","Action":"fail","Package":"corpus/init_panic","Elapsed":0.268}

@@ -1,0 +1,152 @@
+{
+  "captured_environment": {
+    "format": "representative xcodebuild and Swift Testing output",
+    "provenance": "hand-authored synthetic log"
+  },
+  "exit_code": 65,
+  "expected_subset": {
+    "adapters": [
+      {
+        "id": "xcodebuild-test",
+        "kind": "runner",
+        "selected": true,
+        "selection_reason": "argv_name_match",
+        "version": "xcodebuild-test@0.1.0"
+      }
+    ],
+    "command": "xcodebuild test -project ExampleApp.xcodeproj -scheme ExampleApp",
+    "counts": {
+      "files_failed": null,
+      "tests_errored": 0,
+      "tests_failed": 0,
+      "tests_not_run": null,
+      "tests_passed": 0,
+      "tests_run": 0,
+      "tests_skipped": 0
+    },
+    "cwd": "/workspace/example-app",
+    "determinism_warnings": [],
+    "document_kind": "analysis_result",
+    "duration_ms": 1200,
+    "early_exit": null,
+    "emission": {
+      "channel": "file",
+      "failures_emitted": 1,
+      "failures_total": 1,
+      "full_output_path": "<run-dir>/output.json",
+      "max_failures": null,
+      "mode": "full"
+    },
+    "exit_code": 65,
+    "extensions": {},
+    "failtrace_version": "0.1.0",
+    "failures": [
+      {
+        "adapter_id": "xcodebuild-test",
+        "cascade_reason": null,
+        "cascade_root": null,
+        "companion_diagnostics": [],
+        "dependent_failure_ids": [],
+        "details": {
+          "import_chain": [],
+          "symbol": "ExampleCatalog",
+          "type": "missing_symbol"
+        },
+        "diagnostic_code": null,
+        "diagnostic_severity": "error",
+        "evidence": {
+          "byte_range": {
+            "end": 250,
+            "start": 146
+          },
+          "excerpts": [
+            {
+              "ansi_stripped": false,
+              "byte_range": {
+                "end": 250,
+                "start": 146
+              },
+              "kind": "failure_block",
+              "source": "raw_log",
+              "text": "/workspace/example-app/Sources/CatalogBuilder.swift:62:28: error: cannot find 'ExampleCatalog' in scope",
+              "truncated": false
+            }
+          ]
+        },
+        "extensions": {},
+        "extra_locations": [],
+        "failure_id": "13629d480ca479a5",
+        "kind": "missing_symbol",
+        "message": "cannot find 'ExampleCatalog' in scope",
+        "param_id": null,
+        "phase": "build",
+        "primary_location": {
+          "column": 28,
+          "end_column": null,
+          "end_line": null,
+          "file": "/workspace/example-app/Sources/CatalogBuilder.swift",
+          "in_user_code": true,
+          "line": 62,
+          "role": "primary"
+        },
+        "raw_log_lines": [
+          4,
+          4
+        ],
+        "retries": [],
+        "runner_package_id": null,
+        "runner_test_id": null,
+        "test_group_id": null,
+        "test_name": null,
+        "test_segments": []
+      }
+    ],
+    "failures_complete": true,
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "ranking": {
+      "is_stable_across_runs": true,
+      "strategy": "compile_before_runtime"
+    },
+    "raw_log_path": "<run-dir>/log",
+    "raw_log_sha256": "cd1c71528001e3b4cd16a5c36f8bbb271a052d92b06093620a5d68ac5e3e9e48",
+    "runner_outcome": "pre_test_failed",
+    "schema_version": "1.6",
+    "signal": null,
+    "started_at": "2026-01-01T00:00:00Z",
+    "suggested_next_commands": [],
+    "truncated": false,
+    "truncation_reason": null
+  },
+  "hash_inputs": {
+    "failure_order_stable": true,
+    "failures": [
+      {
+        "adapter_id": "xcodebuild-test",
+        "failure_id": "13629d480ca479a5",
+        "kind": "missing_symbol",
+        "normalized_message": "cannot find 'ExampleCatalog' in scope",
+        "param_id": null,
+        "phase": "build",
+        "primary_location": {
+          "column": 28,
+          "file": "/workspace/example-app/Sources/CatalogBuilder.swift",
+          "line": 62
+        },
+        "runner_test_id": null
+      }
+    ],
+    "normative": false,
+    "schema_version": "1.6",
+    "test_group_id": null
+  },
+  "runner_argv": [
+    "xcodebuild",
+    "test",
+    "-project",
+    "ExampleApp.xcodeproj",
+    "-scheme",
+    "ExampleApp"
+  ],
+  "scenario": "build_failure"
+}

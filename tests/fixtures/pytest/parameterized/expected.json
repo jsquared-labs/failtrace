@@ -1,0 +1,138 @@
+{
+  "scenario": "parameterized",
+  "captured_environment": {
+    "pytest_version": "8.4.2",
+    "python_version": "3.11.15",
+    "platform": "darwin"
+  },
+  "runner_argv": ["pytest", "--color=no", "-p", "no:cacheprovider", "tests/"],
+  "exit_code": 1,
+  "hash_inputs": {
+    "schema_version": "1.6",
+    "normative": true,
+    "test_group_id": "49507ef118ce763f",
+    "failures": [
+      {
+        "failure_id": "58af4b4b1fcb1036",
+        "adapter_id": "pytest",
+        "phase": "test",
+        "kind": "assertion",
+        "runner_test_id": "tests/test_parser.py::test_parse[empty-string]",
+        "param_id": "empty-string",
+        "primary_location": {"file": "tests/test_parser.py", "line": 41},
+        "normalized_message": "AssertionError: expected '' to equal None"
+      },
+      {
+        "failure_id": "4b78b28e9378f472",
+        "adapter_id": "pytest",
+        "phase": "test",
+        "kind": "assertion",
+        "runner_test_id": "tests/test_parser.py::test_parse[trailing-newline]",
+        "param_id": "trailing-newline",
+        "primary_location": {"file": "tests/test_parser.py", "line": 41},
+        "normalized_message": "AssertionError: expected 'foo/n' to equal 'foo'"
+      },
+      {
+        "failure_id": "6f4cda653abb2c1c",
+        "adapter_id": "pytest",
+        "phase": "test",
+        "kind": "assertion",
+        "runner_test_id": "tests/test_parser.py::test_parse[unicode-bom]",
+        "param_id": "unicode-bom",
+        "primary_location": {"file": "tests/test_parser.py", "line": 41},
+        "normalized_message": "AssertionError: expected '/ufefffoo' to equal 'foo'"
+      }
+    ]
+  },
+  "expected_subset": {
+    "schema_version": "1.6",
+    "emission": {
+      "channel": "file",
+      "mode": "full",
+      "max_failures": null,
+      "failures_emitted": 3,
+      "failures_total": 3,
+      "full_output_path": "<run-dir>/output.json"
+    },
+    "runner_outcome": "failed",
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "determinism_warnings": [],
+    "truncated": false,
+    "truncation_reason": null,
+    "failures_complete": true,
+    "ranking": {"strategy": "first_emitted", "is_stable_across_runs": true},
+    "counts": {
+      "tests_run": 17,
+      "tests_passed": 14,
+      "tests_failed": 3,
+      "tests_errored": 0,
+      "tests_skipped": 0,
+      "tests_not_run": null,
+      "files_failed": 1
+    },
+    "adapters": [
+      {"id": "pytest", "kind": "runner", "selected": true, "selection_reason": "argv_name_match"}
+    ],
+    "failures": [
+      {
+        "failure_id": "58af4b4b1fcb1036",
+        "adapter_id": "pytest",
+        "phase": "test",
+        "kind": "assertion",
+        "runner_test_id": "tests/test_parser.py::test_parse[empty-string]",
+        "test_name": "test_parse[empty-string]",
+        "param_id": "empty-string",
+        "test_group_id": "49507ef118ce763f",
+        "primary_location": {"file": "tests/test_parser.py", "line": 41, "role": "primary"},
+        "message": "AssertionError: expected '' to equal None",
+        "diagnostic_severity": "error",
+        "raw_log_lines": [10, 25],
+        "cascade_root": null,
+        "cascade_reason": null,
+        "dependent_failure_ids": [],
+        "retries": [],
+        "companion_diagnostics": []
+      },
+      {
+        "failure_id": "4b78b28e9378f472",
+        "adapter_id": "pytest",
+        "phase": "test",
+        "kind": "assertion",
+        "runner_test_id": "tests/test_parser.py::test_parse[trailing-newline]",
+        "test_name": "test_parse[trailing-newline]",
+        "param_id": "trailing-newline",
+        "test_group_id": "49507ef118ce763f",
+        "primary_location": {"file": "tests/test_parser.py", "line": 41, "role": "primary"},
+        "message": "AssertionError: expected 'foo\\n' to equal 'foo'",
+        "diagnostic_severity": "error",
+        "raw_log_lines": [26, 45],
+        "cascade_root": null,
+        "cascade_reason": null,
+        "dependent_failure_ids": [],
+        "retries": [],
+        "companion_diagnostics": []
+      },
+      {
+        "failure_id": "6f4cda653abb2c1c",
+        "adapter_id": "pytest",
+        "phase": "test",
+        "kind": "assertion",
+        "runner_test_id": "tests/test_parser.py::test_parse[unicode-bom]",
+        "test_name": "test_parse[unicode-bom]",
+        "param_id": "unicode-bom",
+        "test_group_id": "49507ef118ce763f",
+        "primary_location": {"file": "tests/test_parser.py", "line": 41, "role": "primary"},
+        "message": "AssertionError: expected '\\ufefffoo' to equal 'foo'",
+        "diagnostic_severity": "error",
+        "raw_log_lines": [46, 65],
+        "cascade_root": null,
+        "cascade_reason": null,
+        "dependent_failure_ids": [],
+        "retries": [],
+        "companion_diagnostics": []
+      }
+    ]
+  },
+  "notes": "Schema example raw_log_lines values ([128,145], [146,163], [164,181]) reflect a longer cwd path and differ from ours."
+}

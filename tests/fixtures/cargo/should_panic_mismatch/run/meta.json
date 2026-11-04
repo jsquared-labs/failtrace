@@ -1,0 +1,41 @@
+{
+  "meta_schema_version": "1.2",
+  "schema_version": "1.6",
+  "failtrace_version": "0.1.0",
+  "adapters": [
+    {
+      "id": "cargo-test",
+      "version": "cargo-test@0.1.0",
+      "kind": "runner",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "command": "cargo test --color never",
+  "cwd": "/Users/dev/failtrace/tests/fixtures/cargo/should_panic_mismatch/source",
+  "started_at": "2026-05-14T12:00:00Z",
+  "duration_ms": 100,
+  "exit_code": 101,
+  "signal": null,
+  "early_exit": null,
+  "truncated": false,
+  "truncation_reason": null,
+  "path_case_folding": "case_sensitive",
+  "stream_merge": "stdout_stderr_interleaved",
+  "raw_log_sha256": "3bd286654aaaacdd9fa030ac05dec1a25fa43d91339c4561ab6beeccd9e9ee9e",
+  "adapter_candidates": [
+    {
+      "id": "cargo-test",
+      "version": "cargo-test@0.1.0",
+      "kind": "runner",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "argv": [
+    "cargo",
+    "test",
+    "--color",
+    "never"
+  ]
+}

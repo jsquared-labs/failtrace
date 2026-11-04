@@ -1,0 +1,94 @@
+name: Adapter bug or misclassification
+description: Report a missing, incorrect, or incomplete structured failure using sanitized evidence.
+title: "[adapter] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not attach a run directory or unredacted `log`, `meta.json`, or `output.json`. Inspect all three files before sharing any excerpt. For security impact, stop and use [private vulnerability reporting](https://github.com/oh-meh/failtrace/security/advisories/new).
+  - type: dropdown
+    id: adapter
+    attributes:
+      label: Adapter
+      options:
+        - pytest
+        - vitest
+        - jest
+        - cargo-test
+        - tsc
+        - gotest
+        - xcodebuild-test
+        - Command detection or other
+    validations:
+      required: true
+  - type: input
+    id: failtrace_version
+    attributes:
+      label: Failtrace version
+      description: Output of `failtrace --version`.
+      placeholder: failtrace 0.1.0
+    validations:
+      required: true
+  - type: input
+    id: schema_version
+    attributes:
+      label: Schema version
+      description: The `schema_version` from the emitted document, or `not emitted` for a command-detection failure.
+      placeholder: "1.6 or not emitted"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system, architecture, and runner version.
+      placeholder: macOS 15 arm64; pytest 8.4
+    validations:
+      required: true
+  - type: input
+    id: command_shape
+    attributes:
+      label: Sanitized command shape
+      description: Remove credentials, private paths, repository names, and test data.
+      placeholder: failtrace run -- pytest tests/test_example.py -q
+    validations:
+      required: true
+  - type: textarea
+    id: contract_state
+    attributes:
+      label: Structured result state
+      description: Include selected adapter, parse_status, parse_warnings, failures_complete, truncated, runner_outcome, and failure counts. For a detection failure with no JSON, enter {"status":"not_emitted","reason":"command_detection"}. Remove private paths and messages.
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should Failtrace have emitted, and why?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Public or synthetic reproduction
+      description: Give minimal files and steps, or link a public pinned repository. Do not paste proprietary source or full artifacts.
+    validations:
+      required: true
+  - type: textarea
+    id: excerpt
+    attributes:
+      label: Smallest sanitized evidence excerpt
+      description: Optional. Include only the lines required to show the parser shape, with secrets, identities, and paths removed.
+      render: text
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Artifact safety
+      options:
+        - label: I inspected `log`, `meta.json`, and `output.json` if they were created, and did not attach any unredacted artifact. Command-detection failures may create none.
+          required: true
+        - label: This report contains no credentials, private source, personal paths, device identifiers, or proprietary test data.
+          required: true
+        - label: This is not a security vulnerability; if it is, I will use private vulnerability reporting instead.
+          required: true

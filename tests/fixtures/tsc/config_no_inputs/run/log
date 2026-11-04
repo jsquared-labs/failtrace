@@ -1,0 +1,1 @@
+tsconfig.json(7,12): error TS18002: The 'files' list in config file '/Users/dev/failtrace/tests/fixtures/tsc/config_no_inputs/source/tsconfig.json' is empty.

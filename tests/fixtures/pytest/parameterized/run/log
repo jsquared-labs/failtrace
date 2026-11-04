@@ -1,0 +1,70 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.15, pytest-8.4.2, pluggy-1.6.0
+rootdir: /Users/dev/failtrace/tests/fixtures/pytest
+configfile: pyproject.toml
+collected 17 items
+
+tests/test_parser.py FFF..............                                   [100%]
+
+=================================== FAILURES ===================================
+___________________________ test_parse[empty-string] ___________________________
+
+value = '', expected = None
+
+    @pytest.mark.parametrize(
+        "value,expected",
+        [(value, expected) for value, expected, _ in CASES],
+        ids=[param_id for _, _, param_id in CASES],
+    )
+    def test_parse(value, expected):
+        result = parse(value)
+>       assert result == expected, f"expected {result!a} to equal {expected!a}"
+E       AssertionError: expected '' to equal None
+E       assert '' == None
+
+tests/test_parser.py:41: AssertionError
+_________________________ test_parse[trailing-newline] _________________________
+
+value = 'foo\n', expected = 'foo'
+
+    @pytest.mark.parametrize(
+        "value,expected",
+        [(value, expected) for value, expected, _ in CASES],
+        ids=[param_id for _, _, param_id in CASES],
+    )
+    def test_parse(value, expected):
+        result = parse(value)
+>       assert result == expected, f"expected {result!a} to equal {expected!a}"
+E       AssertionError: expected 'foo\n' to equal 'foo'
+E       assert 'foo\n' == 'foo'
+E         
+E         - foo
+E         + foo
+E         ?    +
+
+tests/test_parser.py:41: AssertionError
+___________________________ test_parse[unicode-bom] ____________________________
+
+value = '\ufefffoo', expected = 'foo'
+
+    @pytest.mark.parametrize(
+        "value,expected",
+        [(value, expected) for value, expected, _ in CASES],
+        ids=[param_id for _, _, param_id in CASES],
+    )
+    def test_parse(value, expected):
+        result = parse(value)
+>       assert result == expected, f"expected {result!a} to equal {expected!a}"
+E       AssertionError: expected '\ufefffoo' to equal 'foo'
+E       assert '\ufefffoo' == 'foo'
+E         
+E         - foo
+E         + ﻿foo
+E         ? +
+
+tests/test_parser.py:41: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_parser.py::test_parse[empty-string] - AssertionError: expec...
+FAILED tests/test_parser.py::test_parse[trailing-newline] - AssertionError: e...
+FAILED tests/test_parser.py::test_parse[unicode-bom] - AssertionError: expect...
+========================= 3 failed, 14 passed in 0.01s =========================

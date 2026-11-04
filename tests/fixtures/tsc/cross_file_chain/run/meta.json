@@ -1,0 +1,40 @@
+{
+  "meta_schema_version": "1.2",
+  "schema_version": "1.6",
+  "failtrace_version": "0.1.0",
+  "adapters": [
+    {
+      "id": "tsc",
+      "version": "tsc@0.1.0",
+      "kind": "typechecker",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "command": "tsc --project tsconfig.json",
+  "cwd": "/Users/dev/failtrace/tests/fixtures/tsc/cross_file_chain/source",
+  "started_at": "2026-05-15T12:00:00Z",
+  "duration_ms": 100,
+  "exit_code": 2,
+  "signal": null,
+  "early_exit": null,
+  "truncated": false,
+  "truncation_reason": null,
+  "path_case_folding": "case_sensitive",
+  "stream_merge": "stdout_stderr_interleaved",
+  "raw_log_sha256": "981c5ac99b91152877f8c4c8a1a21b6160aa6b7a64d7fdeae9aee21605335e1e",
+  "adapter_candidates": [
+    {
+      "id": "tsc",
+      "version": "tsc@0.1.0",
+      "kind": "typechecker",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "argv": [
+    "tsc",
+    "--project",
+    "tsconfig.json"
+  ]
+}

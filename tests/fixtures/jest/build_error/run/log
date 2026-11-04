@@ -1,0 +1,19 @@
+FAIL tests/build_error.test.js
+  ● Test suite failed to run
+
+    Cannot find module './this-module-does-not-exist' from 'tests/build_error.test.js'
+
+    > 1 | const missing = require("./this-module-does-not-exist");
+        |                 ^
+      2 |
+      3 | test("uses missing module", () => {
+      4 |   expect(missing.value).toBe(1);
+
+      at Resolver._throwModNotFoundError (../../../../../.failtrace-corpus/npm-cache/_npx/ca52b3544e8b1bfd/node_modules/jest-resolve/build/index.js:895:11)
+      at Object.require (tests/build_error.test.js:1:17)
+
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        0.11 s
+Ran all test suites.

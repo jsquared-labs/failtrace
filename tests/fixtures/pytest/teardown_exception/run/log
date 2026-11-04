@@ -1,0 +1,21 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.15, pytest-8.4.2, pluggy-1.6.0
+rootdir: /Users/dev/failtrace/tests/fixtures/pytest
+configfile: pyproject.toml
+collected 1 item
+
+tests/test_db.py .E                                                      [100%]
+
+==================================== ERRORS ====================================
+_______________________ ERROR at teardown of test_query ________________________
+
+    @pytest.fixture
+    def db_connection():
+        yield "fake_connection"
+>       raise RuntimeError("connection close failed during teardown")
+E       RuntimeError: connection close failed during teardown
+
+tests/test_db.py:7: RuntimeError
+=========================== short test summary info ============================
+ERROR tests/test_db.py::test_query - RuntimeError: connection close failed du...
+========================== 1 passed, 1 error in 0.01s ==========================

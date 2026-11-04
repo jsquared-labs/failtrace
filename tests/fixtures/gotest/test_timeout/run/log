@@ -1,0 +1,42 @@
+{"Time":"2026-05-15T10:59:22.549138-04:00","Action":"start","Package":"corpus/test_timeout"}
+{"Time":"2026-05-15T10:59:22.700946-04:00","Action":"run","Package":"corpus/test_timeout","Test":"TestQuick"}
+{"Time":"2026-05-15T10:59:22.700982-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestQuick","Output":"=== RUN   TestQuick\n"}
+{"Time":"2026-05-15T10:59:22.701001-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestQuick","Output":"--- PASS: TestQuick (0.00s)\n"}
+{"Time":"2026-05-15T10:59:22.701005-04:00","Action":"pass","Package":"corpus/test_timeout","Test":"TestQuick","Elapsed":0}
+{"Time":"2026-05-15T10:59:22.70101-04:00","Action":"run","Package":"corpus/test_timeout","Test":"TestSlow"}
+{"Time":"2026-05-15T10:59:22.701012-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"=== RUN   TestSlow\n"}
+{"Time":"2026-05-15T10:59:23.204879-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"panic: test timed out after 500ms\n"}
+{"Time":"2026-05-15T10:59:23.204951-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"\trunning tests:\n"}
+{"Time":"2026-05-15T10:59:23.20497-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"\t\tTestSlow (1s)\n"}
+{"Time":"2026-05-15T10:59:23.204982-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"\n"}
+{"Time":"2026-05-15T10:59:23.204994-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"goroutine 19 [running]:\n"}
+{"Time":"2026-05-15T10:59:23.205019-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"testing.(*M).startAlarm.func1()\n"}
+{"Time":"2026-05-15T10:59:23.205035-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"\t/opt/homebrew/Cellar/go/1.26.3/libexec/src/testing/testing.go:2802 +0x2cc\n"}
+{"Time":"2026-05-15T10:59:23.205063-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"created by time.goFunc\n"}
+{"Time":"2026-05-15T10:59:23.205074-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"\t/opt/homebrew/Cellar/go/1.26.3/libexec/src/time/sleep.go:215 +0x38\n"}
+{"Time":"2026-05-15T10:59:23.205085-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"\n"}
+{"Time":"2026-05-15T10:59:23.205095-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"goroutine 1 [chan receive]:\n"}
+{"Time":"2026-05-15T10:59:23.205106-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"testing.(*T).Run(0x4856e8fda008, {0x1023aed4a?, 0x29c659e80236a9e0?}, 0x102503f00)\n"}
+{"Time":"2026-05-15T10:59:23.205117-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"\t/opt/homebrew/Cellar/go/1.26.3/libexec/src/testing/testing.go:2109 +0x3bc\n"}
+{"Time":"2026-05-15T10:59:23.205127-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"testing.runTests.func1(0x4856e8fda008)\n"}
+{"Time":"2026-05-15T10:59:23.205147-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"\t/opt/homebrew/Cellar/go/1.26.3/libexec/src/testing/testing.go:2585 +0x40\n"}
+{"Time":"2026-05-15T10:59:23.205159-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"testing.tRunner(0x4856e8fda008, 0x4856e8f8ac48)\n"}
+{"Time":"2026-05-15T10:59:23.20517-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"\t/opt/homebrew/Cellar/go/1.26.3/libexec/src/testing/testing.go:2036 +0xc4\n"}
+{"Time":"2026-05-15T10:59:23.20518-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"testing.runTests({0x1023b1d50, 0x13}, {0x1023b1d50, 0x13}, 0x4856e8f902e8, {0x102526680, 0x2, 0x2}, {0x8080808080646324?, 0x1023b0b14?, ...})\n"}
+{"Time":"2026-05-15T10:59:23.205198-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"\t/opt/homebrew/Cellar/go/1.26.3/libexec/src/testing/testing.go:2583 +0x3f0\n"}
+{"Time":"2026-05-15T10:59:23.205269-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"testing.(*M).Run(0x4856e8f8e820)\n"}
+{"Time":"2026-05-15T10:59:23.205279-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"\t/opt/homebrew/Cellar/go/1.26.3/libexec/src/testing/testing.go:2443 +0x578\n"}
+{"Time":"2026-05-15T10:59:23.205298-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"main.main()\n"}
+{"Time":"2026-05-15T10:59:23.205307-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"\t_testmain.go:48 +0x80\n"}
+{"Time":"2026-05-15T10:59:23.205315-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"\n"}
+{"Time":"2026-05-15T10:59:23.205323-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"goroutine 35 [sleep]:\n"}
+{"Time":"2026-05-15T10:59:23.205332-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"time.Sleep(0x6fc23ac00)\n"}
+{"Time":"2026-05-15T10:59:23.205341-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"\t/opt/homebrew/Cellar/go/1.26.3/libexec/src/runtime/time.go:363 +0x150\n"}
+{"Time":"2026-05-15T10:59:23.20535-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"corpus/test_timeout.TestSlow(0x4856e8fda488?)\n"}
+{"Time":"2026-05-15T10:59:23.205359-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"\t/tmp/ft-gocorpus/test_timeout/slow_test.go:15 +0x28\n"}
+{"Time":"2026-05-15T10:59:23.205373-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"testing.tRunner(0x4856e8fda488, 0x102503f00)\n"}
+{"Time":"2026-05-15T10:59:23.205383-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"\t/opt/homebrew/Cellar/go/1.26.3/libexec/src/testing/testing.go:2036 +0xc4\n"}
+{"Time":"2026-05-15T10:59:23.205392-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"created by testing.(*T).Run in goroutine 1\n"}
+{"Time":"2026-05-15T10:59:23.205401-04:00","Action":"output","Package":"corpus/test_timeout","Test":"TestSlow","Output":"\t/opt/homebrew/Cellar/go/1.26.3/libexec/src/testing/testing.go:2101 +0x3a8\n"}
+{"Time":"2026-05-15T10:59:23.206308-04:00","Action":"output","Package":"corpus/test_timeout","Output":"FAIL\tcorpus/test_timeout\t0.657s\n"}
+{"Time":"2026-05-15T10:59:23.206354-04:00","Action":"fail","Package":"corpus/test_timeout","Elapsed":0.657}

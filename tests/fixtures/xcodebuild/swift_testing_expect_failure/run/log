@@ -1,0 +1,12 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test -project ExampleApp.xcodeproj -scheme ExampleApp
+
+◇ Test run started.
+◇ Suite "ExampleSuite" started.
+✘ Test comparesValues() recorded an issue at ExampleTests.swift:10:9: Expectation failed: (actual → 42) == (expected → 99)
+↳ values should match
+✘ Test comparesValues() failed after 0.002 seconds with 1 issue.
+✘ Suite "ExampleSuite" failed after 0.003 seconds with 1 issue.
+✘ Test run with 1 test in 1 suite failed after 0.003 seconds with 1 issue.
+
+** TEST FAILED **

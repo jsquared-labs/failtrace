@@ -1,0 +1,45 @@
+{
+  "meta_schema_version": "1.2",
+  "schema_version": "1.6",
+  "failtrace_version": "0.1.0",
+  "adapters": [
+    {
+      "id": "tsc",
+      "version": "tsc@0.1.0",
+      "kind": "typechecker",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "adapter_candidates": [
+    {
+      "id": "tsc",
+      "version": "tsc@0.1.0",
+      "kind": "typechecker",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "argv": [
+    "bunx",
+    "--bun",
+    "-p",
+    "typescript@5.8.2",
+    "tsc",
+    "--noEmit",
+    "-p",
+    "."
+  ],
+  "command": "bunx --bun -p typescript@5.8.2 tsc --noEmit -p .",
+  "cwd": "/Users/dev/failtrace/tests/fixtures/tsc/destr_argument_type/source",
+  "started_at": "2026-05-16T14:18:35.827265Z",
+  "duration_ms": 450,
+  "exit_code": 2,
+  "signal": null,
+  "early_exit": null,
+  "truncated": false,
+  "truncation_reason": null,
+  "path_case_folding": "case_insensitive",
+  "stream_merge": "stdout_stderr_interleaved",
+  "raw_log_sha256": "3c9ce87185f238175962467850403886292be2e7ce91abc7be4003bc94581fcc"
+}

@@ -1,0 +1,79 @@
+{
+  "scenario": "basic_assertion",
+  "captured_environment": {
+    "pytest_version": "8.4.2",
+    "python_version": "3.11.15",
+    "platform": "darwin"
+  },
+  "runner_argv": ["pytest", "--color=no", "-p", "no:cacheprovider", "tests/"],
+  "exit_code": 1,
+  "hash_inputs": {
+    "schema_version": "1.6",
+    "normative": false,
+    "test_group_id": null,
+    "failures": [
+      {
+        "failure_id": "c345c28f273400ef",
+        "adapter_id": "pytest",
+        "phase": "test",
+        "kind": "assertion",
+        "runner_test_id": "tests/test_basic.py::test_addition",
+        "param_id": null,
+        "primary_location": {"file": "tests/test_basic.py", "line": 4},
+        "normalized_message": "AssertionError: expected <N> to equal <N>"
+      }
+    ]
+  },
+  "expected_subset": {
+    "schema_version": "1.6",
+    "emission": {
+      "channel": "file",
+      "mode": "full",
+      "max_failures": null,
+      "failures_emitted": 1,
+      "failures_total": 1,
+      "full_output_path": "<run-dir>/output.json"
+    },
+    "runner_outcome": "failed",
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "determinism_warnings": [],
+    "truncated": false,
+    "truncation_reason": null,
+    "failures_complete": true,
+    "ranking": {"strategy": "first_emitted", "is_stable_across_runs": true},
+    "counts": {
+      "tests_run": 1,
+      "tests_passed": 0,
+      "tests_failed": 1,
+      "tests_errored": 0,
+      "tests_skipped": 0,
+      "tests_not_run": null,
+      "files_failed": 1
+    },
+    "adapters": [
+      {"id": "pytest", "kind": "runner", "selected": true, "selection_reason": "argv_name_match"}
+    ],
+    "failures": [
+      {
+        "failure_id": "c345c28f273400ef",
+        "adapter_id": "pytest",
+        "phase": "test",
+        "kind": "assertion",
+        "runner_test_id": "tests/test_basic.py::test_addition",
+        "test_name": "test_addition",
+        "param_id": null,
+        "primary_location": {"file": "tests/test_basic.py", "line": 4, "role": "primary"},
+        "message": "AssertionError: expected 2 to equal 3",
+        "diagnostic_severity": "error",
+        "raw_log_lines": [10, 19],
+        "cascade_root": null,
+        "cascade_reason": null,
+        "dependent_failure_ids": [],
+        "retries": [],
+        "companion_diagnostics": []
+      }
+    ]
+  },
+  "notes": "Local regression anchor only — failure_id is computed but NOT in v1.4 normative examples (hash_inputs.normative: false). Changing the source line, message, or test name will change the hash. Exercises the standard 'E   AssertionError: ...' extraction path that the normative examples do not cover."
+}

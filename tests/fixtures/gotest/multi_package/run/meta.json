@@ -1,0 +1,41 @@
+{
+  "meta_schema_version": "1.2",
+  "schema_version": "1.6",
+  "failtrace_version": "0.1.0",
+  "adapters": [
+    {
+      "id": "gotest",
+      "version": "gotest@0.1.0",
+      "kind": "runner",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "command": "go test -json ./...",
+  "cwd": "/Users/dev/failtrace/tests/fixtures/gotest/multi_package/source",
+  "started_at": "2026-05-15T12:00:00Z",
+  "duration_ms": 100,
+  "exit_code": 1,
+  "signal": null,
+  "early_exit": null,
+  "truncated": false,
+  "truncation_reason": null,
+  "path_case_folding": "case_sensitive",
+  "stream_merge": "stdout_stderr_interleaved",
+  "raw_log_sha256": "50121f6314159882d5d639c3f249e87c0873d99e783310a214a3e6df08e64200",
+  "adapter_candidates": [
+    {
+      "id": "gotest",
+      "version": "gotest@0.1.0",
+      "kind": "runner",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "argv": [
+    "go",
+    "test",
+    "-json",
+    "./..."
+  ]
+}

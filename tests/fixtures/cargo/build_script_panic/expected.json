@@ -1,0 +1,172 @@
+{
+  "scenario": "build_script_panic",
+  "captured_environment": {
+    "cargo_reporter": "default",
+    "platform": "darwin"
+  },
+  "runner_argv": [
+    "cargo",
+    "test",
+    "--color",
+    "never"
+  ],
+  "exit_code": 101,
+  "hash_inputs": {
+    "schema_version": "1.6",
+    "normative": false,
+    "test_group_id": null,
+    "failures": [
+      {
+        "failure_id": "8a209dd25158395f",
+        "adapter_id": "cargo-test",
+        "phase": "build",
+        "kind": "panic",
+        "runner_test_id": null,
+        "param_id": null,
+        "primary_location": {
+          "file": "build.rs",
+          "line": 2,
+          "column": 5
+        },
+        "normalized_message": "build script panic: generated bindings are missing"
+      }
+    ]
+  },
+  "expected_subset": {
+    "schema_version": "1.6",
+    "document_kind": "analysis_result",
+    "failtrace_version": "0.1.0",
+    "emission": {
+      "channel": "file",
+      "mode": "full",
+      "max_failures": null,
+      "failures_emitted": 1,
+      "failures_total": 1,
+      "full_output_path": "<run-dir>/output.json"
+    },
+    "command": "cargo test --color never",
+    "cwd": "/Users/dev/failtrace/tests/fixtures/cargo/build_script_panic/source",
+    "started_at": "2026-05-14T12:00:00Z",
+    "duration_ms": 100,
+    "exit_code": 101,
+    "signal": null,
+    "runner_outcome": "pre_test_failed",
+    "early_exit": null,
+    "adapters": [
+      {
+        "id": "cargo-test",
+        "version": "cargo-test@0.1.0",
+        "kind": "runner",
+        "selected": true,
+        "selection_reason": "argv_name_match"
+      }
+    ],
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "determinism_warnings": [],
+    "truncated": false,
+    "truncation_reason": null,
+    "failures_complete": true,
+    "failures": [
+      {
+        "failure_id": "8a209dd25158395f",
+        "adapter_id": "cargo-test",
+        "phase": "build",
+        "kind": "panic",
+        "runner_package_id": null,
+        "runner_test_id": null,
+        "test_segments": [],
+        "test_name": null,
+        "param_id": null,
+        "test_group_id": null,
+        "primary_location": {
+          "file": "build.rs",
+          "line": 2,
+          "column": 5,
+          "end_line": null,
+          "end_column": null,
+          "role": "panic_site",
+          "in_user_code": true
+        },
+        "extra_locations": [],
+        "message": "build script panic: generated bindings are missing",
+        "diagnostic_code": null,
+        "diagnostic_severity": "error",
+        "details": {
+          "type": "panic",
+          "panic_message": "generated bindings are missing",
+          "stack": [
+            {
+              "file": "build.rs",
+              "line": 2,
+              "function": null,
+              "in_user_code": true
+            }
+          ],
+          "goroutine_id": null
+        },
+        "raw_log_lines": [
+          2,
+          10
+        ],
+        "evidence": {
+          "byte_range": {
+            "start": 109,
+            "end": 643
+          },
+          "excerpts": [
+            {
+              "source": "raw_log",
+              "kind": "failure_block",
+              "byte_range": {
+                "start": 109,
+                "end": 643
+              },
+              "text": "error: failed to run custom build command for `build_script_panic v0.1.0 (/Users/dev/failtrace/tests/fixtures/cargo/build_script_panic/source)`\n\nCaused by:\n  process didn't exit successfully: `/Users/dev/failtrace/tests/fixtures/cargo/build_script_panic/source/target/debug/build/build_script_panic-c9bf3da14422394d/build-script-build` (exit status: 101)\n  --- stderr\n\n  thread 'main' (6220508) panicked at build.rs:2:5:\n  generated bindings are missing\n  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n",
+              "ansi_stripped": false,
+              "truncated": false
+            }
+          ]
+        },
+        "cascade_root": null,
+        "cascade_reason": null,
+        "dependent_failure_ids": [],
+        "retries": [],
+        "companion_diagnostics": [],
+        "extensions": {}
+      }
+    ],
+    "ranking": {
+      "strategy": "compile_before_runtime",
+      "is_stable_across_runs": true
+    },
+    "counts": {
+      "tests_run": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "tests_errored": 0,
+      "tests_skipped": 0,
+      "tests_not_run": null,
+      "files_failed": null
+    },
+    "raw_log_path": "<run-dir>/log",
+    "raw_log_sha256": "47da2214ba21f17af24ae91b0e8507b26f50c00863524a7067640e6d96d2080b",
+    "suggested_next_commands": [
+      {
+        "argv": [
+          "failtrace",
+          "explain",
+          "8a209dd25158395f"
+        ],
+        "command": "failtrace explain 8a209dd25158395f",
+        "cwd": "/Users/dev/failtrace/tests/fixtures/cargo/build_script_panic/source",
+        "intent": "explain_diagnostic",
+        "interactive": false,
+        "mutates_workspace": false,
+        "uses_network": false,
+        "requires_approval": false
+      }
+    ],
+    "extensions": {}
+  }
+}

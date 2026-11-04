@@ -1,0 +1,164 @@
+{
+  "scenario": "dependency_resolution",
+  "captured_environment": {
+    "cargo_reporter": "default",
+    "platform": "darwin"
+  },
+  "runner_argv": [
+    "cargo",
+    "test",
+    "--color",
+    "never"
+  ],
+  "exit_code": 101,
+  "hash_inputs": {
+    "schema_version": "1.6",
+    "normative": false,
+    "test_group_id": null,
+    "failures": [
+      {
+        "failure_id": "5df14fde59dae1f9",
+        "adapter_id": "cargo-test",
+        "phase": "build",
+        "kind": "dependency_resolution_error",
+        "runner_test_id": null,
+        "param_id": null,
+        "primary_location": {
+          "file": "Cargo.toml",
+          "line": null,
+          "column": null
+        },
+        "normalized_message": "failed to select a version for the requirement `serde = \"^<N>.<N>.<N>\"`"
+      }
+    ]
+  },
+  "expected_subset": {
+    "schema_version": "1.6",
+    "document_kind": "analysis_result",
+    "failtrace_version": "0.1.0",
+    "emission": {
+      "channel": "file",
+      "mode": "full",
+      "max_failures": null,
+      "failures_emitted": 1,
+      "failures_total": 1,
+      "full_output_path": "<run-dir>/output.json"
+    },
+    "command": "cargo test --color never",
+    "cwd": "/Users/dev/failtrace/tests/fixtures/cargo/dependency_resolution/source",
+    "started_at": "2026-05-14T12:00:00Z",
+    "duration_ms": 100,
+    "exit_code": 101,
+    "signal": null,
+    "runner_outcome": "pre_test_failed",
+    "early_exit": null,
+    "adapters": [
+      {
+        "id": "cargo-test",
+        "version": "cargo-test@0.1.0",
+        "kind": "runner",
+        "selected": true,
+        "selection_reason": "argv_name_match"
+      }
+    ],
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "determinism_warnings": [],
+    "truncated": false,
+    "truncation_reason": null,
+    "failures_complete": true,
+    "failures": [
+      {
+        "failure_id": "5df14fde59dae1f9",
+        "adapter_id": "cargo-test",
+        "phase": "build",
+        "kind": "dependency_resolution_error",
+        "runner_package_id": null,
+        "runner_test_id": null,
+        "test_segments": [],
+        "test_name": null,
+        "param_id": null,
+        "test_group_id": null,
+        "primary_location": {
+          "file": "Cargo.toml",
+          "line": null,
+          "column": null,
+          "end_line": null,
+          "end_column": null,
+          "role": "import_site",
+          "in_user_code": true
+        },
+        "extra_locations": [],
+        "message": "failed to select a version for the requirement `serde = \"^999.0.0\"`",
+        "diagnostic_code": null,
+        "diagnostic_severity": "error",
+        "details": {
+          "type": "dependency_resolution_error",
+          "package": "serde",
+          "resolver": "cargo"
+        },
+        "raw_log_lines": [
+          2,
+          7
+        ],
+        "evidence": {
+          "byte_range": {
+            "start": 29,
+            "end": 465
+          },
+          "excerpts": [
+            {
+              "source": "raw_log",
+              "kind": "failure_block",
+              "byte_range": {
+                "start": 29,
+                "end": 465
+              },
+              "text": "error: failed to select a version for the requirement `serde = \"^999.0.0\"`\ncandidate versions found which didn't match: 1.0.228, 1.0.227, 1.0.226, ...\nlocation searched: crates.io index\nrequired by package `dependency_resolution v0.1.0 (/Users/dev/failtrace/tests/fixtures/cargo/dependency_resolution/source)`\nif you are looking for the prerelease package it needs to be specified explicitly\n    serde = { version = \"1.0.172-alpha.0\" }\n",
+              "ansi_stripped": false,
+              "truncated": false
+            }
+          ]
+        },
+        "cascade_root": null,
+        "cascade_reason": null,
+        "dependent_failure_ids": [],
+        "retries": [],
+        "companion_diagnostics": [],
+        "extensions": {}
+      }
+    ],
+    "ranking": {
+      "strategy": "compile_before_runtime",
+      "is_stable_across_runs": true
+    },
+    "counts": {
+      "tests_run": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "tests_errored": 0,
+      "tests_skipped": 0,
+      "tests_not_run": null,
+      "files_failed": null
+    },
+    "raw_log_path": "<run-dir>/log",
+    "raw_log_sha256": "4a3a4a574336d4e2148b0eef73a05e0b7e49e9607cf77c0d4b8a1aedd9eb59b5",
+    "suggested_next_commands": [
+      {
+        "argv": [
+          "failtrace",
+          "explain",
+          "5df14fde59dae1f9"
+        ],
+        "command": "failtrace explain 5df14fde59dae1f9",
+        "cwd": "/Users/dev/failtrace/tests/fixtures/cargo/dependency_resolution/source",
+        "intent": "explain_diagnostic",
+        "interactive": false,
+        "mutates_workspace": false,
+        "uses_network": false,
+        "requires_approval": false
+      }
+    ],
+    "extensions": {}
+  }
+}

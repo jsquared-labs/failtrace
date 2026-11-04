@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "noEmit": true,
+    "pretty": false,
+    "moduleResolution": "node"
+  },
+  "files": ["src/a.ts", "src/b.ts", "src/c.ts"]
+}

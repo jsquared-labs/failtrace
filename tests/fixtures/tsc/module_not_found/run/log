@@ -1,0 +1,1 @@
+src/index.ts(1,25): error TS2307: Cannot find module './missing-module' or its corresponding type declarations.

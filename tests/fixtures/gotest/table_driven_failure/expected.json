@@ -1,0 +1,267 @@
+{
+  "scenario": "table_driven_failure",
+  "captured_environment": {
+    "go": "1.26.3",
+    "platform": "darwin",
+    "capture_command": "go test -json ./..."
+  },
+  "runner_argv": [
+    "go",
+    "test",
+    "-json",
+    "./..."
+  ],
+  "exit_code": 1,
+  "hash_inputs": {
+    "schema_version": "1.6",
+    "normative": false,
+    "test_group_id": null,
+    "failure_order_stable": true,
+    "failures": [
+      {
+        "adapter_id": "gotest",
+        "phase": "test",
+        "kind": "assertion",
+        "runner_test_id": "corpus/table_driven_failure::TestSquare/big_(wrong_expected)",
+        "param_id": null,
+        "primary_location": {
+          "file": "table_test.go",
+          "line": 23,
+          "column": null
+        },
+        "normalized_message": "square(<N>) = <N>, want <N>",
+        "failure_id": "86eeb4216b573ea1"
+      },
+      {
+        "adapter_id": "gotest",
+        "phase": "test",
+        "kind": "assertion",
+        "runner_test_id": "corpus/table_driven_failure::TestSquare/three_(wrong_expected)",
+        "param_id": null,
+        "primary_location": {
+          "file": "table_test.go",
+          "line": 23,
+          "column": null
+        },
+        "normalized_message": "square(<N>) = <N>, want <N>",
+        "failure_id": "6d0c72b61c4402d9"
+      }
+    ]
+  },
+  "expected_subset": {
+    "schema_version": "1.6",
+    "document_kind": "analysis_result",
+    "failtrace_version": "0.1.0",
+    "emission": {
+      "channel": "file",
+      "mode": "full",
+      "max_failures": null,
+      "failures_emitted": 2,
+      "failures_total": 2,
+      "full_output_path": "<run-dir>/output.json"
+    },
+    "command": "go test -json ./...",
+    "cwd": "/Users/dev/failtrace/tests/fixtures/gotest/table_driven_failure/source",
+    "started_at": "2026-05-15T12:00:00Z",
+    "duration_ms": 100,
+    "exit_code": 1,
+    "signal": null,
+    "runner_outcome": "failed",
+    "early_exit": null,
+    "adapters": [
+      {
+        "id": "gotest",
+        "version": "gotest@0.1.0",
+        "kind": "runner",
+        "selected": true,
+        "selection_reason": "argv_name_match"
+      }
+    ],
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "determinism_warnings": [],
+    "truncated": false,
+    "truncation_reason": null,
+    "failures_complete": true,
+    "failures": [
+      {
+        "failure_id": "86eeb4216b573ea1",
+        "adapter_id": "gotest",
+        "phase": "test",
+        "kind": "assertion",
+        "runner_package_id": "corpus/table_driven_failure",
+        "runner_test_id": "corpus/table_driven_failure::TestSquare/big_(wrong_expected)",
+        "test_segments": [
+          "TestSquare",
+          "big_(wrong_expected)"
+        ],
+        "test_name": "TestSquare/big_(wrong_expected)",
+        "param_id": null,
+        "test_group_id": null,
+        "primary_location": {
+          "file": "table_test.go",
+          "line": 23,
+          "column": null,
+          "end_line": 23,
+          "end_column": null,
+          "role": "primary",
+          "in_user_code": true
+        },
+        "extra_locations": [],
+        "message": "square(9) = 81, want 80",
+        "diagnostic_code": null,
+        "diagnostic_severity": "error",
+        "details": {
+          "type": "assertion",
+          "expected": null,
+          "actual": null,
+          "diff": null
+        },
+        "raw_log_lines": [
+          27,
+          27
+        ],
+        "evidence": {
+          "byte_range": {
+            "start": 4040,
+            "end": 4242
+          },
+          "excerpts": [
+            {
+              "source": "runner_structured_event",
+              "kind": "failure_block",
+              "byte_range": {
+                "start": 4040,
+                "end": 4242
+              },
+              "text": "    table_test.go:23: square(9) = 81, want 80\n",
+              "ansi_stripped": false,
+              "truncated": false
+            }
+          ]
+        },
+        "cascade_root": null,
+        "cascade_reason": null,
+        "dependent_failure_ids": [],
+        "retries": [],
+        "companion_diagnostics": [],
+        "extensions": {}
+      },
+      {
+        "failure_id": "6d0c72b61c4402d9",
+        "adapter_id": "gotest",
+        "phase": "test",
+        "kind": "assertion",
+        "runner_package_id": "corpus/table_driven_failure",
+        "runner_test_id": "corpus/table_driven_failure::TestSquare/three_(wrong_expected)",
+        "test_segments": [
+          "TestSquare",
+          "three_(wrong_expected)"
+        ],
+        "test_name": "TestSquare/three_(wrong_expected)",
+        "param_id": null,
+        "test_group_id": null,
+        "primary_location": {
+          "file": "table_test.go",
+          "line": 23,
+          "column": null,
+          "end_line": 23,
+          "end_column": null,
+          "role": "primary",
+          "in_user_code": true
+        },
+        "extra_locations": [],
+        "message": "square(3) = 9, want 10",
+        "diagnostic_code": null,
+        "diagnostic_severity": "error",
+        "details": {
+          "type": "assertion",
+          "expected": null,
+          "actual": null,
+          "diff": null
+        },
+        "raw_log_lines": [
+          18,
+          18
+        ],
+        "evidence": {
+          "byte_range": {
+            "start": 2509,
+            "end": 2712
+          },
+          "excerpts": [
+            {
+              "source": "runner_structured_event",
+              "kind": "failure_block",
+              "byte_range": {
+                "start": 2509,
+                "end": 2712
+              },
+              "text": "    table_test.go:23: square(3) = 9, want 10\n",
+              "ansi_stripped": false,
+              "truncated": false
+            }
+          ]
+        },
+        "cascade_root": null,
+        "cascade_reason": null,
+        "dependent_failure_ids": [],
+        "retries": [],
+        "companion_diagnostics": [],
+        "extensions": {}
+      }
+    ],
+    "ranking": {
+      "strategy": "first_emitted",
+      "is_stable_across_runs": true
+    },
+    "counts": {
+      "tests_run": 7,
+      "tests_passed": 4,
+      "tests_failed": 2,
+      "tests_errored": 0,
+      "tests_skipped": 0,
+      "tests_not_run": null,
+      "files_failed": 1
+    },
+    "raw_log_path": "<run-dir>/log",
+    "raw_log_sha256": "dad1a1627c6490032e4b4e8163bfe66afca262a39690519b90a4baffeb8b8ace",
+    "suggested_next_commands": [
+      {
+        "argv": [
+          "go",
+          "test",
+          "-json",
+          "corpus/table_driven_failure",
+          "-run",
+          "^TestSquare/big_\\(wrong_expected\\)$"
+        ],
+        "command": "go test -json corpus/table_driven_failure -run '^TestSquare/big_\\(wrong_expected\\)$'",
+        "cwd": "/Users/dev/failtrace/tests/fixtures/gotest/table_driven_failure/source",
+        "intent": "rerun_isolated",
+        "interactive": false,
+        "mutates_workspace": false,
+        "uses_network": false,
+        "requires_approval": false
+      },
+      {
+        "argv": [
+          "go",
+          "test",
+          "-json",
+          "corpus/table_driven_failure",
+          "-run",
+          "^TestSquare/three_\\(wrong_expected\\)$"
+        ],
+        "command": "go test -json corpus/table_driven_failure -run '^TestSquare/three_\\(wrong_expected\\)$'",
+        "cwd": "/Users/dev/failtrace/tests/fixtures/gotest/table_driven_failure/source",
+        "intent": "rerun_isolated",
+        "interactive": false,
+        "mutates_workspace": false,
+        "uses_network": false,
+        "requires_approval": false
+      }
+    ],
+    "extensions": {}
+  }
+}

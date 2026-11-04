@@ -1,0 +1,10 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test -project ExampleApp.xcodeproj -scheme ExampleApp
+
+/workspace/example-app/Sources/CatalogBuilder.swift:62:28: error: cannot find 'ExampleCatalog' in scope
+
+Testing failed:
+	Cannot find 'ExampleCatalog' in scope
+	Testing cancelled because the build failed.
+
+** TEST FAILED **

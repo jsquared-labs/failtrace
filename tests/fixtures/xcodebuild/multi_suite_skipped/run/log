@@ -1,0 +1,163 @@
+Test Suite 'All tests' started at 2026-01-01 00:00:00.000.
+Test Suite 'ExampleAppTests.xctest' started at 2026-01-01 00:00:00.000.
+Test Suite 'ExampleAppTests.Group1' started at 2026-01-01 00:00:00.000.
+Test Case '-[ExampleAppTests.Group1 testCase01]' started.
+Test Case '-[ExampleAppTests.Group1 testCase01]' skipped (0.001 seconds).
+Test Case '-[ExampleAppTests.Group1 testCase02]' started.
+Test Case '-[ExampleAppTests.Group1 testCase02]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group1 testCase03]' started.
+Test Case '-[ExampleAppTests.Group1 testCase03]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group1 testCase04]' started.
+Test Case '-[ExampleAppTests.Group1 testCase04]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group1 testCase05]' started.
+Test Case '-[ExampleAppTests.Group1 testCase05]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group1 testCase06]' started.
+Test Case '-[ExampleAppTests.Group1 testCase06]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group1 testCase07]' started.
+Test Case '-[ExampleAppTests.Group1 testCase07]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group1 testCase08]' started.
+Test Case '-[ExampleAppTests.Group1 testCase08]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group1 testCase09]' started.
+Test Case '-[ExampleAppTests.Group1 testCase09]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group1 testCase10]' started.
+Test Case '-[ExampleAppTests.Group1 testCase10]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group1 testCase11]' started.
+Test Case '-[ExampleAppTests.Group1 testCase11]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group1 testCase12]' started.
+Test Case '-[ExampleAppTests.Group1 testCase12]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group1 testCase13]' started.
+Test Case '-[ExampleAppTests.Group1 testCase13]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group1 testCase14]' started.
+Test Case '-[ExampleAppTests.Group1 testCase14]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group1 testCase15]' started.
+Test Case '-[ExampleAppTests.Group1 testCase15]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group1 testCase16]' started.
+Test Case '-[ExampleAppTests.Group1 testCase16]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group1 testCase17]' started.
+Test Case '-[ExampleAppTests.Group1 testCase17]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group1 testCase18]' started.
+Test Case '-[ExampleAppTests.Group1 testCase18]' passed (0.001 seconds).
+Test Suite 'ExampleAppTests.Group1' passed at 2026-01-01 00:00:01.000.
+ Executed 18 tests, with 1 test skipped and 0 failures (0 unexpected) in 1.000 (1.000) seconds
+Test Suite 'ExampleAppTests.Group2' started at 2026-01-01 00:00:00.000.
+Test Case '-[ExampleAppTests.Group2 testCase01]' started.
+Test Case '-[ExampleAppTests.Group2 testCase01]' skipped (0.001 seconds).
+Test Case '-[ExampleAppTests.Group2 testCase02]' started.
+Test Case '-[ExampleAppTests.Group2 testCase02]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group2 testCase03]' started.
+Test Case '-[ExampleAppTests.Group2 testCase03]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group2 testCase04]' started.
+Test Case '-[ExampleAppTests.Group2 testCase04]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group2 testCase05]' started.
+Test Case '-[ExampleAppTests.Group2 testCase05]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group2 testCase06]' started.
+Test Case '-[ExampleAppTests.Group2 testCase06]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group2 testCase07]' started.
+Test Case '-[ExampleAppTests.Group2 testCase07]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group2 testCase08]' started.
+Test Case '-[ExampleAppTests.Group2 testCase08]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group2 testCase09]' started.
+Test Case '-[ExampleAppTests.Group2 testCase09]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group2 testCase10]' started.
+Test Case '-[ExampleAppTests.Group2 testCase10]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group2 testCase11]' started.
+Test Case '-[ExampleAppTests.Group2 testCase11]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group2 testCase12]' started.
+Test Case '-[ExampleAppTests.Group2 testCase12]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group2 testCase13]' started.
+Test Case '-[ExampleAppTests.Group2 testCase13]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group2 testCase14]' started.
+Test Case '-[ExampleAppTests.Group2 testCase14]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group2 testCase15]' started.
+Test Case '-[ExampleAppTests.Group2 testCase15]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group2 testCase16]' started.
+Test Case '-[ExampleAppTests.Group2 testCase16]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group2 testCase17]' started.
+Test Case '-[ExampleAppTests.Group2 testCase17]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group2 testCase18]' started.
+Test Case '-[ExampleAppTests.Group2 testCase18]' passed (0.001 seconds).
+Test Suite 'ExampleAppTests.Group2' passed at 2026-01-01 00:00:01.000.
+ Executed 18 tests, with 1 test skipped and 0 failures (0 unexpected) in 1.000 (1.000) seconds
+Test Suite 'ExampleAppTests.Group3' started at 2026-01-01 00:00:00.000.
+Test Case '-[ExampleAppTests.Group3 testCase01]' started.
+Test Case '-[ExampleAppTests.Group3 testCase01]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group3 testCase02]' started.
+Test Case '-[ExampleAppTests.Group3 testCase02]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group3 testCase03]' started.
+Test Case '-[ExampleAppTests.Group3 testCase03]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group3 testCase04]' started.
+Test Case '-[ExampleAppTests.Group3 testCase04]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group3 testCase05]' started.
+Test Case '-[ExampleAppTests.Group3 testCase05]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group3 testCase06]' started.
+Test Case '-[ExampleAppTests.Group3 testCase06]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group3 testCase07]' started.
+Test Case '-[ExampleAppTests.Group3 testCase07]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group3 testCase08]' started.
+Test Case '-[ExampleAppTests.Group3 testCase08]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group3 testCase09]' started.
+Test Case '-[ExampleAppTests.Group3 testCase09]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group3 testCase10]' started.
+Test Case '-[ExampleAppTests.Group3 testCase10]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group3 testCase11]' started.
+Test Case '-[ExampleAppTests.Group3 testCase11]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group3 testCase12]' started.
+Test Case '-[ExampleAppTests.Group3 testCase12]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group3 testCase13]' started.
+Test Case '-[ExampleAppTests.Group3 testCase13]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group3 testCase14]' started.
+Test Case '-[ExampleAppTests.Group3 testCase14]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group3 testCase15]' started.
+Test Case '-[ExampleAppTests.Group3 testCase15]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group3 testCase16]' started.
+Test Case '-[ExampleAppTests.Group3 testCase16]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group3 testCase17]' started.
+Test Case '-[ExampleAppTests.Group3 testCase17]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group3 testCase18]' started.
+Test Case '-[ExampleAppTests.Group3 testCase18]' passed (0.001 seconds).
+Test Suite 'ExampleAppTests.Group3' passed at 2026-01-01 00:00:01.000.
+ Executed 18 tests, with 0 failures (0 unexpected) in 1.000 (1.000) seconds
+Test Suite 'ExampleAppTests.Group4' started at 2026-01-01 00:00:00.000.
+Test Case '-[ExampleAppTests.Group4 testCase01]' started.
+Test Case '-[ExampleAppTests.Group4 testCase01]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group4 testCase02]' started.
+Test Case '-[ExampleAppTests.Group4 testCase02]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group4 testCase03]' started.
+Test Case '-[ExampleAppTests.Group4 testCase03]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group4 testCase04]' started.
+Test Case '-[ExampleAppTests.Group4 testCase04]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group4 testCase05]' started.
+Test Case '-[ExampleAppTests.Group4 testCase05]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group4 testCase06]' started.
+Test Case '-[ExampleAppTests.Group4 testCase06]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group4 testCase07]' started.
+Test Case '-[ExampleAppTests.Group4 testCase07]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group4 testCase08]' started.
+Test Case '-[ExampleAppTests.Group4 testCase08]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group4 testCase09]' started.
+Test Case '-[ExampleAppTests.Group4 testCase09]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group4 testCase10]' started.
+Test Case '-[ExampleAppTests.Group4 testCase10]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group4 testCase11]' started.
+Test Case '-[ExampleAppTests.Group4 testCase11]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group4 testCase12]' started.
+Test Case '-[ExampleAppTests.Group4 testCase12]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group4 testCase13]' started.
+Test Case '-[ExampleAppTests.Group4 testCase13]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group4 testCase14]' started.
+Test Case '-[ExampleAppTests.Group4 testCase14]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group4 testCase15]' started.
+Test Case '-[ExampleAppTests.Group4 testCase15]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group4 testCase16]' started.
+Test Case '-[ExampleAppTests.Group4 testCase16]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group4 testCase17]' started.
+Test Case '-[ExampleAppTests.Group4 testCase17]' passed (0.001 seconds).
+Test Case '-[ExampleAppTests.Group4 testCase18]' started.
+Test Case '-[ExampleAppTests.Group4 testCase18]' passed (0.001 seconds).
+Test Suite 'ExampleAppTests.Group4' passed at 2026-01-01 00:00:01.000.
+ Executed 18 tests, with 0 failures (0 unexpected) in 1.000 (1.000) seconds
+Test Suite 'ExampleAppTests.xctest' passed at 2026-01-01 00:00:04.000.
+ Executed 72 tests, with 2 tests skipped and 0 failures (0 unexpected) in 4.000 (4.000) seconds
+Test Suite 'All tests' passed at 2026-01-01 00:00:04.000.
+ Executed 72 tests, with 2 tests skipped and 0 failures (0 unexpected) in 4.000 (4.000) seconds
+** TEST SUCCEEDED **

@@ -1,0 +1,157 @@
+{
+  "captured_environment": {
+    "format": "representative xcodebuild and Swift Testing output",
+    "provenance": "hand-authored synthetic log"
+  },
+  "exit_code": 65,
+  "expected_subset": {
+    "adapters": [
+      {
+        "id": "xcodebuild-test",
+        "kind": "runner",
+        "selected": true,
+        "selection_reason": "argv_name_match",
+        "version": "xcodebuild-test@0.1.0"
+      }
+    ],
+    "command": "xcodebuild test -project ExampleApp.xcodeproj -scheme ExampleApp -only-testing:ExampleAppTests/ExampleSuite",
+    "counts": {
+      "files_failed": null,
+      "tests_errored": 0,
+      "tests_failed": 1,
+      "tests_not_run": null,
+      "tests_passed": 0,
+      "tests_run": 1,
+      "tests_skipped": 0
+    },
+    "cwd": "/workspace/example-app",
+    "determinism_warnings": [],
+    "document_kind": "analysis_result",
+    "duration_ms": 1000,
+    "early_exit": null,
+    "emission": {
+      "channel": "file",
+      "failures_emitted": 1,
+      "failures_total": 1,
+      "full_output_path": "<run-dir>/output.json",
+      "max_failures": null,
+      "mode": "full"
+    },
+    "exit_code": 65,
+    "extensions": {},
+    "failtrace_version": "0.1.0",
+    "failures": [
+      {
+        "adapter_id": "xcodebuild-test",
+        "cascade_reason": null,
+        "cascade_root": null,
+        "companion_diagnostics": [],
+        "dependent_failure_ids": [],
+        "details": {
+          "actual": "42",
+          "diff": null,
+          "expected": "99",
+          "type": "assertion"
+        },
+        "diagnostic_code": null,
+        "diagnostic_severity": "error",
+        "evidence": {
+          "byte_range": {
+            "end": 355,
+            "start": 202
+          },
+          "excerpts": [
+            {
+              "ansi_stripped": false,
+              "byte_range": {
+                "end": 355,
+                "start": 202
+              },
+              "kind": "failure_block",
+              "source": "raw_log",
+              "text": "✘ Test comparesValues() recorded an issue at ExampleTests.swift:10:9: Expectation failed: (actual → 42) == (expected → 99)\n↳ values should match",
+              "truncated": false
+            }
+          ]
+        },
+        "extensions": {},
+        "extra_locations": [],
+        "failure_id": "809ae3308dc9ff86",
+        "kind": "assertion",
+        "message": "Expectation failed: (actual → 42) == (expected → 99): values should match",
+        "param_id": null,
+        "phase": "test",
+        "primary_location": {
+          "column": 9,
+          "end_column": null,
+          "end_line": null,
+          "file": "ExampleTests.swift",
+          "in_user_code": true,
+          "line": 10,
+          "role": "primary"
+        },
+        "raw_log_lines": [
+          6,
+          7
+        ],
+        "retries": [],
+        "runner_package_id": null,
+        "runner_test_id": "ExampleSuite.comparesValues",
+        "test_group_id": null,
+        "test_name": "comparesValues",
+        "test_segments": [
+          "ExampleSuite",
+          "comparesValues"
+        ]
+      }
+    ],
+    "failures_complete": true,
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "ranking": {
+      "is_stable_across_runs": false,
+      "strategy": "compile_before_runtime"
+    },
+    "raw_log_path": "<run-dir>/log",
+    "raw_log_sha256": "b231159974ccb668fe6ba2a95a1185cffa2142918f1d52dd8cdd601befc22bc2",
+    "runner_outcome": "failed",
+    "schema_version": "1.6",
+    "signal": null,
+    "started_at": "2026-01-01T00:00:00Z",
+    "suggested_next_commands": [],
+    "truncated": false,
+    "truncation_reason": null
+  },
+  "hash_inputs": {
+    "failure_order_stable": false,
+    "failures": [
+      {
+        "adapter_id": "xcodebuild-test",
+        "failure_id": "809ae3308dc9ff86",
+        "kind": "assertion",
+        "normalized_message": "Expectation failed: (actual → <N>) == (expected → <N>): values should match",
+        "param_id": null,
+        "phase": "test",
+        "primary_location": {
+          "column": 9,
+          "file": "ExampleTests.swift",
+          "line": 10
+        },
+        "runner_test_id": "ExampleSuite.comparesValues"
+      }
+    ],
+    "normative": false,
+    "schema_version": "1.6",
+    "test_group_id": null
+  },
+  "runner_argv": [
+    "xcodebuild",
+    "test",
+    "-project",
+    "ExampleApp.xcodeproj",
+    "-scheme",
+    "ExampleApp",
+    "-only-testing:ExampleAppTests/ExampleSuite"
+  ],
+  "scenario": "swift_testing_expect_failure"
+}

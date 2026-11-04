@@ -1,0 +1,13 @@
+diff --git a/tests/macros.rs b/tests/macros.rs
+index a82130c..3ccc032 100644
+--- a/tests/macros.rs
++++ b/tests/macros.rs
+@@ -2,7 +2,7 @@ mod arg {
+     #[test]
+     fn name_explicit() {
+         let arg = clap::arg!(foo: --bar <NUM>);
+-        assert_eq!(arg.get_id(), "foo");
++        assert_eq!(arg.get_id(), "wrong_id");
+         assert_eq!(arg.get_long(), Some("bar"));
+         assert_eq!(arg.get_value_names(), Some(vec!["NUM".into()].as_slice()));
+         assert!(!arg.is_required_set());

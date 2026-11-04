@@ -1,0 +1,44 @@
+{
+  "meta_schema_version": "1.2",
+  "schema_version": "1.6",
+  "failtrace_version": "0.1.0",
+  "adapters": [
+    {
+      "id": "cargo-test",
+      "version": "cargo-test@0.1.0",
+      "kind": "runner",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "adapter_candidates": [
+    {
+      "id": "cargo-test",
+      "version": "cargo-test@0.1.0",
+      "kind": "runner",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "argv": [
+    "cargo",
+    "test",
+    "--test",
+    "macros",
+    "--",
+    "--test-threads=1",
+    "arg::name_explicit"
+  ],
+  "command": "cargo test --test macros -- --test-threads=1 arg::name_explicit",
+  "cwd": "/Users/dev/failtrace/tests/fixtures/cargo/clap_macros_assertion/source",
+  "started_at": "2026-05-16T14:18:23.14615Z",
+  "duration_ms": 11903,
+  "exit_code": 101,
+  "signal": null,
+  "early_exit": null,
+  "truncated": false,
+  "truncation_reason": null,
+  "path_case_folding": "case_insensitive",
+  "stream_merge": "stdout_stderr_interleaved",
+  "raw_log_sha256": "0dc01bd0cd73b96a8f5b555a32fbac1fb70fe655618660beb82ca6a80d2b3fbc"
+}

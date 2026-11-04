@@ -1,0 +1,118 @@
+name: Gauntlet
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 8 * * 1"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: gauntlet-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'workflow_dispatch' }}
+
+env:
+  CARGO_TERM_COLOR: always
+  COREPACK_ENABLE_DOWNLOAD_PROMPT: "0"
+  RUSTFLAGS: -D warnings
+
+jobs:
+  gauntlet:
+    name: Run corpus gauntlet
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - name: Finalize Rust toolchain
+        run: |
+          rustup default stable
+          echo "$CARGO_HOME/bin" >> "$GITHUB_PATH"
+
+      - uses: Swatinem/rust-cache@v2.9.1
+        with:
+          shared-key: gauntlet
+
+      - uses: actions/setup-python@v5.6.0
+        with:
+          python-version: "3.12"
+
+      - uses: astral-sh/setup-uv@v8.1.0
+
+      - uses: actions/setup-node@v4.4.0
+        with:
+          node-version: "22.x"
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - uses: actions/setup-go@v5.6.0
+        with:
+          go-version: "1.26.x"
+
+      - uses: oven-sh/setup-bun@v2.2.0
+
+      - name: Cache uv
+        uses: actions/cache@v4.3.0
+        with:
+          path: .failtrace-corpus/uv-cache
+          key: uv-${{ runner.os }}-${{ hashFiles('Makefile', 'scripts/corpus/run_corpus.py', 'scripts/corpus/corpus.yaml') }}
+          restore-keys: |
+            uv-${{ runner.os }}-
+
+      - name: Cache JavaScript package-manager stores
+        uses: actions/cache@v4.3.0
+        with:
+          path: |
+            ~/.cache/node/corepack
+            ~/.cache/yarn
+            ~/.local/share/pnpm/store
+            ~/.yarn/berry/cache
+          key: js-stores-${{ runner.os }}-node22-${{ hashFiles('scripts/corpus/corpus.yaml') }}
+          restore-keys: |
+            js-stores-${{ runner.os }}-node22-
+
+      - name: Cache corpus repos
+        uses: actions/cache@v4.3.0
+        with:
+          path: .failtrace-corpus/repos
+          key: corpus-repos-${{ runner.os }}-${{ hashFiles('scripts/corpus/corpus.yaml') }}
+          restore-keys: |
+            corpus-repos-${{ runner.os }}-
+
+      - name: Run gauntlet
+        run: make gauntlet
+
+      - name: Read gauntlet run id
+        id: gauntlet_run
+        if: always()
+        shell: bash
+        run: |
+          if [[ -f .failtrace-corpus/out/latest ]]; then
+            run_id="$(cat .failtrace-corpus/out/latest)"
+            run_id="${run_id#runs/}"
+          else
+            run_id="missing-${GITHUB_RUN_ID}"
+          fi
+          echo "run_id=${run_id}" >> "$GITHUB_OUTPUT"
+
+      # Raw run directories and rendered reports can contain third-party output,
+      # failure messages, and local paths. Automatic uploads are limited to the
+      # machine-readable summary and provenance metadata; all raw or rendered
+      # evidence requires a separate privacy/license review before redistribution.
+      - name: Upload gauntlet summary and provenance metadata
+        if: always()
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: gauntlet-out-${{ steps.gauntlet_run.outputs.run_id }}
+          path: |
+            .failtrace-corpus/out/latest
+            .failtrace-corpus/out/runs/${{ steps.gauntlet_run.outputs.run_id }}/summary.json
+            .failtrace-corpus/out/runs/${{ steps.gauntlet_run.outputs.run_id }}/manifest.snapshot.yaml
+            .failtrace-corpus/out/runs/${{ steps.gauntlet_run.outputs.run_id }}/toolchain.json
+          if-no-files-found: warn
+          include-hidden-files: true
+          retention-days: 14

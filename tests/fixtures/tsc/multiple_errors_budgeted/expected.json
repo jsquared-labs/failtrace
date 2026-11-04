@@ -1,0 +1,363 @@
+{
+  "scenario": "multiple_errors_budgeted",
+  "captured_environment": {
+    "typescript": "5.9.3",
+    "platform": "darwin",
+    "capture_command": "npm_config_cache=/private/tmp/failtrace-npm-cache npx --yes -p typescript@5 tsc"
+  },
+  "runner_argv": [
+    "tsc",
+    "--project",
+    "tsconfig.json"
+  ],
+  "exit_code": 2,
+  "hash_inputs": {
+    "schema_version": "1.6",
+    "normative": false,
+    "test_group_id": null,
+    "failures": [
+      {
+        "adapter_id": "tsc",
+        "phase": "typecheck",
+        "kind": "type_error",
+        "runner_test_id": null,
+        "param_id": null,
+        "primary_location": {
+          "file": "src/a.ts",
+          "line": 1,
+          "column": 7
+        },
+        "normalized_message": "TS2322: Type 'string' is not assignable to type 'number'.",
+        "failure_id": "80720e4d3ebecd68"
+      },
+      {
+        "adapter_id": "tsc",
+        "phase": "typecheck",
+        "kind": "missing_symbol",
+        "runner_test_id": null,
+        "param_id": null,
+        "primary_location": {
+          "file": "src/b.ts",
+          "line": 1,
+          "column": 13
+        },
+        "normalized_message": "TS2304: Cannot find name 'notDeclared'.",
+        "failure_id": "fb4e796cb978c07f"
+      },
+      {
+        "adapter_id": "tsc",
+        "phase": "typecheck",
+        "kind": "missing_symbol",
+        "runner_test_id": null,
+        "param_id": null,
+        "primary_location": {
+          "file": "src/c.ts",
+          "line": 1,
+          "column": 23
+        },
+        "normalized_message": "TS2307: Cannot find module './absent' or its corresponding type declarations.",
+        "failure_id": "000a99e561f92fd6"
+      }
+    ]
+  },
+  "expected_subset": {
+    "schema_version": "1.6",
+    "document_kind": "analysis_result",
+    "failtrace_version": "0.1.0",
+    "emission": {
+      "channel": "file",
+      "mode": "full",
+      "max_failures": null,
+      "failures_emitted": 3,
+      "failures_total": 3,
+      "full_output_path": "<run-dir>/output.json"
+    },
+    "command": "tsc --project tsconfig.json",
+    "cwd": "/Users/dev/failtrace/tests/fixtures/tsc/multiple_errors_budgeted/source",
+    "started_at": "2026-05-15T12:00:00Z",
+    "duration_ms": 100,
+    "exit_code": 2,
+    "signal": null,
+    "runner_outcome": "typecheck_failed",
+    "early_exit": null,
+    "adapters": [
+      {
+        "id": "tsc",
+        "version": "tsc@0.1.0",
+        "kind": "typechecker",
+        "selected": true,
+        "selection_reason": "argv_name_match"
+      }
+    ],
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "determinism_warnings": [],
+    "truncated": false,
+    "truncation_reason": null,
+    "failures_complete": true,
+    "failures": [
+      {
+        "failure_id": "80720e4d3ebecd68",
+        "adapter_id": "tsc",
+        "phase": "typecheck",
+        "kind": "type_error",
+        "runner_package_id": null,
+        "runner_test_id": null,
+        "test_segments": [],
+        "test_name": null,
+        "param_id": null,
+        "test_group_id": null,
+        "primary_location": {
+          "file": "src/a.ts",
+          "line": 1,
+          "column": 7,
+          "end_line": 1,
+          "end_column": 8,
+          "role": "primary",
+          "in_user_code": true
+        },
+        "extra_locations": [],
+        "message": "TS2322: Type 'string' is not assignable to type 'number'.",
+        "diagnostic_code": "TS2322",
+        "diagnostic_severity": "error",
+        "details": {
+          "type": "type_error",
+          "spans": [
+            {
+              "file": "src/a.ts",
+              "line": 1,
+              "column": 7,
+              "end_line": 1,
+              "end_column": 8,
+              "role": "primary",
+              "note": null
+            }
+          ],
+          "explanation_command": "tsc diagnostic TS2322"
+        },
+        "raw_log_lines": [
+          1,
+          1
+        ],
+        "evidence": {
+          "byte_range": {
+            "start": 0,
+            "end": 79
+          },
+          "excerpts": [
+            {
+              "source": "raw_log",
+              "kind": "failure_block",
+              "byte_range": {
+                "start": 0,
+                "end": 79
+              },
+              "text": "src/a.ts(1,7): error TS2322: Type 'string' is not assignable to type 'number'.\n",
+              "ansi_stripped": false,
+              "truncated": false
+            }
+          ]
+        },
+        "cascade_root": null,
+        "cascade_reason": null,
+        "dependent_failure_ids": [],
+        "retries": [],
+        "companion_diagnostics": [],
+        "extensions": {
+          "tsc": {
+            "column_unit": "utf16_code_unit",
+            "phase_detail": "typecheck"
+          }
+        }
+      },
+      {
+        "failure_id": "fb4e796cb978c07f",
+        "adapter_id": "tsc",
+        "phase": "typecheck",
+        "kind": "missing_symbol",
+        "runner_package_id": null,
+        "runner_test_id": null,
+        "test_segments": [],
+        "test_name": null,
+        "param_id": null,
+        "test_group_id": null,
+        "primary_location": {
+          "file": "src/b.ts",
+          "line": 1,
+          "column": 13,
+          "end_line": 1,
+          "end_column": 14,
+          "role": "primary",
+          "in_user_code": true
+        },
+        "extra_locations": [],
+        "message": "TS2304: Cannot find name 'notDeclared'.",
+        "diagnostic_code": "TS2304",
+        "diagnostic_severity": "error",
+        "details": {
+          "type": "missing_symbol",
+          "symbol": "notDeclared",
+          "import_chain": []
+        },
+        "raw_log_lines": [
+          2,
+          2
+        ],
+        "evidence": {
+          "byte_range": {
+            "start": 79,
+            "end": 141
+          },
+          "excerpts": [
+            {
+              "source": "raw_log",
+              "kind": "failure_block",
+              "byte_range": {
+                "start": 79,
+                "end": 141
+              },
+              "text": "src/b.ts(1,13): error TS2304: Cannot find name 'notDeclared'.\n",
+              "ansi_stripped": false,
+              "truncated": false
+            }
+          ]
+        },
+        "cascade_root": null,
+        "cascade_reason": null,
+        "dependent_failure_ids": [],
+        "retries": [],
+        "companion_diagnostics": [],
+        "extensions": {
+          "tsc": {
+            "column_unit": "utf16_code_unit",
+            "phase_detail": "typecheck"
+          }
+        }
+      },
+      {
+        "failure_id": "000a99e561f92fd6",
+        "adapter_id": "tsc",
+        "phase": "typecheck",
+        "kind": "missing_symbol",
+        "runner_package_id": null,
+        "runner_test_id": null,
+        "test_segments": [],
+        "test_name": null,
+        "param_id": null,
+        "test_group_id": null,
+        "primary_location": {
+          "file": "src/c.ts",
+          "line": 1,
+          "column": 23,
+          "end_line": 1,
+          "end_column": 24,
+          "role": "primary",
+          "in_user_code": true
+        },
+        "extra_locations": [],
+        "message": "TS2307: Cannot find module './absent' or its corresponding type declarations.",
+        "diagnostic_code": "TS2307",
+        "diagnostic_severity": "error",
+        "details": {
+          "type": "missing_symbol",
+          "symbol": "./absent",
+          "import_chain": []
+        },
+        "raw_log_lines": [
+          3,
+          3
+        ],
+        "evidence": {
+          "byte_range": {
+            "start": 141,
+            "end": 241
+          },
+          "excerpts": [
+            {
+              "source": "raw_log",
+              "kind": "failure_block",
+              "byte_range": {
+                "start": 141,
+                "end": 241
+              },
+              "text": "src/c.ts(1,23): error TS2307: Cannot find module './absent' or its corresponding type declarations.\n",
+              "ansi_stripped": false,
+              "truncated": false
+            }
+          ]
+        },
+        "cascade_root": null,
+        "cascade_reason": null,
+        "dependent_failure_ids": [],
+        "retries": [],
+        "companion_diagnostics": [],
+        "extensions": {
+          "tsc": {
+            "column_unit": "utf16_code_unit",
+            "phase_detail": "typecheck"
+          }
+        }
+      }
+    ],
+    "ranking": {
+      "strategy": "compile_before_runtime",
+      "is_stable_across_runs": true
+    },
+    "counts": {
+      "tests_run": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "tests_errored": 0,
+      "tests_skipped": 0,
+      "tests_not_run": null,
+      "files_failed": 3
+    },
+    "raw_log_path": "<run-dir>/log",
+    "raw_log_sha256": "94c20c680bff96f7f935cf06b11a4440e91d0b8e50ee9958a96f09eaba12eca9",
+    "suggested_next_commands": [
+      {
+        "argv": [
+          "failtrace",
+          "explain",
+          "80720e4d3ebecd68"
+        ],
+        "command": "failtrace explain 80720e4d3ebecd68",
+        "cwd": "/Users/dev/failtrace/tests/fixtures/tsc/multiple_errors_budgeted/source",
+        "intent": "explain_diagnostic",
+        "interactive": false,
+        "mutates_workspace": false,
+        "uses_network": false,
+        "requires_approval": false
+      },
+      {
+        "argv": [
+          "failtrace",
+          "explain",
+          "fb4e796cb978c07f"
+        ],
+        "command": "failtrace explain fb4e796cb978c07f",
+        "cwd": "/Users/dev/failtrace/tests/fixtures/tsc/multiple_errors_budgeted/source",
+        "intent": "explain_diagnostic",
+        "interactive": false,
+        "mutates_workspace": false,
+        "uses_network": false,
+        "requires_approval": false
+      },
+      {
+        "argv": [
+          "failtrace",
+          "explain",
+          "000a99e561f92fd6"
+        ],
+        "command": "failtrace explain 000a99e561f92fd6",
+        "cwd": "/Users/dev/failtrace/tests/fixtures/tsc/multiple_errors_budgeted/source",
+        "intent": "explain_diagnostic",
+        "interactive": false,
+        "mutates_workspace": false,
+        "uses_network": false,
+        "requires_approval": false
+      }
+    ],
+    "extensions": {}
+  }
+}

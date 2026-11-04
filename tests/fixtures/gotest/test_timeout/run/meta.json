@@ -1,0 +1,46 @@
+{
+  "meta_schema_version": "1.2",
+  "schema_version": "1.6",
+  "failtrace_version": "0.1.0",
+  "adapters": [
+    {
+      "id": "gotest",
+      "version": "gotest@0.1.0",
+      "kind": "runner",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "command": "go test -json -timeout=500ms ./...",
+  "cwd": "/Users/dev/failtrace/tests/fixtures/gotest/test_timeout/source",
+  "started_at": "2026-05-15T12:00:00Z",
+  "duration_ms": 100,
+  "exit_code": 1,
+  "signal": null,
+  "early_exit": {
+    "reason": "per_test_timeout",
+    "killer": "runner",
+    "details": "go test reported a per-test timeout"
+  },
+  "truncated": false,
+  "truncation_reason": null,
+  "path_case_folding": "case_sensitive",
+  "stream_merge": "stdout_stderr_interleaved",
+  "raw_log_sha256": "42fed5f243b494fc3a159d2d6d69c840ad5bbb4f2e6a4dd2cbd49b074f019eee",
+  "adapter_candidates": [
+    {
+      "id": "gotest",
+      "version": "gotest@0.1.0",
+      "kind": "runner",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "argv": [
+    "go",
+    "test",
+    "-json",
+    "-timeout=500ms",
+    "./..."
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "scenario": "borrow_checker_e0502",
+  "captured_environment": {
+    "cargo_reporter": "default",
+    "platform": "darwin"
+  },
+  "runner_argv": [
+    "cargo",
+    "test",
+    "--color",
+    "never"
+  ],
+  "exit_code": 101,
+  "hash_inputs": {
+    "schema_version": "1.6",
+    "normative": true,
+    "test_group_id": null,
+    "failures": [
+      {
+        "failure_id": "013ab298536da477",
+        "adapter_id": "cargo-test",
+        "phase": "build",
+        "kind": "type_error",
+        "runner_test_id": null,
+        "param_id": null,
+        "primary_location": {
+          "file": "src/lib.rs",
+          "line": 4,
+          "column": 5
+        },
+        "normalized_message": "E0502: cannot borrow `data` as mutable because it is also borrowed as immutable"
+      }
+    ]
+  },
+  "expected_subset": {
+    "schema_version": "1.6",
+    "document_kind": "analysis_result",
+    "failtrace_version": "0.1.0",
+    "emission": {
+      "channel": "file",
+      "mode": "full",
+      "max_failures": null,
+      "failures_emitted": 1,
+      "failures_total": 1,
+      "full_output_path": "<run-dir>/output.json"
+    },
+    "command": "cargo test --color never",
+    "cwd": "/Users/dev/failtrace/tests/fixtures/cargo/borrow_checker_e0502/source",
+    "started_at": "2026-05-14T12:00:00Z",
+    "duration_ms": 100,
+    "exit_code": 101,
+    "signal": null,
+    "runner_outcome": "pre_test_failed",
+    "early_exit": null,
+    "adapters": [
+      {
+        "id": "cargo-test",
+        "version": "cargo-test@0.1.0",
+        "kind": "runner",
+        "selected": true,
+        "selection_reason": "argv_name_match"
+      }
+    ],
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "determinism_warnings": [],
+    "truncated": false,
+    "truncation_reason": null,
+    "failures_complete": true,
+    "failures": [
+      {
+        "failure_id": "013ab298536da477",
+        "adapter_id": "cargo-test",
+        "phase": "build",
+        "kind": "type_error",
+        "runner_package_id": null,
+        "runner_test_id": null,
+        "test_segments": [],
+        "test_name": null,
+        "param_id": null,
+        "test_group_id": null,
+        "primary_location": {
+          "file": "src/lib.rs",
+          "line": 4,
+          "column": 5,
+          "end_line": 4,
+          "end_column": 17,
+          "role": "primary",
+          "in_user_code": true
+        },
+        "extra_locations": [
+          {
+            "file": "src/lib.rs",
+            "line": 3,
+            "column": 18,
+            "end_line": 3,
+            "end_column": 22,
+            "role": "related",
+            "in_user_code": true
+          },
+          {
+            "file": "src/lib.rs",
+            "line": 5,
+            "column": 16,
+            "end_line": 5,
+            "end_column": 21,
+            "role": "related",
+            "in_user_code": true
+          }
+        ],
+        "message": "E0502: cannot borrow `data` as mutable because it is also borrowed as immutable",
+        "diagnostic_code": "E0502",
+        "diagnostic_severity": "error",
+        "details": {
+          "type": "type_error",
+          "spans": [
+            {
+              "file": "src/lib.rs",
+              "line": 3,
+              "column": 18,
+              "end_line": 3,
+              "end_column": 22,
+              "role": "related",
+              "note": "immutable borrow occurs here"
+            },
+            {
+              "file": "src/lib.rs",
+              "line": 4,
+              "column": 5,
+              "end_line": 4,
+              "end_column": 17,
+              "role": "primary",
+              "note": "mutable borrow occurs here"
+            },
+            {
+              "file": "src/lib.rs",
+              "line": 5,
+              "column": 16,
+              "end_line": 5,
+              "end_column": 21,
+              "role": "related",
+              "note": "immutable borrow later used here"
+            }
+          ],
+          "explanation_command": "rustc --explain E0502"
+        },
+        "raw_log_lines": [
+          2,
+          11
+        ],
+        "evidence": {
+          "byte_range": {
+            "start": 113,
+            "end": 467
+          },
+          "excerpts": [
+            {
+              "source": "raw_log",
+              "kind": "failure_block",
+              "byte_range": {
+                "start": 113,
+                "end": 467
+              },
+              "text": "error[E0502]: cannot borrow `data` as mutable because it is also borrowed as immutable\n --> src/lib.rs:4:5\n  |\n3 |     let first = &data[0];\n  |                  ---- immutable borrow occurs here\n4 |     data.push(4);\n  |     ^^^^^^^^^^^^ mutable borrow occurs here\n5 |     println!(\"{first}\");\n  |                ----- immutable borrow later used here\n\n",
+              "ansi_stripped": false,
+              "truncated": false
+            }
+          ]
+        },
+        "cascade_root": null,
+        "cascade_reason": null,
+        "dependent_failure_ids": [],
+        "retries": [],
+        "companion_diagnostics": [],
+        "extensions": {}
+      }
+    ],
+    "ranking": {
+      "strategy": "compile_before_runtime",
+      "is_stable_across_runs": true
+    },
+    "counts": {
+      "tests_run": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "tests_errored": 0,
+      "tests_skipped": 0,
+      "tests_not_run": null,
+      "files_failed": null
+    },
+    "raw_log_path": "<run-dir>/log",
+    "raw_log_sha256": "1459488eb2e537d245016b9a629c0e0643c71723965dd6d9366fe109051ff28d",
+    "suggested_next_commands": [
+      {
+        "argv": [
+          "rustc",
+          "--explain",
+          "E0502"
+        ],
+        "command": "rustc --explain E0502",
+        "cwd": "/Users/dev/failtrace/tests/fixtures/cargo/borrow_checker_e0502/source",
+        "intent": "explain_diagnostic",
+        "interactive": false,
+        "mutates_workspace": false,
+        "uses_network": false,
+        "requires_approval": false
+      }
+    ],
+    "extensions": {}
+  }
+}

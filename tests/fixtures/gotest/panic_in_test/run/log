@@ -1,0 +1,29 @@
+{"Time":"2026-05-15T10:59:07.364695-04:00","Action":"start","Package":"corpus/panic_in_test"}
+{"Time":"2026-05-15T10:59:07.51764-04:00","Action":"run","Package":"corpus/panic_in_test","Test":"TestPasses"}
+{"Time":"2026-05-15T10:59:07.517694-04:00","Action":"output","Package":"corpus/panic_in_test","Test":"TestPasses","Output":"=== RUN   TestPasses\n"}
+{"Time":"2026-05-15T10:59:07.517715-04:00","Action":"output","Package":"corpus/panic_in_test","Test":"TestPasses","Output":"--- PASS: TestPasses (0.00s)\n"}
+{"Time":"2026-05-15T10:59:07.51772-04:00","Action":"pass","Package":"corpus/panic_in_test","Test":"TestPasses","Elapsed":0}
+{"Time":"2026-05-15T10:59:07.517724-04:00","Action":"run","Package":"corpus/panic_in_test","Test":"TestPanics"}
+{"Time":"2026-05-15T10:59:07.517728-04:00","Action":"output","Package":"corpus/panic_in_test","Test":"TestPanics","Output":"=== RUN   TestPanics\n"}
+{"Time":"2026-05-15T10:59:07.517731-04:00","Action":"output","Package":"corpus/panic_in_test","Test":"TestPanics","Output":"--- FAIL: TestPanics (0.00s)\n"}
+{"Time":"2026-05-15T10:59:07.520202-04:00","Action":"output","Package":"corpus/panic_in_test","Test":"TestPanics","Output":"panic: runtime error: invalid memory address or nil pointer dereference [recovered, repanicked]\n"}
+{"Time":"2026-05-15T10:59:07.520211-04:00","Action":"output","Package":"corpus/panic_in_test","Test":"TestPanics","Output":"[signal SIGSEGV: segmentation violation code=0x2 addr=0x0 pc=0x1048900b8]\n"}
+{"Time":"2026-05-15T10:59:07.520215-04:00","Action":"output","Package":"corpus/panic_in_test","Test":"TestPanics","Output":"\n"}
+{"Time":"2026-05-15T10:59:07.520218-04:00","Action":"output","Package":"corpus/panic_in_test","Test":"TestPanics","Output":"goroutine 22 [running]:\n"}
+{"Time":"2026-05-15T10:59:07.520223-04:00","Action":"output","Package":"corpus/panic_in_test","Test":"TestPanics","Output":"testing.tRunner.func1.2({0x1049c6be0, 0x104a10ec0})\n"}
+{"Time":"2026-05-15T10:59:07.520232-04:00","Action":"output","Package":"corpus/panic_in_test","Test":"TestPanics","Output":"\t/opt/homebrew/Cellar/go/1.26.3/libexec/src/testing/testing.go:1974 +0x1a0\n"}
+{"Time":"2026-05-15T10:59:07.520235-04:00","Action":"output","Package":"corpus/panic_in_test","Test":"TestPanics","Output":"testing.tRunner.func1()\n"}
+{"Time":"2026-05-15T10:59:07.520237-04:00","Action":"output","Package":"corpus/panic_in_test","Test":"TestPanics","Output":"\t/opt/homebrew/Cellar/go/1.26.3/libexec/src/testing/testing.go:1977 +0x318\n"}
+{"Time":"2026-05-15T10:59:07.520242-04:00","Action":"output","Package":"corpus/panic_in_test","Test":"TestPanics","Output":"panic({0x1049c6be0?, 0x104a10ec0?})\n"}
+{"Time":"2026-05-15T10:59:07.520247-04:00","Action":"output","Package":"corpus/panic_in_test","Test":"TestPanics","Output":"\t/opt/homebrew/Cellar/go/1.26.3/libexec/src/runtime/panic.go:860 +0x12c\n"}
+{"Time":"2026-05-15T10:59:07.520257-04:00","Action":"output","Package":"corpus/panic_in_test","Test":"TestPanics","Output":"corpus/panic_in_test.helper(...)\n"}
+{"Time":"2026-05-15T10:59:07.52026-04:00","Action":"output","Package":"corpus/panic_in_test","Test":"TestPanics","Output":"\t/tmp/ft-gocorpus/panic_in_test/panic_test.go:7\n"}
+{"Time":"2026-05-15T10:59:07.520264-04:00","Action":"output","Package":"corpus/panic_in_test","Test":"TestPanics","Output":"corpus/panic_in_test.TestPanics(0x6b878a0e4488?)\n"}
+{"Time":"2026-05-15T10:59:07.520269-04:00","Action":"output","Package":"corpus/panic_in_test","Test":"TestPanics","Output":"\t/tmp/ft-gocorpus/panic_in_test/panic_test.go:17 +0x8\n"}
+{"Time":"2026-05-15T10:59:07.520271-04:00","Action":"output","Package":"corpus/panic_in_test","Test":"TestPanics","Output":"testing.tRunner(0x6b878a0e4488, 0x1049efef8)\n"}
+{"Time":"2026-05-15T10:59:07.520274-04:00","Action":"output","Package":"corpus/panic_in_test","Test":"TestPanics","Output":"\t/opt/homebrew/Cellar/go/1.26.3/libexec/src/testing/testing.go:2036 +0xc4\n"}
+{"Time":"2026-05-15T10:59:07.520276-04:00","Action":"output","Package":"corpus/panic_in_test","Test":"TestPanics","Output":"created by testing.(*T).Run in goroutine 1\n"}
+{"Time":"2026-05-15T10:59:07.520295-04:00","Action":"output","Package":"corpus/panic_in_test","Test":"TestPanics","Output":"\t/opt/homebrew/Cellar/go/1.26.3/libexec/src/testing/testing.go:2101 +0x3a8\n"}
+{"Time":"2026-05-15T10:59:07.520537-04:00","Action":"fail","Package":"corpus/panic_in_test","Test":"TestPanics","Elapsed":0}
+{"Time":"2026-05-15T10:59:07.520544-04:00","Action":"output","Package":"corpus/panic_in_test","Output":"FAIL\tcorpus/panic_in_test\t0.156s\n"}
+{"Time":"2026-05-15T10:59:07.52055-04:00","Action":"fail","Package":"corpus/panic_in_test","Elapsed":0.156}

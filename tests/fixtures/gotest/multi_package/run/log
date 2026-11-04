@@ -1,0 +1,51 @@
+{"Time":"2026-05-15T10:59:21.971436-04:00","Action":"start","Package":"corpus/multi_package/alpha"}
+{"Time":"2026-05-15T10:59:21.971534-04:00","Action":"start","Package":"corpus/multi_package/beta"}
+{"Time":"2026-05-15T10:59:21.971564-04:00","Action":"start","Package":"corpus/multi_package/empty"}
+{"Time":"2026-05-15T10:59:21.971575-04:00","Action":"output","Package":"corpus/multi_package/empty","Output":"?   \tcorpus/multi_package/empty\t[no test files]\n"}
+{"Time":"2026-05-15T10:59:21.971583-04:00","Action":"skip","Package":"corpus/multi_package/empty","Elapsed":0}
+{"Time":"2026-05-15T10:59:21.971587-04:00","Action":"start","Package":"corpus/multi_package/gamma"}
+{"Time":"2026-05-15T10:59:22.143918-04:00","Action":"run","Package":"corpus/multi_package/beta","Test":"TestBetaPasses"}
+{"Time":"2026-05-15T10:59:22.144126-04:00","Action":"output","Package":"corpus/multi_package/beta","Test":"TestBetaPasses","Output":"=== RUN   TestBetaPasses\n"}
+{"Time":"2026-05-15T10:59:22.144215-04:00","Action":"output","Package":"corpus/multi_package/beta","Test":"TestBetaPasses","Output":"--- PASS: TestBetaPasses (0.00s)\n"}
+{"Time":"2026-05-15T10:59:22.144237-04:00","Action":"pass","Package":"corpus/multi_package/beta","Test":"TestBetaPasses","Elapsed":0}
+{"Time":"2026-05-15T10:59:22.144258-04:00","Action":"run","Package":"corpus/multi_package/beta","Test":"TestBetaFails"}
+{"Time":"2026-05-15T10:59:22.144266-04:00","Action":"output","Package":"corpus/multi_package/beta","Test":"TestBetaFails","Output":"=== RUN   TestBetaFails\n"}
+{"Time":"2026-05-15T10:59:22.144275-04:00","Action":"output","Package":"corpus/multi_package/beta","Test":"TestBetaFails","Output":"    beta_test.go:8: beta package test failed\n"}
+{"Time":"2026-05-15T10:59:22.144283-04:00","Action":"output","Package":"corpus/multi_package/beta","Test":"TestBetaFails","Output":"--- FAIL: TestBetaFails (0.00s)\n"}
+{"Time":"2026-05-15T10:59:22.14429-04:00","Action":"fail","Package":"corpus/multi_package/beta","Test":"TestBetaFails","Elapsed":0}
+{"Time":"2026-05-15T10:59:22.144296-04:00","Action":"output","Package":"corpus/multi_package/beta","Output":"FAIL\n"}
+{"Time":"2026-05-15T10:59:22.144345-04:00","Action":"output","Package":"corpus/multi_package/beta","Output":"FAIL\tcorpus/multi_package/beta\t0.173s\n"}
+{"Time":"2026-05-15T10:59:22.144377-04:00","Action":"fail","Package":"corpus/multi_package/beta","Elapsed":0.173}
+{"Time":"2026-05-15T10:59:22.275913-04:00","Action":"run","Package":"corpus/multi_package/alpha","Test":"TestAlpha1"}
+{"Time":"2026-05-15T10:59:22.27596-04:00","Action":"output","Package":"corpus/multi_package/alpha","Test":"TestAlpha1","Output":"=== RUN   TestAlpha1\n"}
+{"Time":"2026-05-15T10:59:22.275977-04:00","Action":"output","Package":"corpus/multi_package/alpha","Test":"TestAlpha1","Output":"--- PASS: TestAlpha1 (0.00s)\n"}
+{"Time":"2026-05-15T10:59:22.275985-04:00","Action":"pass","Package":"corpus/multi_package/alpha","Test":"TestAlpha1","Elapsed":0}
+{"Time":"2026-05-15T10:59:22.275994-04:00","Action":"run","Package":"corpus/multi_package/alpha","Test":"TestAlpha2"}
+{"Time":"2026-05-15T10:59:22.276-04:00","Action":"output","Package":"corpus/multi_package/alpha","Test":"TestAlpha2","Output":"=== RUN   TestAlpha2\n"}
+{"Time":"2026-05-15T10:59:22.276007-04:00","Action":"output","Package":"corpus/multi_package/alpha","Test":"TestAlpha2","Output":"--- PASS: TestAlpha2 (0.00s)\n"}
+{"Time":"2026-05-15T10:59:22.276018-04:00","Action":"pass","Package":"corpus/multi_package/alpha","Test":"TestAlpha2","Elapsed":0}
+{"Time":"2026-05-15T10:59:22.276024-04:00","Action":"output","Package":"corpus/multi_package/alpha","Output":"PASS\n"}
+{"Time":"2026-05-15T10:59:22.276502-04:00","Action":"output","Package":"corpus/multi_package/alpha","Output":"ok  \tcorpus/multi_package/alpha\t0.305s\n"}
+{"Time":"2026-05-15T10:59:22.277496-04:00","Action":"pass","Package":"corpus/multi_package/alpha","Elapsed":0.306}
+{"Time":"2026-05-15T10:59:22.40994-04:00","Action":"run","Package":"corpus/multi_package/gamma","Test":"TestGammaPanics"}
+{"Time":"2026-05-15T10:59:22.410005-04:00","Action":"output","Package":"corpus/multi_package/gamma","Test":"TestGammaPanics","Output":"=== RUN   TestGammaPanics\n"}
+{"Time":"2026-05-15T10:59:22.410043-04:00","Action":"output","Package":"corpus/multi_package/gamma","Test":"TestGammaPanics","Output":"--- FAIL: TestGammaPanics (0.00s)\n"}
+{"Time":"2026-05-15T10:59:22.412575-04:00","Action":"output","Package":"corpus/multi_package/gamma","Test":"TestGammaPanics","Output":"panic: runtime error: invalid memory address or nil pointer dereference [recovered, repanicked]\n"}
+{"Time":"2026-05-15T10:59:22.412646-04:00","Action":"output","Package":"corpus/multi_package/gamma","Test":"TestGammaPanics","Output":"[signal SIGSEGV: segmentation violation code=0x2 addr=0x0 pc=0x10233c18c]\n"}
+{"Time":"2026-05-15T10:59:22.412656-04:00","Action":"output","Package":"corpus/multi_package/gamma","Test":"TestGammaPanics","Output":"\n"}
+{"Time":"2026-05-15T10:59:22.412665-04:00","Action":"output","Package":"corpus/multi_package/gamma","Test":"TestGammaPanics","Output":"goroutine 34 [running]:\n"}
+{"Time":"2026-05-15T10:59:22.412681-04:00","Action":"output","Package":"corpus/multi_package/gamma","Test":"TestGammaPanics","Output":"testing.tRunner.func1.2({0x102472be0, 0x1024bcec0})\n"}
+{"Time":"2026-05-15T10:59:22.412691-04:00","Action":"output","Package":"corpus/multi_package/gamma","Test":"TestGammaPanics","Output":"\t/opt/homebrew/Cellar/go/1.26.3/libexec/src/testing/testing.go:1974 +0x1a0\n"}
+{"Time":"2026-05-15T10:59:22.4127-04:00","Action":"output","Package":"corpus/multi_package/gamma","Test":"TestGammaPanics","Output":"testing.tRunner.func1()\n"}
+{"Time":"2026-05-15T10:59:22.412729-04:00","Action":"output","Package":"corpus/multi_package/gamma","Test":"TestGammaPanics","Output":"\t/opt/homebrew/Cellar/go/1.26.3/libexec/src/testing/testing.go:1977 +0x318\n"}
+{"Time":"2026-05-15T10:59:22.412747-04:00","Action":"output","Package":"corpus/multi_package/gamma","Test":"TestGammaPanics","Output":"panic({0x102472be0?, 0x1024bcec0?})\n"}
+{"Time":"2026-05-15T10:59:22.412756-04:00","Action":"output","Package":"corpus/multi_package/gamma","Test":"TestGammaPanics","Output":"\t/opt/homebrew/Cellar/go/1.26.3/libexec/src/runtime/panic.go:860 +0x12c\n"}
+{"Time":"2026-05-15T10:59:22.412764-04:00","Action":"output","Package":"corpus/multi_package/gamma","Test":"TestGammaPanics","Output":"corpus/multi_package/gamma.TestGammaPanics(0x147ef765a248?)\n"}
+{"Time":"2026-05-15T10:59:22.412784-04:00","Action":"output","Package":"corpus/multi_package/gamma","Test":"TestGammaPanics","Output":"\t/tmp/ft-gocorpus/multi_package/gamma/gamma_test.go:7 +0x1c\n"}
+{"Time":"2026-05-15T10:59:22.412793-04:00","Action":"output","Package":"corpus/multi_package/gamma","Test":"TestGammaPanics","Output":"testing.tRunner(0x147ef765a248, 0x10249bef8)\n"}
+{"Time":"2026-05-15T10:59:22.412801-04:00","Action":"output","Package":"corpus/multi_package/gamma","Test":"TestGammaPanics","Output":"\t/opt/homebrew/Cellar/go/1.26.3/libexec/src/testing/testing.go:2036 +0xc4\n"}
+{"Time":"2026-05-15T10:59:22.412808-04:00","Action":"output","Package":"corpus/multi_package/gamma","Test":"TestGammaPanics","Output":"created by testing.(*T).Run in goroutine 1\n"}
+{"Time":"2026-05-15T10:59:22.41283-04:00","Action":"output","Package":"corpus/multi_package/gamma","Test":"TestGammaPanics","Output":"\t/opt/homebrew/Cellar/go/1.26.3/libexec/src/testing/testing.go:2101 +0x3a8\n"}
+{"Time":"2026-05-15T10:59:22.41355-04:00","Action":"fail","Package":"corpus/multi_package/gamma","Test":"TestGammaPanics","Elapsed":0}
+{"Time":"2026-05-15T10:59:22.413572-04:00","Action":"output","Package":"corpus/multi_package/gamma","Output":"FAIL\tcorpus/multi_package/gamma\t0.442s\n"}
+{"Time":"2026-05-15T10:59:22.413595-04:00","Action":"fail","Package":"corpus/multi_package/gamma","Elapsed":0.442}

@@ -1,0 +1,48 @@
+{
+  "meta_schema_version": "1.2",
+  "schema_version": "1.6",
+  "failtrace_version": "0.1.0",
+  "adapters": [
+    {
+      "id": "jest",
+      "version": "jest@0.1.0",
+      "kind": "runner",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "command": "npx --yes --package jest@30.4 jest --ci --runInBand --reporters=default --colors=false --no-coverage --testLocationInResults=false",
+  "cwd": "/Users/dev/failtrace/tests/fixtures/jest/basic_assertion/source",
+  "started_at": "2026-05-14T12:00:00Z",
+  "duration_ms": 100,
+  "exit_code": 1,
+  "signal": null,
+  "early_exit": null,
+  "truncated": false,
+  "truncation_reason": null,
+  "path_case_folding": "case_sensitive",
+  "stream_merge": "stdout_stderr_interleaved",
+  "raw_log_sha256": "97f3bae73a751d8bc21731cc31ac496875f3d3166b827e02f18d4941dd68f6e7",
+  "adapter_candidates": [
+    {
+      "id": "jest",
+      "version": "jest@0.1.0",
+      "kind": "runner",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "argv": [
+    "npx",
+    "--yes",
+    "--package",
+    "jest@30.4",
+    "jest",
+    "--ci",
+    "--runInBand",
+    "--reporters=default",
+    "--colors=false",
+    "--no-coverage",
+    "--testLocationInResults=false"
+  ]
+}

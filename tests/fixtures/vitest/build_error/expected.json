@@ -1,0 +1,170 @@
+{
+  "scenario": "build_error",
+  "captured_environment": {
+    "vitest_version": "4.1.6",
+    "node_package_manager": "pnpm",
+    "platform": "darwin"
+  },
+  "runner_argv": [
+    "pnpm",
+    "exec",
+    "vitest",
+    "run",
+    "--reporter=default",
+    "--no-file-parallelism",
+    "--sequence.shuffle=false",
+    "--sequence.concurrent=false",
+    "--logHeapUsage=false"
+  ],
+  "exit_code": 1,
+  "hash_inputs": {
+    "schema_version": "1.6",
+    "normative": false,
+    "test_group_id": null,
+    "failures": [
+      {
+        "failure_id": "3a112a30443a423f",
+        "adapter_id": "vitest",
+        "phase": "collect",
+        "kind": "missing_symbol",
+        "runner_test_id": null,
+        "param_id": null,
+        "primary_location": {
+          "file": "tests/build_error.test.ts",
+          "line": 2,
+          "column": 1
+        },
+        "normalized_message": "Error: Cannot find module './this-module-does-not-exist' imported from <cwd>/tests/build_error.test.ts"
+      }
+    ]
+  },
+  "expected_subset": {
+    "schema_version": "1.6",
+    "document_kind": "analysis_result",
+    "failtrace_version": "0.1.0",
+    "emission": {
+      "channel": "file",
+      "mode": "full",
+      "max_failures": null,
+      "failures_emitted": 1,
+      "failures_total": 1,
+      "full_output_path": "<run-dir>/output.json"
+    },
+    "command": "pnpm exec vitest run --reporter=default --no-file-parallelism --sequence.shuffle=false --sequence.concurrent=false --logHeapUsage=false",
+    "cwd": "/Users/dev/failtrace/tests/fixtures/vitest/build_error/source",
+    "started_at": "2026-05-14T16:05:28Z",
+    "duration_ms": 97,
+    "exit_code": 1,
+    "signal": null,
+    "runner_outcome": "pre_test_failed",
+    "early_exit": null,
+    "adapters": [
+      {
+        "id": "vitest",
+        "version": "vitest@0.1.0",
+        "kind": "runner",
+        "selected": true,
+        "selection_reason": "argv_name_match"
+      }
+    ],
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "determinism_warnings": [],
+    "truncated": false,
+    "truncation_reason": null,
+    "failures_complete": true,
+    "failures": [
+      {
+        "failure_id": "3a112a30443a423f",
+        "adapter_id": "vitest",
+        "phase": "collect",
+        "kind": "missing_symbol",
+        "runner_package_id": null,
+        "runner_test_id": null,
+        "test_segments": [],
+        "test_name": null,
+        "param_id": null,
+        "test_group_id": null,
+        "primary_location": {
+          "file": "tests/build_error.test.ts",
+          "line": 2,
+          "column": 1,
+          "end_line": null,
+          "end_column": null,
+          "role": "import_site",
+          "in_user_code": true
+        },
+        "extra_locations": [],
+        "message": "Error: Cannot find module './this-module-does-not-exist' imported from /Users/dev/failtrace/tests/fixtures/vitest/build_error/source/tests/build_error.test.ts",
+        "diagnostic_code": null,
+        "diagnostic_severity": "error",
+        "details": {
+          "type": "missing_symbol",
+          "symbol": "./this-module-does-not-exist",
+          "import_chain": []
+        },
+        "raw_log_lines": [
+          8,
+          17
+        ],
+        "evidence": {
+          "byte_range": {
+            "start": 176,
+            "end": 708
+          },
+          "excerpts": [
+            {
+              "source": "raw_log",
+              "kind": "failure_block",
+              "byte_range": {
+                "start": 176,
+                "end": 708
+              },
+              "text": " FAIL  tests/build_error.test.ts [ tests/build_error.test.ts ]\nError: Cannot find module './this-module-does-not-exist' imported from /Users/dev/failtrace/tests/fixtures/vitest/build_error/source/tests/build_error.test.ts\n \u276f tests/build_error.test.ts:2:1\n      1| import { describe, it, expect } from \"vitest\";\n      2| import { nonexistent } from \"./this-module-does-not-exist\";\n       | ^\n      3|\n      4| describe(\"build error sample\", () => {\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af[1/1]\u23af\n",
+              "ansi_stripped": false,
+              "truncated": false
+            }
+          ]
+        },
+        "cascade_root": null,
+        "cascade_reason": null,
+        "dependent_failure_ids": [],
+        "retries": [],
+        "companion_diagnostics": [],
+        "extensions": {}
+      }
+    ],
+    "ranking": {
+      "strategy": "runner_priority",
+      "is_stable_across_runs": false
+    },
+    "counts": {
+      "tests_run": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "tests_errored": 0,
+      "tests_skipped": 0,
+      "tests_not_run": null,
+      "files_failed": null
+    },
+    "raw_log_path": "<run-dir>/log",
+    "raw_log_sha256": "e27d7d231121762b4a4473490d18c15e1b2275c0542c1ebbe16c1b7691a7c349",
+    "suggested_next_commands": [
+      {
+        "argv": [
+          "failtrace",
+          "explain",
+          "3a112a30443a423f"
+        ],
+        "command": "failtrace explain 3a112a30443a423f",
+        "cwd": "/Users/dev/failtrace/tests/fixtures/vitest/build_error/source",
+        "intent": "explain_diagnostic",
+        "interactive": false,
+        "mutates_workspace": false,
+        "uses_network": false,
+        "requires_approval": false
+      }
+    ],
+    "extensions": {}
+  }
+}

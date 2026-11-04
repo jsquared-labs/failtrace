@@ -1,0 +1,31 @@
+{"Time":"2026-05-15T10:59:08.030816-04:00","Action":"start","Package":"corpus/parallel_interleaved"}
+{"Time":"2026-05-15T10:59:08.198366-04:00","Action":"run","Package":"corpus/parallel_interleaved","Test":"TestParA"}
+{"Time":"2026-05-15T10:59:08.198446-04:00","Action":"output","Package":"corpus/parallel_interleaved","Test":"TestParA","Output":"=== RUN   TestParA\n"}
+{"Time":"2026-05-15T10:59:08.198486-04:00","Action":"output","Package":"corpus/parallel_interleaved","Test":"TestParA","Output":"=== PAUSE TestParA\n"}
+{"Time":"2026-05-15T10:59:08.198494-04:00","Action":"pause","Package":"corpus/parallel_interleaved","Test":"TestParA"}
+{"Time":"2026-05-15T10:59:08.1985-04:00","Action":"run","Package":"corpus/parallel_interleaved","Test":"TestParB"}
+{"Time":"2026-05-15T10:59:08.198506-04:00","Action":"output","Package":"corpus/parallel_interleaved","Test":"TestParB","Output":"=== RUN   TestParB\n"}
+{"Time":"2026-05-15T10:59:08.198512-04:00","Action":"output","Package":"corpus/parallel_interleaved","Test":"TestParB","Output":"=== PAUSE TestParB\n"}
+{"Time":"2026-05-15T10:59:08.198517-04:00","Action":"pause","Package":"corpus/parallel_interleaved","Test":"TestParB"}
+{"Time":"2026-05-15T10:59:08.198523-04:00","Action":"run","Package":"corpus/parallel_interleaved","Test":"TestParC"}
+{"Time":"2026-05-15T10:59:08.198528-04:00","Action":"output","Package":"corpus/parallel_interleaved","Test":"TestParC","Output":"=== RUN   TestParC\n"}
+{"Time":"2026-05-15T10:59:08.198533-04:00","Action":"output","Package":"corpus/parallel_interleaved","Test":"TestParC","Output":"=== PAUSE TestParC\n"}
+{"Time":"2026-05-15T10:59:08.198537-04:00","Action":"pause","Package":"corpus/parallel_interleaved","Test":"TestParC"}
+{"Time":"2026-05-15T10:59:08.198542-04:00","Action":"cont","Package":"corpus/parallel_interleaved","Test":"TestParA"}
+{"Time":"2026-05-15T10:59:08.198546-04:00","Action":"output","Package":"corpus/parallel_interleaved","Test":"TestParA","Output":"=== CONT  TestParA\n"}
+{"Time":"2026-05-15T10:59:08.198551-04:00","Action":"cont","Package":"corpus/parallel_interleaved","Test":"TestParB"}
+{"Time":"2026-05-15T10:59:08.198555-04:00","Action":"output","Package":"corpus/parallel_interleaved","Test":"TestParB","Output":"=== CONT  TestParB\n"}
+{"Time":"2026-05-15T10:59:08.19856-04:00","Action":"cont","Package":"corpus/parallel_interleaved","Test":"TestParC"}
+{"Time":"2026-05-15T10:59:08.198564-04:00","Action":"output","Package":"corpus/parallel_interleaved","Test":"TestParC","Output":"=== CONT  TestParC\n"}
+{"Time":"2026-05-15T10:59:08.249767-04:00","Action":"output","Package":"corpus/parallel_interleaved","Test":"TestParC","Output":"    par_test.go:23: C done\n"}
+{"Time":"2026-05-15T10:59:08.24985-04:00","Action":"output","Package":"corpus/parallel_interleaved","Test":"TestParC","Output":"--- PASS: TestParC (0.05s)\n"}
+{"Time":"2026-05-15T10:59:08.249861-04:00","Action":"pass","Package":"corpus/parallel_interleaved","Test":"TestParC","Elapsed":0.05}
+{"Time":"2026-05-15T10:59:08.249882-04:00","Action":"output","Package":"corpus/parallel_interleaved","Test":"TestParB","Output":"    par_test.go:17: B fails after parallel\n"}
+{"Time":"2026-05-15T10:59:08.249904-04:00","Action":"output","Package":"corpus/parallel_interleaved","Test":"TestParB","Output":"--- FAIL: TestParB (0.05s)\n"}
+{"Time":"2026-05-15T10:59:08.249931-04:00","Action":"fail","Package":"corpus/parallel_interleaved","Test":"TestParB","Elapsed":0.05}
+{"Time":"2026-05-15T10:59:08.249939-04:00","Action":"output","Package":"corpus/parallel_interleaved","Test":"TestParA","Output":"    par_test.go:11: A done\n"}
+{"Time":"2026-05-15T10:59:08.249947-04:00","Action":"output","Package":"corpus/parallel_interleaved","Test":"TestParA","Output":"--- PASS: TestParA (0.05s)\n"}
+{"Time":"2026-05-15T10:59:08.249953-04:00","Action":"pass","Package":"corpus/parallel_interleaved","Test":"TestParA","Elapsed":0.05}
+{"Time":"2026-05-15T10:59:08.24996-04:00","Action":"output","Package":"corpus/parallel_interleaved","Output":"FAIL\n"}
+{"Time":"2026-05-15T10:59:08.25074-04:00","Action":"output","Package":"corpus/parallel_interleaved","Output":"FAIL\tcorpus/parallel_interleaved\t0.220s\n"}
+{"Time":"2026-05-15T10:59:08.250794-04:00","Action":"fail","Package":"corpus/parallel_interleaved","Elapsed":0.22}

@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+# Pre-commit hook: runs the full local contributor gate before each commit.
+#
+# Install (one time, per clone):
+#   git config core.hooksPath .githooks
+#
+# Bypass (emergencies only — be honest about why):
+#   FAILTRACE_SKIP_HOOK=1 git commit ...
+#
+# Order: fast/local-first so the common failure modes surface early.
+# Each step prints its own banner and runs to completion before the next.
+
+set -euo pipefail
+
+if [[ "${FAILTRACE_SKIP_HOOK:-0}" == "1" ]]; then
+    echo "pre-commit: FAILTRACE_SKIP_HOOK=1 — skipping all checks." >&2
+    exit 0
+fi
+
+cd "$(git rev-parse --show-toplevel)"
+
+step() {
+    local label="$1"
+    shift
+    printf '\n\033[1;34m[pre-commit]\033[0m %s\n' "$label"
+    if ! "$@"; then
+        printf '\n\033[1;31m[pre-commit]\033[0m FAILED: %s\n' "$label" >&2
+        printf '\033[1;31m[pre-commit]\033[0m Fix or run: FAILTRACE_SKIP_HOOK=1 git commit ...\n' >&2
+        exit 1
+    fi
+}
+
+step "cargo fmt --all -- --check"           cargo fmt --all -- --check
+step "python3 scripts/verify_fixtures.py"   python3 scripts/verify_fixtures.py
+step "python3 scripts/test-failtrace-enforce.py" python3 scripts/test-failtrace-enforce.py
+step "python3 scripts/test-claude-skill-install.py" python3 scripts/test-claude-skill-install.py
+step "python3 scripts/test-codex-shims.py" python3 scripts/test-codex-shims.py
+step "python3 scripts/test-corpus-harness.py" python3 scripts/test-corpus-harness.py
+step "python3 scripts/check-agents-skill-sync.py" python3 scripts/check-agents-skill-sync.py
+step "cargo clippy --all-targets --all-features --locked -- -D warnings" \
+    cargo clippy --all-targets --all-features --locked -- -D warnings
+step "cargo build --locked"                 cargo build --locked
+step "failtrace run -- cargo test --all-features --locked" \
+    target/debug/failtrace run -- cargo test --all-features --locked
+# Cross-walk drift defense: every hook denial must have a
+# CLI-supported wrap. Runs after the explicitly built binary and wrapped tests.
+step "python3 scripts/test-crosswalk.py"    python3 scripts/test-crosswalk.py
+
+printf '\n\033[1;32m[pre-commit]\033[0m All checks passed.\n'

@@ -1,0 +1,8 @@
+No tests found, exiting with code 1
+Run with `--passWithNoTests` to exit with code 0
+In /Users/dev/failtrace/tests/fixtures/jest/no_test_files/source
+  1 file checked.
+  testMatch: **/__tests__/**/*.?([mc])[jt]s?(x), **/?(*.)+(spec|test).?([mc])[jt]s?(x) - 0 matches
+  testPathIgnorePatterns: /node_modules/ - 1 match
+  testRegex:  - 0 matches
+Pattern: does-not-exist.test.js - 0 matches

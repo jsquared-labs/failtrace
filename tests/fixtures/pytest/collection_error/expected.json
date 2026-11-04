@@ -1,0 +1,80 @@
+{
+  "scenario": "collection_error",
+  "captured_environment": {
+    "pytest_version": "8.4.2",
+    "python_version": "3.11.15",
+    "platform": "darwin"
+  },
+  "runner_argv": ["pytest", "--color=no", "-p", "no:cacheprovider", "tests/"],
+  "exit_code": 4,
+  "hash_inputs": {
+    "schema_version": "1.6",
+    "normative": true,
+    "test_group_id": null,
+    "failures": [
+      {
+        "failure_id": "a28a10bf9c212128",
+        "adapter_id": "pytest",
+        "phase": "collect",
+        "kind": "missing_symbol",
+        "runner_test_id": null,
+        "param_id": null,
+        "primary_location": {"file": "tests/conftest.py", "line": 8},
+        "normalized_message": "ModuleNotFoundError: No module named 'app.fixtures'"
+      }
+    ]
+  },
+  "expected_subset": {
+    "schema_version": "1.6",
+    "emission": {
+      "channel": "file",
+      "mode": "full",
+      "max_failures": null,
+      "failures_emitted": 1,
+      "failures_total": 1,
+      "full_output_path": "<run-dir>/output.json"
+    },
+    "runner_outcome": "pre_test_failed",
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "determinism_warnings": [],
+    "truncated": false,
+    "truncation_reason": null,
+    "failures_complete": true,
+    "ranking": {"strategy": "runner_priority", "is_stable_across_runs": true},
+    "counts": {
+      "tests_run": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "tests_errored": 0,
+      "tests_skipped": 0,
+      "tests_not_run": null,
+      "files_failed": null
+    },
+    "adapters": [
+      {"id": "pytest", "kind": "runner", "selected": true, "selection_reason": "argv_name_match"}
+    ],
+    "failures": [
+      {
+        "failure_id": "a28a10bf9c212128",
+        "adapter_id": "pytest",
+        "phase": "collect",
+        "kind": "missing_symbol",
+        "runner_test_id": null,
+        "test_name": null,
+        "param_id": null,
+        "test_group_id": null,
+        "primary_location": {"file": "tests/conftest.py", "line": 8, "role": "import_site"},
+        "message": "ModuleNotFoundError: No module named 'app.fixtures'",
+        "diagnostic_severity": "error",
+        "raw_log_lines": [1, 4],
+        "cascade_root": null,
+        "cascade_reason": null,
+        "dependent_failure_ids": [],
+        "retries": [],
+        "companion_diagnostics": []
+      }
+    ]
+  },
+  "notes": "Real pytest 8.4 exits 4 for conftest-import failure. exit_code is not part of failure_id derivation. The 'app' package lives at source/tests/app/, not source/app/, because pytest loads conftest before fully populating sys.path."
+}

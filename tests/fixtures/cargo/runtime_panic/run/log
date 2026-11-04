@@ -1,0 +1,22 @@
+   Compiling runtime_panic v0.1.0 (/Users/dev/failtrace/tests/fixtures/cargo/runtime_panic/source)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.11s
+     Running unittests src/lib.rs (target/debug/deps/runtime_panic-62ecda7e8ecd1268)
+
+running 1 test
+test tests::parses_bad_input ... FAILED
+
+failures:
+
+---- tests::parses_bad_input stdout ----
+
+thread 'tests::parses_bad_input' (6220766) panicked at src/lib.rs:2:19:
+called `Result::unwrap()` on an `Err` value: ParseIntError { kind: InvalidDigit }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    tests::parses_bad_input
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--lib`

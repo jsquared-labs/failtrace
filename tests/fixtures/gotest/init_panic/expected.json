@@ -1,0 +1,159 @@
+{
+  "scenario": "init_panic",
+  "captured_environment": {
+    "go": "1.26.3",
+    "platform": "darwin",
+    "capture_command": "go test -json ./..."
+  },
+  "runner_argv": [
+    "go",
+    "test",
+    "-json",
+    "./..."
+  ],
+  "exit_code": 1,
+  "hash_inputs": {
+    "schema_version": "1.6",
+    "normative": false,
+    "test_group_id": null,
+    "failure_order_stable": true,
+    "failures": [
+      {
+        "adapter_id": "gotest",
+        "phase": "setup",
+        "kind": "panic",
+        "runner_test_id": null,
+        "param_id": null,
+        "primary_location": {
+          "file": "init_test.go",
+          "line": 6,
+          "column": null
+        },
+        "normalized_message": "init-time boom",
+        "failure_id": "667be4101e76f8f3"
+      }
+    ]
+  },
+  "expected_subset": {
+    "schema_version": "1.6",
+    "document_kind": "analysis_result",
+    "failtrace_version": "0.1.0",
+    "emission": {
+      "channel": "file",
+      "mode": "full",
+      "max_failures": null,
+      "failures_emitted": 1,
+      "failures_total": 1,
+      "full_output_path": "<run-dir>/output.json"
+    },
+    "command": "go test -json ./...",
+    "cwd": "/Users/dev/failtrace/tests/fixtures/gotest/init_panic/source",
+    "started_at": "2026-05-15T12:00:00Z",
+    "duration_ms": 100,
+    "exit_code": 1,
+    "signal": null,
+    "runner_outcome": "failed",
+    "early_exit": null,
+    "adapters": [
+      {
+        "id": "gotest",
+        "version": "gotest@0.1.0",
+        "kind": "runner",
+        "selected": true,
+        "selection_reason": "argv_name_match"
+      }
+    ],
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "determinism_warnings": [],
+    "truncated": false,
+    "truncation_reason": null,
+    "failures_complete": true,
+    "failures": [
+      {
+        "failure_id": "667be4101e76f8f3",
+        "adapter_id": "gotest",
+        "phase": "setup",
+        "kind": "panic",
+        "runner_package_id": "corpus/init_panic",
+        "runner_test_id": null,
+        "test_segments": [],
+        "test_name": null,
+        "param_id": null,
+        "test_group_id": null,
+        "primary_location": {
+          "file": "init_test.go",
+          "line": 6,
+          "column": null,
+          "end_line": 6,
+          "end_column": null,
+          "role": "primary",
+          "in_user_code": true
+        },
+        "extra_locations": [],
+        "message": "init-time boom",
+        "diagnostic_code": null,
+        "diagnostic_severity": "error",
+        "details": {
+          "type": "panic",
+          "panic_message": "init-time boom",
+          "stack": [
+            {
+              "file": "init_test.go",
+              "line": 6,
+              "function": "corpus/init_panic.init.0()",
+              "in_user_code": true
+            }
+          ],
+          "goroutine_id": 1
+        },
+        "raw_log_lines": [
+          2,
+          7
+        ],
+        "evidence": {
+          "byte_range": {
+            "start": 91,
+            "end": 875
+          },
+          "excerpts": [
+            {
+              "source": "runner_structured_event",
+              "kind": "failure_block",
+              "byte_range": {
+                "start": 91,
+                "end": 875
+              },
+              "text": "panic: init-time boom\n\ngoroutine 1 [running]:\ncorpus/init_panic.init.0()\n\t/tmp/ft-gocorpus/init_panic/init_test.go:6 +0x2c\nFAIL\tcorpus/init_panic\t0.268s\n",
+              "ansi_stripped": false,
+              "truncated": false
+            }
+          ]
+        },
+        "cascade_root": null,
+        "cascade_reason": null,
+        "dependent_failure_ids": [],
+        "retries": [],
+        "companion_diagnostics": [],
+        "extensions": {}
+      }
+    ],
+    "ranking": {
+      "strategy": "first_emitted",
+      "is_stable_across_runs": true
+    },
+    "counts": {
+      "tests_run": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "tests_errored": 0,
+      "tests_skipped": 0,
+      "tests_not_run": null,
+      "files_failed": 1
+    },
+    "raw_log_path": "<run-dir>/log",
+    "raw_log_sha256": "52dc5816330bebaa18c10dd76b04c36b3519cff1e842b2fc4e0dda42a35c6d5d",
+    "suggested_next_commands": [],
+    "extensions": {}
+  }
+}

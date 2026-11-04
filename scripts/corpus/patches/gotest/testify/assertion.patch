@@ -1,0 +1,13 @@
+diff --git a/assert/assertion_compare_test.go b/assert/assertion_compare_test.go
+index 95a7a7b..301196d 100644
+--- a/assert/assertion_compare_test.go
++++ b/assert/assertion_compare_test.go
+@@ -128,7 +128,7 @@ func callerName(skip int) string {
+ func TestGreater(t *testing.T) {
+ 	mockT := new(testing.T)
+ 
+-	if !Greater(mockT, 2, 1) {
++	if Greater(mockT, 2, 1) {
+ 		t.Error("Greater should return true")
+ 	}
+ 

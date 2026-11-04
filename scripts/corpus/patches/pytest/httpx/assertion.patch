@@ -1,0 +1,13 @@
+diff --git a/tests/test_status_codes.py b/tests/test_status_codes.py
+index 13314db..48b4dbe 100644
+--- a/tests/test_status_codes.py
++++ b/tests/test_status_codes.py
+@@ -3,7 +3,7 @@ import httpx
+ 
+ def test_status_code_as_int():
+     # mypy doesn't (yet) recognize that IntEnum members are ints, so ignore it here
+-    assert httpx.codes.NOT_FOUND == 404  # type: ignore[comparison-overlap]
++    assert httpx.codes.NOT_FOUND == 405  # type: ignore[comparison-overlap]
+     assert str(httpx.codes.NOT_FOUND) == "404"
+ 
+ 

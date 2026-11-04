@@ -1,0 +1,234 @@
+{
+  "captured_environment": {
+    "format": "representative xcodebuild and Swift Testing output",
+    "provenance": "hand-authored synthetic log"
+  },
+  "exit_code": 65,
+  "expected_subset": {
+    "adapters": [
+      {
+        "id": "xcodebuild-test",
+        "kind": "runner",
+        "selected": true,
+        "selection_reason": "argv_name_match",
+        "version": "xcodebuild-test@0.1.0"
+      }
+    ],
+    "command": "xcodebuild test -project ExampleApp.xcodeproj -scheme ExampleApp -only-testing:ExampleAppTests/ExampleSuite",
+    "counts": {
+      "files_failed": null,
+      "tests_errored": 0,
+      "tests_failed": 1,
+      "tests_not_run": null,
+      "tests_passed": 0,
+      "tests_run": 1,
+      "tests_skipped": 0
+    },
+    "cwd": "/workspace/example-app",
+    "determinism_warnings": [],
+    "document_kind": "analysis_result",
+    "duration_ms": 1000,
+    "early_exit": null,
+    "emission": {
+      "channel": "file",
+      "failures_emitted": 2,
+      "failures_total": 2,
+      "full_output_path": "<run-dir>/output.json",
+      "max_failures": null,
+      "mode": "full"
+    },
+    "exit_code": 65,
+    "extensions": {},
+    "failtrace_version": "0.1.0",
+    "failures": [
+      {
+        "adapter_id": "xcodebuild-test",
+        "cascade_reason": null,
+        "cascade_root": null,
+        "companion_diagnostics": [],
+        "dependent_failure_ids": [],
+        "details": {
+          "actual": "1",
+          "diff": null,
+          "expected": "2",
+          "type": "assertion"
+        },
+        "diagnostic_code": null,
+        "diagnostic_severity": "error",
+        "evidence": {
+          "byte_range": {
+            "end": 344,
+            "start": 202
+          },
+          "excerpts": [
+            {
+              "ansi_stripped": false,
+              "byte_range": {
+                "end": 344,
+                "start": 202
+              },
+              "kind": "failure_block",
+              "source": "raw_log",
+              "text": "✘ Test reportsTwoIssues() recorded an issue at ExampleTests.swift:13:9: Expectation failed: (left → 1) == (right → 2)\n↳ first failure",
+              "truncated": false
+            }
+          ]
+        },
+        "extensions": {},
+        "extra_locations": [],
+        "failure_id": "fe19895ab5e60801",
+        "kind": "assertion",
+        "message": "Expectation failed: (left → 1) == (right → 2): first failure",
+        "param_id": null,
+        "phase": "test",
+        "primary_location": {
+          "column": 9,
+          "end_column": null,
+          "end_line": null,
+          "file": "ExampleTests.swift",
+          "in_user_code": true,
+          "line": 13,
+          "role": "primary"
+        },
+        "raw_log_lines": [
+          6,
+          7
+        ],
+        "retries": [],
+        "runner_package_id": null,
+        "runner_test_id": "ExampleSuite.reportsTwoIssues",
+        "test_group_id": null,
+        "test_name": "reportsTwoIssues",
+        "test_segments": [
+          "ExampleSuite",
+          "reportsTwoIssues"
+        ]
+      },
+      {
+        "adapter_id": "xcodebuild-test",
+        "cascade_reason": null,
+        "cascade_root": null,
+        "companion_diagnostics": [],
+        "dependent_failure_ids": [],
+        "details": {
+          "actual": "\"alpha\"",
+          "diff": null,
+          "expected": "\"beta\"",
+          "type": "assertion"
+        },
+        "diagnostic_code": null,
+        "diagnostic_severity": "error",
+        "evidence": {
+          "byte_range": {
+            "end": 498,
+            "start": 344
+          },
+          "excerpts": [
+            {
+              "ansi_stripped": false,
+              "byte_range": {
+                "end": 498,
+                "start": 344
+              },
+              "kind": "failure_block",
+              "source": "raw_log",
+              "text": "✘ Test reportsTwoIssues() recorded an issue at ExampleTests.swift:14:9: Expectation failed: (left → \"alpha\") == (right → \"beta\")\n↳ second failure",
+              "truncated": false
+            }
+          ]
+        },
+        "extensions": {},
+        "extra_locations": [],
+        "failure_id": "c47c313426517021",
+        "kind": "assertion",
+        "message": "Expectation failed: (left → \"alpha\") == (right → \"beta\"): second failure",
+        "param_id": null,
+        "phase": "test",
+        "primary_location": {
+          "column": 9,
+          "end_column": null,
+          "end_line": null,
+          "file": "ExampleTests.swift",
+          "in_user_code": true,
+          "line": 14,
+          "role": "primary"
+        },
+        "raw_log_lines": [
+          8,
+          9
+        ],
+        "retries": [],
+        "runner_package_id": null,
+        "runner_test_id": "ExampleSuite.reportsTwoIssues",
+        "test_group_id": null,
+        "test_name": "reportsTwoIssues",
+        "test_segments": [
+          "ExampleSuite",
+          "reportsTwoIssues"
+        ]
+      }
+    ],
+    "failures_complete": true,
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "ranking": {
+      "is_stable_across_runs": false,
+      "strategy": "compile_before_runtime"
+    },
+    "raw_log_path": "<run-dir>/log",
+    "raw_log_sha256": "b94d86a4134fce86a095cf0a67b2058ab824d83b17c900ecf0ac4bda14f98ce4",
+    "runner_outcome": "failed",
+    "schema_version": "1.6",
+    "signal": null,
+    "started_at": "2026-01-01T00:00:00Z",
+    "suggested_next_commands": [],
+    "truncated": false,
+    "truncation_reason": null
+  },
+  "hash_inputs": {
+    "failure_order_stable": false,
+    "failures": [
+      {
+        "adapter_id": "xcodebuild-test",
+        "failure_id": "fe19895ab5e60801",
+        "kind": "assertion",
+        "normalized_message": "Expectation failed: (left → <N>) == (right → <N>): first failure",
+        "param_id": null,
+        "phase": "test",
+        "primary_location": {
+          "column": 9,
+          "file": "ExampleTests.swift",
+          "line": 13
+        },
+        "runner_test_id": "ExampleSuite.reportsTwoIssues"
+      },
+      {
+        "adapter_id": "xcodebuild-test",
+        "failure_id": "c47c313426517021",
+        "kind": "assertion",
+        "normalized_message": "Expectation failed: (left → \"alpha\") == (right → \"beta\"): second failure",
+        "param_id": null,
+        "phase": "test",
+        "primary_location": {
+          "column": 9,
+          "file": "ExampleTests.swift",
+          "line": 14
+        },
+        "runner_test_id": "ExampleSuite.reportsTwoIssues"
+      }
+    ],
+    "normative": false,
+    "schema_version": "1.6",
+    "test_group_id": null
+  },
+  "runner_argv": [
+    "xcodebuild",
+    "test",
+    "-project",
+    "ExampleApp.xcodeproj",
+    "-scheme",
+    "ExampleApp",
+    "-only-testing:ExampleAppTests/ExampleSuite"
+  ],
+  "scenario": "swift_testing_multi_expect"
+}

@@ -1,0 +1,15 @@
+go: downloading github.com/stretchr/testify v1.9.0
+go: downloading gopkg.in/yaml.v3 v3.0.1
+go: downloading github.com/davecgh/go-spew v1.1.1
+{"Time":"2026-05-15T10:58:48.401813-04:00","Action":"start","Package":"corpus/malformed_event_preamble"}
+{"Time":"2026-05-15T10:58:48.54931-04:00","Action":"run","Package":"corpus/malformed_event_preamble","Test":"TestAdd"}
+{"Time":"2026-05-15T10:58:48.549359-04:00","Action":"output","Package":"corpus/malformed_event_preamble","Test":"TestAdd","Output":"=== RUN   TestAdd\n"}
+{"Time":"2026-05-15T10:58:48.549378-04:00","Action":"output","Package":"corpus/malformed_event_preamble","Test":"TestAdd","Output":"--- PASS: TestAdd (0.00s)\n"}
+{"Time":"2026-05-15T10:58:48.549385-04:00","Action":"pass","Package":"corpus/malformed_event_preamble","Test":"TestAdd","Elapsed":0}
+{"Time":"2026-05-15T10:58:48.549389-04:00","Action":"run","Package":"corpus/malformed_event_preamble","Test":"TestSub"}
+{"Time":"2026-05-15T10:58:48.549392-04:00","Action":"output","Package":"corpus/malformed_event_preamble","Test":"TestSub","Output":"=== RUN   TestSub\n"}
+{"Time":"2026-05-15T10:58:48.549395-04:00","Action":"output","Package":"corpus/malformed_event_preamble","Test":"TestSub","Output":"--- PASS: TestSub (0.00s)\n"}
+{"Time":"2026-05-15T10:58:48.549398-04:00","Action":"pass","Package":"corpus/malformed_event_preamble","Test":"TestSub","Elapsed":0}
+{"Time":"2026-05-15T10:58:48.5494-04:00","Action":"output","Package":"corpus/malformed_event_preamble","Output":"PASS\n"}
+{"Time":"2026-05-15T10:58:48.549674-04:00","Action":"output","Package":"corpus/malformed_event_preamble","Output":"ok  \tcorpus/malformed_event_preamble\t0.148s\n"}
+{"Time":"2026-05-15T10:58:48.550203-04:00","Action":"pass","Package":"corpus/malformed_event_preamble","Elapsed":0.148}

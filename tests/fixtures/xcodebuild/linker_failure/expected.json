@@ -1,0 +1,226 @@
+{
+  "captured_environment": {
+    "format": "representative xcodebuild and Swift Testing output",
+    "provenance": "hand-authored synthetic log"
+  },
+  "exit_code": 65,
+  "expected_subset": {
+    "adapters": [
+      {
+        "id": "xcodebuild-test",
+        "kind": "runner",
+        "selected": true,
+        "selection_reason": "argv_name_match",
+        "version": "xcodebuild-test@0.1.0"
+      }
+    ],
+    "command": "xcodebuild test -project ExampleApp.xcodeproj -scheme ExampleApp -only-testing:ExampleAppTests/LinkerTests",
+    "counts": {
+      "files_failed": null,
+      "tests_errored": 0,
+      "tests_failed": 0,
+      "tests_not_run": null,
+      "tests_passed": 0,
+      "tests_run": 0,
+      "tests_skipped": 0
+    },
+    "cwd": "/workspace/example-app",
+    "determinism_warnings": [],
+    "document_kind": "analysis_result",
+    "duration_ms": 700,
+    "early_exit": null,
+    "emission": {
+      "channel": "file",
+      "failures_emitted": 2,
+      "failures_total": 2,
+      "full_output_path": "<run-dir>/output.json",
+      "max_failures": null,
+      "mode": "full"
+    },
+    "exit_code": 65,
+    "extensions": {},
+    "failtrace_version": "0.1.0",
+    "failures": [
+      {
+        "adapter_id": "xcodebuild-test",
+        "cascade_reason": null,
+        "cascade_root": null,
+        "companion_diagnostics": [],
+        "dependent_failure_ids": [],
+        "details": {
+          "type": "linker_error",
+          "unresolved_symbols": [
+            "_failtrace_missing_example_symbol"
+          ]
+        },
+        "diagnostic_code": null,
+        "diagnostic_severity": "error",
+        "evidence": {
+          "byte_range": {
+            "end": 285,
+            "start": 146
+          },
+          "excerpts": [
+            {
+              "ansi_stripped": false,
+              "byte_range": {
+                "end": 285,
+                "start": 146
+              },
+              "kind": "failure_block",
+              "source": "raw_log",
+              "text": "Undefined symbols for architecture arm64:\n  \"_failtrace_missing_example_symbol\", referenced from:\n      _exampleCallSite in ExampleTests.o",
+              "truncated": false
+            }
+          ]
+        },
+        "extensions": {},
+        "extra_locations": [],
+        "failure_id": "76c2bdf1bd59472f",
+        "kind": "linker_error",
+        "message": "Undefined symbol for architecture arm64: _failtrace_missing_example_symbol",
+        "param_id": null,
+        "phase": "build",
+        "primary_location": {
+          "column": null,
+          "end_column": null,
+          "end_line": null,
+          "file": "<linker>",
+          "in_user_code": false,
+          "line": null,
+          "role": "primary"
+        },
+        "raw_log_lines": [
+          4,
+          6
+        ],
+        "retries": [],
+        "runner_package_id": null,
+        "runner_test_id": null,
+        "test_group_id": null,
+        "test_name": null,
+        "test_segments": []
+      },
+      {
+        "adapter_id": "xcodebuild-test",
+        "cascade_reason": null,
+        "cascade_root": null,
+        "companion_diagnostics": [],
+        "dependent_failure_ids": [],
+        "details": {
+          "type": "linker_error",
+          "unresolved_symbols": []
+        },
+        "diagnostic_code": null,
+        "diagnostic_severity": "error",
+        "evidence": {
+          "byte_range": {
+            "end": 332,
+            "start": 285
+          },
+          "excerpts": [
+            {
+              "ansi_stripped": false,
+              "byte_range": {
+                "end": 332,
+                "start": 285
+              },
+              "kind": "failure_block",
+              "source": "raw_log",
+              "text": "ld: symbol(s) not found for architecture arm64",
+              "truncated": false
+            }
+          ]
+        },
+        "extensions": {},
+        "extra_locations": [],
+        "failure_id": "8019543cae6ee9a1",
+        "kind": "linker_error",
+        "message": "symbol(s) not found for architecture arm64",
+        "param_id": null,
+        "phase": "build",
+        "primary_location": {
+          "column": null,
+          "end_column": null,
+          "end_line": null,
+          "file": "<linker>",
+          "in_user_code": false,
+          "line": null,
+          "role": "primary"
+        },
+        "raw_log_lines": [
+          7,
+          7
+        ],
+        "retries": [],
+        "runner_package_id": null,
+        "runner_test_id": null,
+        "test_group_id": null,
+        "test_name": null,
+        "test_segments": []
+      }
+    ],
+    "failures_complete": true,
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "ranking": {
+      "is_stable_across_runs": true,
+      "strategy": "compile_before_runtime"
+    },
+    "raw_log_path": "<run-dir>/log",
+    "raw_log_sha256": "c134f59fe007c0f974a74f338673fed436c515613821d95004fe78fd25963f88",
+    "runner_outcome": "pre_test_failed",
+    "schema_version": "1.6",
+    "signal": null,
+    "started_at": "2026-01-01T00:00:00Z",
+    "suggested_next_commands": [],
+    "truncated": false,
+    "truncation_reason": null
+  },
+  "hash_inputs": {
+    "failure_order_stable": true,
+    "failures": [
+      {
+        "adapter_id": "xcodebuild-test",
+        "failure_id": "76c2bdf1bd59472f",
+        "kind": "linker_error",
+        "normalized_message": "Undefined symbol for architecture arm64: _failtrace_missing_example_symbol",
+        "param_id": null,
+        "phase": "build",
+        "primary_location": {
+          "column": null,
+          "file": "<linker>",
+          "line": null
+        },
+        "runner_test_id": null
+      },
+      {
+        "adapter_id": "xcodebuild-test",
+        "failure_id": "8019543cae6ee9a1",
+        "kind": "linker_error",
+        "normalized_message": "symbol(s) not found for architecture arm64",
+        "param_id": null,
+        "phase": "build",
+        "primary_location": {
+          "column": null,
+          "file": "<linker>",
+          "line": null
+        },
+        "runner_test_id": null
+      }
+    ],
+    "normative": false,
+    "schema_version": "1.6",
+    "test_group_id": null
+  },
+  "runner_argv": [
+    "xcodebuild",
+    "test",
+    "-project",
+    "ExampleApp.xcodeproj",
+    "-scheme",
+    "ExampleApp",
+    "-only-testing:ExampleAppTests/LinkerTests"
+  ],
+  "scenario": "linker_failure"
+}

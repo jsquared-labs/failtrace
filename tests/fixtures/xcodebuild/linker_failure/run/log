@@ -1,0 +1,14 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test -project ExampleApp.xcodeproj -scheme ExampleApp
+
+Undefined symbols for architecture arm64:
+  "_failtrace_missing_example_symbol", referenced from:
+      _exampleCallSite in ExampleTests.o
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+Testing failed:
+	Linker command failed with exit code 1
+	Testing cancelled because the build failed.
+
+** TEST FAILED **

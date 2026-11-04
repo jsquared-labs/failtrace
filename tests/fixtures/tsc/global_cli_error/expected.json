@@ -1,0 +1,171 @@
+{
+  "scenario": "global_cli_error",
+  "captured_environment": {
+    "typescript": "5.9.3",
+    "platform": "darwin",
+    "capture_command": "npm_config_cache=/private/tmp/failtrace-npm-cache npx --yes -p typescript@5 tsc"
+  },
+  "runner_argv": [
+    "tsc",
+    "--project",
+    "tsconfig.json",
+    "--notACompilerOption"
+  ],
+  "exit_code": 2,
+  "hash_inputs": {
+    "schema_version": "1.6",
+    "normative": false,
+    "test_group_id": null,
+    "failures": [
+      {
+        "adapter_id": "tsc",
+        "phase": "typecheck",
+        "kind": "unknown",
+        "runner_test_id": null,
+        "param_id": null,
+        "primary_location": {
+          "file": "tsconfig.json",
+          "line": null,
+          "column": null
+        },
+        "normalized_message": "TS5023: Unknown compiler option '--notACompilerOption'.",
+        "failure_id": "655e161625abad08"
+      }
+    ]
+  },
+  "expected_subset": {
+    "schema_version": "1.6",
+    "document_kind": "analysis_result",
+    "failtrace_version": "0.1.0",
+    "emission": {
+      "channel": "file",
+      "mode": "full",
+      "max_failures": null,
+      "failures_emitted": 1,
+      "failures_total": 1,
+      "full_output_path": "<run-dir>/output.json"
+    },
+    "command": "tsc --project tsconfig.json --notACompilerOption",
+    "cwd": "/Users/dev/failtrace/tests/fixtures/tsc/global_cli_error/source",
+    "started_at": "2026-05-15T12:00:00Z",
+    "duration_ms": 100,
+    "exit_code": 2,
+    "signal": null,
+    "runner_outcome": "typecheck_failed",
+    "early_exit": null,
+    "adapters": [
+      {
+        "id": "tsc",
+        "version": "tsc@0.1.0",
+        "kind": "typechecker",
+        "selected": true,
+        "selection_reason": "argv_name_match"
+      }
+    ],
+    "parse_status": "complete",
+    "parse_warnings": [
+      "missing_line_number",
+      "unstructured_diagnostic"
+    ],
+    "determinism_warnings": [],
+    "truncated": false,
+    "truncation_reason": null,
+    "failures_complete": true,
+    "failures": [
+      {
+        "failure_id": "655e161625abad08",
+        "adapter_id": "tsc",
+        "phase": "typecheck",
+        "kind": "unknown",
+        "runner_package_id": null,
+        "runner_test_id": null,
+        "test_segments": [],
+        "test_name": null,
+        "param_id": null,
+        "test_group_id": null,
+        "primary_location": {
+          "file": "tsconfig.json",
+          "line": null,
+          "column": null,
+          "end_line": null,
+          "end_column": null,
+          "role": "primary",
+          "in_user_code": true
+        },
+        "extra_locations": [],
+        "message": "TS5023: Unknown compiler option '--notACompilerOption'.",
+        "diagnostic_code": "TS5023",
+        "diagnostic_severity": "error",
+        "details": {
+          "type": "unknown"
+        },
+        "raw_log_lines": [
+          1,
+          1
+        ],
+        "evidence": {
+          "byte_range": {
+            "start": 0,
+            "end": 62
+          },
+          "excerpts": [
+            {
+              "source": "raw_log",
+              "kind": "failure_block",
+              "byte_range": {
+                "start": 0,
+                "end": 62
+              },
+              "text": "error TS5023: Unknown compiler option '--notACompilerOption'.\n",
+              "ansi_stripped": false,
+              "truncated": false
+            }
+          ]
+        },
+        "cascade_root": null,
+        "cascade_reason": null,
+        "dependent_failure_ids": [],
+        "retries": [],
+        "companion_diagnostics": [],
+        "extensions": {
+          "tsc": {
+            "column_unit": "utf16_code_unit",
+            "phase_detail": "typecheck"
+          }
+        }
+      }
+    ],
+    "ranking": {
+      "strategy": "compile_before_runtime",
+      "is_stable_across_runs": true
+    },
+    "counts": {
+      "tests_run": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "tests_errored": 0,
+      "tests_skipped": 0,
+      "tests_not_run": null,
+      "files_failed": 1
+    },
+    "raw_log_path": "<run-dir>/log",
+    "raw_log_sha256": "b42cc8b614f1fdf829357c15962896095b2938d988cdfea279f2b599ac177c0e",
+    "suggested_next_commands": [
+      {
+        "argv": [
+          "failtrace",
+          "explain",
+          "655e161625abad08"
+        ],
+        "command": "failtrace explain 655e161625abad08",
+        "cwd": "/Users/dev/failtrace/tests/fixtures/tsc/global_cli_error/source",
+        "intent": "explain_diagnostic",
+        "interactive": false,
+        "mutates_workspace": false,
+        "uses_network": false,
+        "requires_approval": false
+      }
+    ],
+    "extensions": {}
+  }
+}

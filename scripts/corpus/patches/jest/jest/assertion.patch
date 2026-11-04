@@ -1,0 +1,12 @@
+diff --git a/packages/jest-validate/src/__tests__/validate.test.ts b/packages/jest-validate/src/__tests__/validate.test.ts
+index 53d8847..7aa93b9 100644
+--- a/packages/jest-validate/src/__tests__/validate.test.ts
++++ b/packages/jest-validate/src/__tests__/validate.test.ts
+@@ -27,6 +27,7 @@ afterEach(() => {
+ });
+ 
+ test('recursively validates default Jest config', () => {
++  expect(1 + 1).toBe(3); // failtrace-corpus injected failure
+   expect(
+     validate(defaultConfig, {
+       exampleConfig: validConfig,

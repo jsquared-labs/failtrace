@@ -1,0 +1,40 @@
+{
+  "meta_schema_version": "1.2",
+  "schema_version": "1.6",
+  "failtrace_version": "0.1.0",
+  "adapters": [
+    {
+      "id": "tsc",
+      "version": "tsc@0.1.0",
+      "kind": "typechecker",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "command": "tsc --project tsconfig.json",
+  "cwd": "/Users/dev/failtrace/tests/fixtures/tsc/basic_type_mismatch/source",
+  "started_at": "2026-05-15T12:00:00Z",
+  "duration_ms": 100,
+  "exit_code": 2,
+  "signal": null,
+  "early_exit": null,
+  "truncated": false,
+  "truncation_reason": null,
+  "path_case_folding": "case_sensitive",
+  "stream_merge": "stdout_stderr_interleaved",
+  "raw_log_sha256": "563ce656c5ab1b279f8abcf9c7c57d67c4f39c12c649d46e90e78386ad7e50ed",
+  "adapter_candidates": [
+    {
+      "id": "tsc",
+      "version": "tsc@0.1.0",
+      "kind": "typechecker",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "argv": [
+    "tsc",
+    "--project",
+    "tsconfig.json"
+  ]
+}

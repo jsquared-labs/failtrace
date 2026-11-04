@@ -1,0 +1,19 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test -project ExampleApp.xcodeproj -scheme ExampleApp -destination "platform=iOS Simulator,name=Unavailable Phone,OS=latest"
+
+User defaults from command line:
+    IDEPackageSupportUseBuiltinSCM = YES
+
+Resolve Package Graph
+
+Resolved source packages:
+  ExampleDependency: https://example.invalid/example-dependency.git @ 1.0.0
+
+xcodebuild: error: Unable to find a device matching the provided destination specifier:
+		{ platform:iOS Simulator, OS:latest, name:Unavailable Phone }
+
+	The requested device could not be found because no available devices matched the request.
+
+	Available destinations for the "ExampleApp" scheme:
+		{ platform:iOS Simulator, arch:arm64, id:00000000-0000-0000-0000-000000000001, OS:18.0, name:Example Phone }
+		{ platform:iOS Simulator, arch:arm64, id:00000000-0000-0000-0000-000000000002, OS:18.0, name:Example Tablet }

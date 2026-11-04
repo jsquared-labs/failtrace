@@ -1,0 +1,18 @@
+Using CPython 3.11.15
+Creating virtual environment at: .venv
+Installed 7 packages in 5ms
+F
+=================================== FAILURES ===================================
+___________________________ test_status_code_as_int ____________________________
+
+    def test_status_code_as_int():
+        # mypy doesn't (yet) recognize that IntEnum members are ints, so ignore it here
+>       assert httpx.codes.NOT_FOUND == 405  # type: ignore[comparison-overlap]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: assert <codes.NOT_FOUND: 404> == 405
+E        +  where <codes.NOT_FOUND: 404> = <enum 'codes'>.NOT_FOUND
+E        +    where <enum 'codes'> = httpx.codes
+
+tests/test_status_codes.py:6: AssertionError
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+1 failed in 0.04s

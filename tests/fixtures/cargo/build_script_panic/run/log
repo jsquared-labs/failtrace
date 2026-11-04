@@ -1,0 +1,10 @@
+   Compiling build_script_panic v0.1.0 (/Users/dev/failtrace/tests/fixtures/cargo/build_script_panic/source)
+error: failed to run custom build command for `build_script_panic v0.1.0 (/Users/dev/failtrace/tests/fixtures/cargo/build_script_panic/source)`
+
+Caused by:
+  process didn't exit successfully: `/Users/dev/failtrace/tests/fixtures/cargo/build_script_panic/source/target/debug/build/build_script_panic-c9bf3da14422394d/build-script-build` (exit status: 101)
+  --- stderr
+
+  thread 'main' (6220508) panicked at build.rs:2:5:
+  generated bindings are missing
+  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace

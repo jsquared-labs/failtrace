@@ -1,0 +1,39 @@
+{
+  "meta_schema_version": "1.2",
+  "schema_version": "1.6",
+  "failtrace_version": "0.1.0",
+  "adapters": [
+    {
+      "id": "pytest",
+      "version": "pytest@0.1.0",
+      "kind": "runner",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "command": "pytest --color=no",
+  "cwd": "/tmp/proj",
+  "started_at": "2026-05-15T12:00:00Z",
+  "duration_ms": 100,
+  "exit_code": 0,
+  "signal": null,
+  "early_exit": null,
+  "truncated": true,
+  "truncation_reason": "buffer_exceeded",
+  "path_case_folding": "case_sensitive",
+  "stream_merge": "stdout_stderr_interleaved",
+  "raw_log_sha256": "f0790b4c5c625e9509d4b63a1099eeeb421bb12005d4d72f913cd3b866f83b03",
+  "adapter_candidates": [
+    {
+      "id": "pytest",
+      "version": "pytest@0.1.0",
+      "kind": "runner",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "argv": [
+    "pytest",
+    "--color=no"
+  ]
+}

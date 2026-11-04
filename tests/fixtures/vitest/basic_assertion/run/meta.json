@@ -1,0 +1,46 @@
+{
+  "meta_schema_version": "1.2",
+  "schema_version": "1.6",
+  "failtrace_version": "0.1.0",
+  "adapters": [
+    {
+      "id": "vitest",
+      "version": "vitest@0.1.0",
+      "kind": "runner",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "command": "pnpm exec vitest run --reporter=default --no-file-parallelism --sequence.shuffle=false --sequence.concurrent=false --logHeapUsage=false",
+  "cwd": "/Users/dev/failtrace/tests/fixtures/vitest/basic_assertion/source",
+  "started_at": "2026-05-14T09:25:30Z",
+  "duration_ms": 109,
+  "exit_code": 1,
+  "signal": null,
+  "early_exit": null,
+  "truncated": false,
+  "truncation_reason": null,
+  "path_case_folding": "case_sensitive",
+  "stream_merge": "stdout_stderr_interleaved",
+  "raw_log_sha256": "48407103545cc3ab379bbfd0108233a14cc094b4f722f624d06bf2e03ac4e272",
+  "adapter_candidates": [
+    {
+      "id": "vitest",
+      "version": "vitest@0.1.0",
+      "kind": "runner",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "argv": [
+    "pnpm",
+    "exec",
+    "vitest",
+    "run",
+    "--reporter=default",
+    "--no-file-parallelism",
+    "--sequence.shuffle=false",
+    "--sequence.concurrent=false",
+    "--logHeapUsage=false"
+  ]
+}

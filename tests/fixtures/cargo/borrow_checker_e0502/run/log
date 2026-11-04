@@ -1,0 +1,15 @@
+   Compiling borrow_checker_e0502 v0.1.0 (/Users/dev/failtrace/tests/fixtures/cargo/borrow_checker_e0502/source)
+error[E0502]: cannot borrow `data` as mutable because it is also borrowed as immutable
+ --> src/lib.rs:4:5
+  |
+3 |     let first = &data[0];
+  |                  ---- immutable borrow occurs here
+4 |     data.push(4);
+  |     ^^^^^^^^^^^^ mutable borrow occurs here
+5 |     println!("{first}");
+  |                ----- immutable borrow later used here
+
+For more information about this error, try `rustc --explain E0502`.
+error: could not compile `borrow_checker_e0502` (lib) due to 1 previous error
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `borrow_checker_e0502` (lib test) due to 1 previous error

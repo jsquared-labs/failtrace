@@ -1,0 +1,196 @@
+{
+  "captured_environment": {
+    "format": "representative xcodebuild and Swift Testing output",
+    "provenance": "hand-authored synthetic log"
+  },
+  "exit_code": 70,
+  "expected_subset": {
+    "adapters": [
+      {
+        "id": "xcodebuild-test",
+        "kind": "runner",
+        "selected": true,
+        "selection_reason": "argv_name_match",
+        "version": "xcodebuild-test@0.1.0"
+      }
+    ],
+    "command": "xcodebuild test -project ExampleApp.xcodeproj -scheme ExampleApp -destination 'platform=iOS Simulator,name=Unavailable Phone,OS=latest' -only-testing:ExampleAppTests/DestinationTests",
+    "counts": {
+      "files_failed": null,
+      "tests_errored": 0,
+      "tests_failed": 0,
+      "tests_not_run": null,
+      "tests_passed": 0,
+      "tests_run": 0,
+      "tests_skipped": 0
+    },
+    "cwd": "/workspace/example-app",
+    "determinism_warnings": [],
+    "document_kind": "analysis_result",
+    "duration_ms": 900,
+    "early_exit": null,
+    "emission": {
+      "channel": "file",
+      "failures_emitted": 1,
+      "failures_total": 1,
+      "full_output_path": "<run-dir>/output.json",
+      "max_failures": null,
+      "mode": "full"
+    },
+    "exit_code": 70,
+    "extensions": {},
+    "failtrace_version": "0.1.0",
+    "failures": [
+      {
+        "adapter_id": "xcodebuild-test",
+        "cascade_reason": null,
+        "cascade_root": null,
+        "companion_diagnostics": [],
+        "dependent_failure_ids": [],
+        "details": {
+          "package": null,
+          "resolver": "unknown",
+          "type": "dependency_resolution_error"
+        },
+        "diagnostic_code": null,
+        "diagnostic_severity": "error",
+        "evidence": {
+          "byte_range": {
+            "end": 939,
+            "start": 418
+          },
+          "excerpts": [
+            {
+              "ansi_stripped": false,
+              "byte_range": {
+                "end": 939,
+                "start": 418
+              },
+              "kind": "failure_block",
+              "source": "raw_log",
+              "text": "xcodebuild: error: Unable to find a device matching the provided destination specifier:\n\t\t{ platform:iOS Simulator, OS:latest, name:Unavailable Phone }\n\n\tThe requested device could not be found because no available devices matched the request.\n\n\tAvailable destinations for the \"ExampleApp\" scheme:\n\t\t{ platform:iOS Simulator, arch:arm64, id:00000000-0000-0000-0000-000000000001, OS:18.0, name:Example Phone }\n\t\t{ platform:iOS Simulator, arch:arm64, id:00000000-0000-0000-0000-000000000002, OS:18.0, name:Example Tablet }",
+              "truncated": false
+            }
+          ]
+        },
+        "extensions": {},
+        "extra_locations": [],
+        "failure_id": "ec654b78eed962f9",
+        "kind": "dependency_resolution_error",
+        "message": "xcodebuild: error: Unable to find a device matching the provided destination specifier:",
+        "param_id": null,
+        "phase": "setup",
+        "primary_location": {
+          "column": null,
+          "end_column": null,
+          "end_line": null,
+          "file": "<xcodebuild>",
+          "in_user_code": false,
+          "line": null,
+          "role": "primary"
+        },
+        "raw_log_lines": [
+          12,
+          19
+        ],
+        "retries": [],
+        "runner_package_id": null,
+        "runner_test_id": null,
+        "test_group_id": null,
+        "test_name": null,
+        "test_segments": []
+      }
+    ],
+    "failures_complete": true,
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "ranking": {
+      "is_stable_across_runs": true,
+      "strategy": "compile_before_runtime"
+    },
+    "raw_log_path": "<run-dir>/log",
+    "raw_log_sha256": "40bc139cf1da61a19d8924f365a82420d663e97e01389e3e744cc64f6d77ce71",
+    "runner_outcome": "pre_test_failed",
+    "schema_version": "1.6",
+    "signal": null,
+    "started_at": "2026-01-01T00:00:00Z",
+    "suggested_next_commands": [
+      {
+        "argv": [
+          "xcodebuild",
+          "test",
+          "-project",
+          "ExampleApp.xcodeproj",
+          "-scheme",
+          "ExampleApp",
+          "-destination",
+          "platform=iOS Simulator,id=00000000-0000-0000-0000-000000000001",
+          "-only-testing:ExampleAppTests/DestinationTests"
+        ],
+        "command": "xcodebuild test -project ExampleApp.xcodeproj -scheme ExampleApp -destination 'platform=iOS Simulator,id=00000000-0000-0000-0000-000000000001' -only-testing:ExampleAppTests/DestinationTests",
+        "cwd": "/workspace/example-app",
+        "intent": "rerun_isolated",
+        "interactive": false,
+        "mutates_workspace": false,
+        "requires_approval": false,
+        "uses_network": false
+      },
+      {
+        "argv": [
+          "xcodebuild",
+          "test",
+          "-project",
+          "ExampleApp.xcodeproj",
+          "-scheme",
+          "ExampleApp",
+          "-destination",
+          "platform=iOS Simulator,id=00000000-0000-0000-0000-000000000002",
+          "-only-testing:ExampleAppTests/DestinationTests"
+        ],
+        "command": "xcodebuild test -project ExampleApp.xcodeproj -scheme ExampleApp -destination 'platform=iOS Simulator,id=00000000-0000-0000-0000-000000000002' -only-testing:ExampleAppTests/DestinationTests",
+        "cwd": "/workspace/example-app",
+        "intent": "rerun_isolated",
+        "interactive": false,
+        "mutates_workspace": false,
+        "requires_approval": false,
+        "uses_network": false
+      }
+    ],
+    "truncated": false,
+    "truncation_reason": null
+  },
+  "hash_inputs": {
+    "failure_order_stable": true,
+    "failures": [
+      {
+        "adapter_id": "xcodebuild-test",
+        "failure_id": "ec654b78eed962f9",
+        "kind": "dependency_resolution_error",
+        "normalized_message": "xcodebuild: error: Unable to find a device matching the provided destination specifier:",
+        "param_id": null,
+        "phase": "setup",
+        "primary_location": {
+          "column": null,
+          "file": "<xcodebuild>",
+          "line": null
+        },
+        "runner_test_id": null
+      }
+    ],
+    "normative": false,
+    "schema_version": "1.6",
+    "test_group_id": null
+  },
+  "runner_argv": [
+    "xcodebuild",
+    "test",
+    "-project",
+    "ExampleApp.xcodeproj",
+    "-scheme",
+    "ExampleApp",
+    "-destination",
+    "platform=iOS Simulator,name=Unavailable Phone,OS=latest",
+    "-only-testing:ExampleAppTests/DestinationTests"
+  ],
+  "scenario": "destination_resolution_failure"
+}

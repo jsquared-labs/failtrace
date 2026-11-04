@@ -1,0 +1,172 @@
+{
+  "scenario": "parallel_interleaved",
+  "captured_environment": {
+    "go": "1.26.3",
+    "platform": "darwin",
+    "capture_command": "go test -json ./..."
+  },
+  "runner_argv": [
+    "go",
+    "test",
+    "-json",
+    "./..."
+  ],
+  "exit_code": 1,
+  "hash_inputs": {
+    "schema_version": "1.6",
+    "normative": false,
+    "test_group_id": null,
+    "failure_order_stable": false,
+    "failures": [
+      {
+        "adapter_id": "gotest",
+        "phase": "test",
+        "kind": "assertion",
+        "runner_test_id": "corpus/parallel_interleaved::TestParB",
+        "param_id": null,
+        "primary_location": {
+          "file": "par_test.go",
+          "line": 17,
+          "column": null
+        },
+        "normalized_message": "B fails after parallel",
+        "failure_id": "c1efe1e743f79b22"
+      }
+    ]
+  },
+  "expected_subset": {
+    "schema_version": "1.6",
+    "document_kind": "analysis_result",
+    "failtrace_version": "0.1.0",
+    "emission": {
+      "channel": "file",
+      "mode": "full",
+      "max_failures": null,
+      "failures_emitted": 1,
+      "failures_total": 1,
+      "full_output_path": "<run-dir>/output.json"
+    },
+    "command": "go test -json ./...",
+    "cwd": "/Users/dev/failtrace/tests/fixtures/gotest/parallel_interleaved/source",
+    "started_at": "2026-05-15T12:00:00Z",
+    "duration_ms": 100,
+    "exit_code": 1,
+    "signal": null,
+    "runner_outcome": "failed",
+    "early_exit": null,
+    "adapters": [
+      {
+        "id": "gotest",
+        "version": "gotest@0.1.0",
+        "kind": "runner",
+        "selected": true,
+        "selection_reason": "argv_name_match"
+      }
+    ],
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "determinism_warnings": [],
+    "truncated": false,
+    "truncation_reason": null,
+    "failures_complete": true,
+    "failures": [
+      {
+        "failure_id": "c1efe1e743f79b22",
+        "adapter_id": "gotest",
+        "phase": "test",
+        "kind": "assertion",
+        "runner_package_id": "corpus/parallel_interleaved",
+        "runner_test_id": "corpus/parallel_interleaved::TestParB",
+        "test_segments": [
+          "TestParB"
+        ],
+        "test_name": "TestParB",
+        "param_id": null,
+        "test_group_id": null,
+        "primary_location": {
+          "file": "par_test.go",
+          "line": 17,
+          "column": null,
+          "end_line": 17,
+          "end_column": null,
+          "role": "primary",
+          "in_user_code": true
+        },
+        "extra_locations": [],
+        "message": "B fails after parallel",
+        "diagnostic_code": null,
+        "diagnostic_severity": "error",
+        "details": {
+          "type": "assertion",
+          "expected": null,
+          "actual": null,
+          "diff": null
+        },
+        "raw_log_lines": [
+          23,
+          23
+        ],
+        "evidence": {
+          "byte_range": {
+            "start": 2980,
+            "end": 3156
+          },
+          "excerpts": [
+            {
+              "source": "runner_structured_event",
+              "kind": "failure_block",
+              "byte_range": {
+                "start": 2980,
+                "end": 3156
+              },
+              "text": "    par_test.go:17: B fails after parallel\n",
+              "ansi_stripped": false,
+              "truncated": false
+            }
+          ]
+        },
+        "cascade_root": null,
+        "cascade_reason": null,
+        "dependent_failure_ids": [],
+        "retries": [],
+        "companion_diagnostics": [],
+        "extensions": {}
+      }
+    ],
+    "ranking": {
+      "strategy": "first_emitted",
+      "is_stable_across_runs": false
+    },
+    "counts": {
+      "tests_run": 3,
+      "tests_passed": 2,
+      "tests_failed": 1,
+      "tests_errored": 0,
+      "tests_skipped": 0,
+      "tests_not_run": null,
+      "files_failed": 1
+    },
+    "raw_log_path": "<run-dir>/log",
+    "raw_log_sha256": "f31c913c4e5125a611207eea54bed44012f71fec1ac4117f93d20a416201633b",
+    "suggested_next_commands": [
+      {
+        "argv": [
+          "go",
+          "test",
+          "-json",
+          "corpus/parallel_interleaved",
+          "-run",
+          "^TestParB$"
+        ],
+        "command": "go test -json corpus/parallel_interleaved -run ^TestParB$",
+        "cwd": "/Users/dev/failtrace/tests/fixtures/gotest/parallel_interleaved/source",
+        "intent": "rerun_isolated",
+        "interactive": false,
+        "mutates_workspace": false,
+        "uses_network": false,
+        "requires_approval": false
+      }
+    ],
+    "extensions": {}
+  }
+}

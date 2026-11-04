@@ -1,0 +1,179 @@
+{
+  "scenario": "build_project_reference",
+  "captured_environment": {
+    "typescript": "5.9.3",
+    "platform": "darwin",
+    "capture_command": "npm_config_cache=/private/tmp/failtrace-npm-cache npx --yes -p typescript@5 tsc"
+  },
+  "runner_argv": [
+    "tsc",
+    "-b",
+    "packages/app"
+  ],
+  "exit_code": 2,
+  "hash_inputs": {
+    "schema_version": "1.6",
+    "normative": false,
+    "test_group_id": null,
+    "failures": [
+      {
+        "adapter_id": "tsc",
+        "phase": "typecheck",
+        "kind": "type_error",
+        "runner_test_id": null,
+        "param_id": null,
+        "primary_location": {
+          "file": "packages/app/src/index.ts",
+          "line": 1,
+          "column": 14
+        },
+        "normalized_message": "TS2322: Type 'string' is not assignable to type 'number'.",
+        "failure_id": "1037a055ee38fc78"
+      }
+    ]
+  },
+  "expected_subset": {
+    "schema_version": "1.6",
+    "document_kind": "analysis_result",
+    "failtrace_version": "0.1.0",
+    "emission": {
+      "channel": "file",
+      "mode": "full",
+      "max_failures": null,
+      "failures_emitted": 1,
+      "failures_total": 1,
+      "full_output_path": "<run-dir>/output.json"
+    },
+    "command": "tsc -b packages/app",
+    "cwd": "/Users/dev/failtrace/tests/fixtures/tsc/build_project_reference/source",
+    "started_at": "2026-05-15T12:00:00Z",
+    "duration_ms": 100,
+    "exit_code": 2,
+    "signal": null,
+    "runner_outcome": "typecheck_failed",
+    "early_exit": null,
+    "adapters": [
+      {
+        "id": "tsc",
+        "version": "tsc@0.1.0",
+        "kind": "typechecker",
+        "selected": true,
+        "selection_reason": "argv_name_match"
+      }
+    ],
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "determinism_warnings": [],
+    "truncated": false,
+    "truncation_reason": null,
+    "failures_complete": true,
+    "failures": [
+      {
+        "failure_id": "1037a055ee38fc78",
+        "adapter_id": "tsc",
+        "phase": "typecheck",
+        "kind": "type_error",
+        "runner_package_id": null,
+        "runner_test_id": null,
+        "test_segments": [],
+        "test_name": null,
+        "param_id": null,
+        "test_group_id": null,
+        "primary_location": {
+          "file": "packages/app/src/index.ts",
+          "line": 1,
+          "column": 14,
+          "end_line": 1,
+          "end_column": 15,
+          "role": "primary",
+          "in_user_code": true
+        },
+        "extra_locations": [],
+        "message": "TS2322: Type 'string' is not assignable to type 'number'.",
+        "diagnostic_code": "TS2322",
+        "diagnostic_severity": "error",
+        "details": {
+          "type": "type_error",
+          "spans": [
+            {
+              "file": "packages/app/src/index.ts",
+              "line": 1,
+              "column": 14,
+              "end_line": 1,
+              "end_column": 15,
+              "role": "primary",
+              "note": null
+            }
+          ],
+          "explanation_command": "tsc diagnostic TS2322"
+        },
+        "raw_log_lines": [
+          1,
+          1
+        ],
+        "evidence": {
+          "byte_range": {
+            "start": 0,
+            "end": 97
+          },
+          "excerpts": [
+            {
+              "source": "raw_log",
+              "kind": "failure_block",
+              "byte_range": {
+                "start": 0,
+                "end": 97
+              },
+              "text": "packages/app/src/index.ts(1,14): error TS2322: Type 'string' is not assignable to type 'number'.\n",
+              "ansi_stripped": false,
+              "truncated": false
+            }
+          ]
+        },
+        "cascade_root": null,
+        "cascade_reason": null,
+        "dependent_failure_ids": [],
+        "retries": [],
+        "companion_diagnostics": [],
+        "extensions": {
+          "tsc": {
+            "column_unit": "utf16_code_unit",
+            "phase_detail": "typecheck"
+          }
+        }
+      }
+    ],
+    "ranking": {
+      "strategy": "compile_before_runtime",
+      "is_stable_across_runs": true
+    },
+    "counts": {
+      "tests_run": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "tests_errored": 0,
+      "tests_skipped": 0,
+      "tests_not_run": null,
+      "files_failed": 1
+    },
+    "raw_log_path": "<run-dir>/log",
+    "raw_log_sha256": "8ce2462d17214543ec9f63732c86a6675641f76f7180858e570be4fef49cb6c0",
+    "suggested_next_commands": [
+      {
+        "argv": [
+          "failtrace",
+          "explain",
+          "1037a055ee38fc78"
+        ],
+        "command": "failtrace explain 1037a055ee38fc78",
+        "cwd": "/Users/dev/failtrace/tests/fixtures/tsc/build_project_reference/source",
+        "intent": "explain_diagnostic",
+        "interactive": false,
+        "mutates_workspace": false,
+        "uses_network": false,
+        "requires_approval": false
+      }
+    ],
+    "extensions": {}
+  }
+}

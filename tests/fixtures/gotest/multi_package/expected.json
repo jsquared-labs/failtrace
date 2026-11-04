@@ -1,0 +1,302 @@
+{
+  "scenario": "multi_package",
+  "captured_environment": {
+    "go": "1.26.3",
+    "platform": "darwin",
+    "capture_command": "go test -json ./..."
+  },
+  "runner_argv": [
+    "go",
+    "test",
+    "-json",
+    "./..."
+  ],
+  "exit_code": 1,
+  "hash_inputs": {
+    "schema_version": "1.6",
+    "normative": false,
+    "test_group_id": null,
+    "failure_order_stable": false,
+    "failures": [
+      {
+        "adapter_id": "gotest",
+        "phase": "test",
+        "kind": "assertion",
+        "runner_test_id": "corpus/multi_package/beta::TestBetaFails",
+        "param_id": null,
+        "primary_location": {
+          "file": "beta_test.go",
+          "line": 8,
+          "column": null
+        },
+        "normalized_message": "beta package test failed",
+        "failure_id": "f8726161bf766dca"
+      },
+      {
+        "adapter_id": "gotest",
+        "phase": "test",
+        "kind": "panic",
+        "runner_test_id": "corpus/multi_package/gamma::TestGammaPanics",
+        "param_id": null,
+        "primary_location": {
+          "file": "gamma_test.go",
+          "line": 7,
+          "column": null
+        },
+        "normalized_message": "runtime error: invalid memory address or nil pointer dereference [recovered, repanicked]",
+        "failure_id": "b973143829513929"
+      }
+    ]
+  },
+  "expected_subset": {
+    "schema_version": "1.6",
+    "document_kind": "analysis_result",
+    "failtrace_version": "0.1.0",
+    "emission": {
+      "channel": "file",
+      "mode": "full",
+      "max_failures": null,
+      "failures_emitted": 2,
+      "failures_total": 2,
+      "full_output_path": "<run-dir>/output.json"
+    },
+    "command": "go test -json ./...",
+    "cwd": "/Users/dev/failtrace/tests/fixtures/gotest/multi_package/source",
+    "started_at": "2026-05-15T12:00:00Z",
+    "duration_ms": 100,
+    "exit_code": 1,
+    "signal": null,
+    "runner_outcome": "failed",
+    "early_exit": null,
+    "adapters": [
+      {
+        "id": "gotest",
+        "version": "gotest@0.1.0",
+        "kind": "runner",
+        "selected": true,
+        "selection_reason": "argv_name_match"
+      }
+    ],
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "determinism_warnings": [],
+    "truncated": false,
+    "truncation_reason": null,
+    "failures_complete": true,
+    "failures": [
+      {
+        "failure_id": "f8726161bf766dca",
+        "adapter_id": "gotest",
+        "phase": "test",
+        "kind": "assertion",
+        "runner_package_id": "corpus/multi_package/beta",
+        "runner_test_id": "corpus/multi_package/beta::TestBetaFails",
+        "test_segments": [
+          "TestBetaFails"
+        ],
+        "test_name": "TestBetaFails",
+        "param_id": null,
+        "test_group_id": null,
+        "primary_location": {
+          "file": "beta_test.go",
+          "line": 8,
+          "column": null,
+          "end_line": 8,
+          "end_column": null,
+          "role": "primary",
+          "in_user_code": true
+        },
+        "extra_locations": [],
+        "message": "beta package test failed",
+        "diagnostic_code": null,
+        "diagnostic_severity": "error",
+        "details": {
+          "type": "assertion",
+          "expected": null,
+          "actual": null,
+          "diff": null
+        },
+        "raw_log_lines": [
+          13,
+          13
+        ],
+        "evidence": {
+          "byte_range": {
+            "start": 1541,
+            "end": 1722
+          },
+          "excerpts": [
+            {
+              "source": "runner_structured_event",
+              "kind": "failure_block",
+              "byte_range": {
+                "start": 1541,
+                "end": 1722
+              },
+              "text": "    beta_test.go:8: beta package test failed\n",
+              "ansi_stripped": false,
+              "truncated": false
+            }
+          ]
+        },
+        "cascade_root": null,
+        "cascade_reason": null,
+        "dependent_failure_ids": [],
+        "retries": [],
+        "companion_diagnostics": [],
+        "extensions": {}
+      },
+      {
+        "failure_id": "b973143829513929",
+        "adapter_id": "gotest",
+        "phase": "test",
+        "kind": "panic",
+        "runner_package_id": "corpus/multi_package/gamma",
+        "runner_test_id": "corpus/multi_package/gamma::TestGammaPanics",
+        "test_segments": [
+          "TestGammaPanics"
+        ],
+        "test_name": "TestGammaPanics",
+        "param_id": null,
+        "test_group_id": null,
+        "primary_location": {
+          "file": "gamma_test.go",
+          "line": 7,
+          "column": null,
+          "end_line": 7,
+          "end_column": null,
+          "role": "primary",
+          "in_user_code": true
+        },
+        "extra_locations": [],
+        "message": "runtime error: invalid memory address or nil pointer dereference [recovered, repanicked]",
+        "diagnostic_code": null,
+        "diagnostic_severity": "error",
+        "details": {
+          "type": "panic",
+          "panic_message": "runtime error: invalid memory address or nil pointer dereference [recovered, repanicked]",
+          "stack": [
+            {
+              "file": "testing.go",
+              "line": 1974,
+              "function": "testing.tRunner.func1.2({0x102472be0, 0x1024bcec0})",
+              "in_user_code": false
+            },
+            {
+              "file": "testing.go",
+              "line": 1977,
+              "function": "testing.tRunner.func1()",
+              "in_user_code": false
+            },
+            {
+              "file": "panic.go",
+              "line": 860,
+              "function": "panic({0x102472be0?, 0x1024bcec0?})",
+              "in_user_code": false
+            },
+            {
+              "file": "gamma_test.go",
+              "line": 7,
+              "function": "corpus/multi_package/gamma.TestGammaPanics(0x147ef765a248?)",
+              "in_user_code": true
+            },
+            {
+              "file": "testing.go",
+              "line": 2036,
+              "function": "testing.tRunner(0x147ef765a248, 0x10249bef8)",
+              "in_user_code": false
+            },
+            {
+              "file": "testing.go",
+              "line": 2101,
+              "function": "created by testing.(*T).Run in goroutine 1",
+              "in_user_code": false
+            }
+          ],
+          "goroutine_id": 34
+        },
+        "raw_log_lines": [
+          31,
+          48
+        ],
+        "evidence": {
+          "byte_range": {
+            "start": 4048,
+            "end": 7499
+          },
+          "excerpts": [
+            {
+              "source": "runner_structured_event",
+              "kind": "failure_block",
+              "byte_range": {
+                "start": 4048,
+                "end": 7499
+              },
+              "text": "=== RUN   TestGammaPanics\n--- FAIL: TestGammaPanics (0.00s)\npanic: runtime error: invalid memory address or nil pointer dereference [recovered, repanicked]\n[signal SIGSEGV: segmentation violation code=0x2 addr=0x0 pc=0x10233c18c]\n\ngoroutine 34 [running]:\ntesting.tRunner.func1.2({0x102472be0, 0x1024bcec0})\n\t/opt/homebrew/Cellar/go/1.26.3/libexec/src/testing/testing.go:1974 +0x1a0\ntesting.tRunner.func1()\n\t/opt/homebrew/Cellar/go/1.26.3/libexec/src/testing/testing.go:1977 +0x318\npanic({0x102472be0?, 0x1024bcec0?})\n\t/opt/homebrew/Cellar/go/1.26.3/libexec/src/runtime/panic.go:860 +0x12c\ncorpus/multi_package/gamma.TestGammaPanics(0x147ef765a248?)\n\t/tmp/ft-gocorpus/multi_package/gamma/gamma_test.go:7 +0x1c\ntesting.tRunner(0x147ef765a248, 0x10249bef8)\n\t/opt/homebrew/Cellar/go/1.26.3/libexec/src/testing/testing.go:2036 +0xc4\ncreated by testing.(*T).Run in goroutine 1\n\t/opt/homebrew/Cellar/go/1.26.3/libexec/src/testing/testing.go:2101 +0x3a8\n",
+              "ansi_stripped": false,
+              "truncated": false
+            }
+          ]
+        },
+        "cascade_root": null,
+        "cascade_reason": null,
+        "dependent_failure_ids": [],
+        "retries": [],
+        "companion_diagnostics": [],
+        "extensions": {}
+      }
+    ],
+    "ranking": {
+      "strategy": "first_emitted",
+      "is_stable_across_runs": false
+    },
+    "counts": {
+      "tests_run": 5,
+      "tests_passed": 3,
+      "tests_failed": 1,
+      "tests_errored": 1,
+      "tests_skipped": 0,
+      "tests_not_run": null,
+      "files_failed": 2
+    },
+    "raw_log_path": "<run-dir>/log",
+    "raw_log_sha256": "50121f6314159882d5d639c3f249e87c0873d99e783310a214a3e6df08e64200",
+    "suggested_next_commands": [
+      {
+        "argv": [
+          "go",
+          "test",
+          "-json",
+          "corpus/multi_package/beta",
+          "-run",
+          "^TestBetaFails$"
+        ],
+        "command": "go test -json corpus/multi_package/beta -run ^TestBetaFails$",
+        "cwd": "/Users/dev/failtrace/tests/fixtures/gotest/multi_package/source",
+        "intent": "rerun_isolated",
+        "interactive": false,
+        "mutates_workspace": false,
+        "uses_network": false,
+        "requires_approval": false
+      },
+      {
+        "argv": [
+          "go",
+          "test",
+          "-json",
+          "corpus/multi_package/gamma",
+          "-run",
+          "^TestGammaPanics$"
+        ],
+        "command": "go test -json corpus/multi_package/gamma -run ^TestGammaPanics$",
+        "cwd": "/Users/dev/failtrace/tests/fixtures/gotest/multi_package/source",
+        "intent": "rerun_isolated",
+        "interactive": false,
+        "mutates_workspace": false,
+        "uses_network": false,
+        "requires_approval": false
+      }
+    ],
+    "extensions": {}
+  }
+}

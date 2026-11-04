@@ -1,0 +1,83 @@
+{
+  "scenario": "no_test_files",
+  "captured_environment": {
+    "jest_version": "30.4.1",
+    "node_package_manager": "npx",
+    "platform": "darwin"
+  },
+  "runner_argv": [
+    "npx",
+    "--yes",
+    "--package",
+    "jest@30.4",
+    "jest",
+    "does-not-exist.test.js",
+    "--ci",
+    "--runInBand",
+    "--reporters=default",
+    "--colors=false",
+    "--no-coverage",
+    "--testLocationInResults=false"
+  ],
+  "exit_code": 1,
+  "hash_inputs": {
+    "schema_version": "1.6",
+    "normative": false,
+    "test_group_id": null,
+    "failures": []
+  },
+  "expected_subset": {
+    "schema_version": "1.6",
+    "document_kind": "analysis_result",
+    "failtrace_version": "0.1.0",
+    "emission": {
+      "channel": "file",
+      "mode": "full",
+      "max_failures": null,
+      "failures_emitted": 0,
+      "failures_total": 0,
+      "full_output_path": "<run-dir>/output.json"
+    },
+    "command": "npx --yes --package jest@30.4 jest does-not-exist.test.js --ci --runInBand --reporters=default --colors=false --no-coverage --testLocationInResults=false",
+    "cwd": "/Users/dev/failtrace/tests/fixtures/jest/no_test_files/source",
+    "started_at": "2026-05-14T12:00:00Z",
+    "duration_ms": 100,
+    "exit_code": 1,
+    "signal": null,
+    "runner_outcome": "harness_crashed",
+    "early_exit": null,
+    "adapters": [
+      {
+        "id": "jest",
+        "version": "jest@0.1.0",
+        "kind": "runner",
+        "selected": true,
+        "selection_reason": "argv_name_match"
+      }
+    ],
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "determinism_warnings": [],
+    "truncated": false,
+    "truncation_reason": null,
+    "failures_complete": true,
+    "failures": [],
+    "ranking": {
+      "strategy": "none",
+      "is_stable_across_runs": false
+    },
+    "counts": {
+      "tests_run": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "tests_errored": 0,
+      "tests_skipped": 0,
+      "tests_not_run": null,
+      "files_failed": 0
+    },
+    "raw_log_path": "<run-dir>/log",
+    "raw_log_sha256": "33dba9d1b496333ed844d71e54ff30933ac7174f80cc8c4429a4efd79416960c",
+    "suggested_next_commands": [],
+    "extensions": {}
+  }
+}

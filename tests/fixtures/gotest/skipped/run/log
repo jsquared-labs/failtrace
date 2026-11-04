@@ -1,0 +1,22 @@
+{"Time":"2026-05-15T10:59:07.702731-04:00","Action":"start","Package":"corpus/skipped"}
+{"Time":"2026-05-15T10:59:07.892797-04:00","Action":"run","Package":"corpus/skipped","Test":"TestPasses"}
+{"Time":"2026-05-15T10:59:07.892869-04:00","Action":"output","Package":"corpus/skipped","Test":"TestPasses","Output":"=== RUN   TestPasses\n"}
+{"Time":"2026-05-15T10:59:07.892901-04:00","Action":"output","Package":"corpus/skipped","Test":"TestPasses","Output":"--- PASS: TestPasses (0.00s)\n"}
+{"Time":"2026-05-15T10:59:07.892916-04:00","Action":"pass","Package":"corpus/skipped","Test":"TestPasses","Elapsed":0}
+{"Time":"2026-05-15T10:59:07.892927-04:00","Action":"run","Package":"corpus/skipped","Test":"TestSkippedUnconditional"}
+{"Time":"2026-05-15T10:59:07.892941-04:00","Action":"output","Package":"corpus/skipped","Test":"TestSkippedUnconditional","Output":"=== RUN   TestSkippedUnconditional\n"}
+{"Time":"2026-05-15T10:59:07.892949-04:00","Action":"output","Package":"corpus/skipped","Test":"TestSkippedUnconditional","Output":"    skip_test.go:12: known issue, see #42\n"}
+{"Time":"2026-05-15T10:59:07.892962-04:00","Action":"output","Package":"corpus/skipped","Test":"TestSkippedUnconditional","Output":"--- SKIP: TestSkippedUnconditional (0.00s)\n"}
+{"Time":"2026-05-15T10:59:07.892968-04:00","Action":"skip","Package":"corpus/skipped","Test":"TestSkippedUnconditional","Elapsed":0}
+{"Time":"2026-05-15T10:59:07.892974-04:00","Action":"run","Package":"corpus/skipped","Test":"TestSkippedShort"}
+{"Time":"2026-05-15T10:59:07.892978-04:00","Action":"output","Package":"corpus/skipped","Test":"TestSkippedShort","Output":"=== RUN   TestSkippedShort\n"}
+{"Time":"2026-05-15T10:59:07.892985-04:00","Action":"output","Package":"corpus/skipped","Test":"TestSkippedShort","Output":"--- PASS: TestSkippedShort (0.00s)\n"}
+{"Time":"2026-05-15T10:59:07.892992-04:00","Action":"pass","Package":"corpus/skipped","Test":"TestSkippedShort","Elapsed":0}
+{"Time":"2026-05-15T10:59:07.892997-04:00","Action":"run","Package":"corpus/skipped","Test":"TestSkippedSkipNow"}
+{"Time":"2026-05-15T10:59:07.893001-04:00","Action":"output","Package":"corpus/skipped","Test":"TestSkippedSkipNow","Output":"=== RUN   TestSkippedSkipNow\n"}
+{"Time":"2026-05-15T10:59:07.893006-04:00","Action":"output","Package":"corpus/skipped","Test":"TestSkippedSkipNow","Output":"    skip_test.go:22: about to skip with SkipNow\n"}
+{"Time":"2026-05-15T10:59:07.893011-04:00","Action":"output","Package":"corpus/skipped","Test":"TestSkippedSkipNow","Output":"--- SKIP: TestSkippedSkipNow (0.00s)\n"}
+{"Time":"2026-05-15T10:59:07.893016-04:00","Action":"skip","Package":"corpus/skipped","Test":"TestSkippedSkipNow","Elapsed":0}
+{"Time":"2026-05-15T10:59:07.893021-04:00","Action":"output","Package":"corpus/skipped","Output":"PASS\n"}
+{"Time":"2026-05-15T10:59:07.893558-04:00","Action":"output","Package":"corpus/skipped","Output":"ok  \tcorpus/skipped\t0.191s\n"}
+{"Time":"2026-05-15T10:59:07.895102-04:00","Action":"pass","Package":"corpus/skipped","Elapsed":0.192}

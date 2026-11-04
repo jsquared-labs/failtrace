@@ -1,0 +1,174 @@
+{
+  "scenario": "basic_assertion",
+  "captured_environment": {
+    "jest_version": "30.4.1",
+    "node_package_manager": "npx",
+    "platform": "darwin"
+  },
+  "runner_argv": [
+    "npx",
+    "--yes",
+    "--package",
+    "jest@30.4",
+    "jest",
+    "--ci",
+    "--runInBand",
+    "--reporters=default",
+    "--colors=false",
+    "--no-coverage",
+    "--testLocationInResults=false"
+  ],
+  "exit_code": 1,
+  "hash_inputs": {
+    "schema_version": "1.6",
+    "normative": false,
+    "test_group_id": null,
+    "failures": [
+      {
+        "failure_id": "3dc55f38554b75ff",
+        "adapter_id": "jest",
+        "phase": "test",
+        "kind": "assertion",
+        "runner_test_id": "tests/basic.test.js > addition \u203a adds two numbers",
+        "param_id": null,
+        "primary_location": {
+          "file": "tests/basic.test.js",
+          "line": 3,
+          "column": 19
+        },
+        "normalized_message": "expect(received).toBe(expected)"
+      }
+    ]
+  },
+  "expected_subset": {
+    "schema_version": "1.6",
+    "document_kind": "analysis_result",
+    "failtrace_version": "0.1.0",
+    "emission": {
+      "channel": "file",
+      "mode": "full",
+      "max_failures": null,
+      "failures_emitted": 1,
+      "failures_total": 1,
+      "full_output_path": "<run-dir>/output.json"
+    },
+    "command": "npx --yes --package jest@30.4 jest --ci --runInBand --reporters=default --colors=false --no-coverage --testLocationInResults=false",
+    "cwd": "/Users/dev/failtrace/tests/fixtures/jest/basic_assertion/source",
+    "started_at": "2026-05-14T12:00:00Z",
+    "duration_ms": 100,
+    "exit_code": 1,
+    "signal": null,
+    "runner_outcome": "failed",
+    "early_exit": null,
+    "adapters": [
+      {
+        "id": "jest",
+        "version": "jest@0.1.0",
+        "kind": "runner",
+        "selected": true,
+        "selection_reason": "argv_name_match"
+      }
+    ],
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "determinism_warnings": [],
+    "truncated": false,
+    "truncation_reason": null,
+    "failures_complete": true,
+    "failures": [
+      {
+        "failure_id": "3dc55f38554b75ff",
+        "adapter_id": "jest",
+        "phase": "test",
+        "kind": "assertion",
+        "runner_package_id": null,
+        "runner_test_id": "tests/basic.test.js > addition \u203a adds two numbers",
+        "test_segments": [],
+        "test_name": "addition \u203a adds two numbers",
+        "param_id": null,
+        "test_group_id": null,
+        "primary_location": {
+          "file": "tests/basic.test.js",
+          "line": 3,
+          "column": 19,
+          "end_line": null,
+          "end_column": null,
+          "role": "primary",
+          "in_user_code": true
+        },
+        "extra_locations": [],
+        "message": "expect(received).toBe(expected)",
+        "diagnostic_code": null,
+        "diagnostic_severity": "error",
+        "details": {
+          "type": "assertion",
+          "expected": null,
+          "actual": null,
+          "diff": null
+        },
+        "raw_log_lines": [
+          5,
+          21
+        ],
+        "evidence": {
+          "byte_range": {
+            "start": 69,
+            "end": 439
+          },
+          "excerpts": [
+            {
+              "source": "raw_log",
+              "kind": "failure_block",
+              "byte_range": {
+                "start": 69,
+                "end": 439
+              },
+              "text": "  \u25cf addition \u203a adds two numbers\n\n    expect(received).toBe(expected) // Object.is equality\n\n    Expected: 3\n    Received: 2\n\n      1 | describe(\"addition\", () => {\n      2 |   test(\"adds two numbers\", () => {\n    > 3 |     expect(1 + 1).toBe(3);\n        |                   ^\n      4 |   });\n      5 | });\n      6 |\n\n      at Object.toBe (tests/basic.test.js:3:19)\n\n",
+              "ansi_stripped": false,
+              "truncated": false
+            }
+          ]
+        },
+        "cascade_root": null,
+        "cascade_reason": null,
+        "dependent_failure_ids": [],
+        "retries": [],
+        "companion_diagnostics": [],
+        "extensions": {}
+      }
+    ],
+    "ranking": {
+      "strategy": "first_emitted",
+      "is_stable_across_runs": false
+    },
+    "counts": {
+      "tests_run": 1,
+      "tests_passed": 0,
+      "tests_failed": 1,
+      "tests_errored": 0,
+      "tests_skipped": 0,
+      "tests_not_run": null,
+      "files_failed": 1
+    },
+    "raw_log_path": "<run-dir>/log",
+    "raw_log_sha256": "97f3bae73a751d8bc21731cc31ac496875f3d3166b827e02f18d4941dd68f6e7",
+    "suggested_next_commands": [
+      {
+        "argv": [
+          "jest",
+          "tests/basic.test.js",
+          "-t",
+          "addition adds two numbers"
+        ],
+        "command": "jest tests/basic.test.js -t \"addition adds two numbers\"",
+        "cwd": "/Users/dev/failtrace/tests/fixtures/jest/basic_assertion/source",
+        "intent": "rerun_isolated",
+        "interactive": false,
+        "mutates_workspace": false,
+        "uses_network": false,
+        "requires_approval": false
+      }
+    ],
+    "extensions": {}
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "meta_schema_version": "1.2",
+  "schema_version": "1.6",
+  "failtrace_version": "0.1.0",
+  "adapters": [
+    {
+      "id": "cargo-test",
+      "version": "cargo-test@0.1.0",
+      "kind": "runner",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "command": "cargo test --color never",
+  "cwd": "/Users/dev/failtrace/tests/fixtures/cargo/runtime_assertion/source",
+  "started_at": "2026-05-14T12:00:00Z",
+  "duration_ms": 100,
+  "exit_code": 101,
+  "signal": null,
+  "early_exit": null,
+  "truncated": false,
+  "truncation_reason": null,
+  "path_case_folding": "case_sensitive",
+  "stream_merge": "stdout_stderr_interleaved",
+  "raw_log_sha256": "f7af7cfe5f0370ab4eb0a2b74c85b847b45581a0ba4037a4e009044f36b3447c",
+  "adapter_candidates": [
+    {
+      "id": "cargo-test",
+      "version": "cargo-test@0.1.0",
+      "kind": "runner",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "argv": [
+    "cargo",
+    "test",
+    "--color",
+    "never"
+  ]
+}

@@ -1,0 +1,10 @@
+
+ RUN  v4.1.6 /Users/dev/failtrace/tests/fixtures/vitest/green/source
+
+ ✓ tests/basic.test.ts (2 tests) 2ms
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  09:25:27
+   Duration  107ms (transform 8ms, setup 0ms, import 12ms, tests 2ms, environment 0ms)
+

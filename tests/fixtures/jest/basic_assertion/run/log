@@ -1,0 +1,26 @@
+FAIL tests/basic.test.js
+  addition
+    ✕ adds two numbers (1 ms)
+
+  ● addition › adds two numbers
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 3
+    Received: 2
+
+      1 | describe("addition", () => {
+      2 |   test("adds two numbers", () => {
+    > 3 |     expect(1 + 1).toBe(3);
+        |                   ^
+      4 |   });
+      5 | });
+      6 |
+
+      at Object.toBe (tests/basic.test.js:3:19)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 total
+Snapshots:   0 total
+Time:        0.107 s
+Ran all test suites.

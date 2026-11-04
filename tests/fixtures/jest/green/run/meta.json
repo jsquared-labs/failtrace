@@ -1,0 +1,48 @@
+{
+  "meta_schema_version": "1.2",
+  "schema_version": "1.6",
+  "failtrace_version": "0.1.0",
+  "adapters": [
+    {
+      "id": "jest",
+      "version": "jest@0.1.0",
+      "kind": "runner",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "command": "npx --yes --package jest@30.4 jest --ci --runInBand --reporters=default --colors=false --no-coverage --testLocationInResults=false",
+  "cwd": "/Users/dev/failtrace/tests/fixtures/jest/green/source",
+  "started_at": "2026-05-14T12:00:00Z",
+  "duration_ms": 100,
+  "exit_code": 0,
+  "signal": null,
+  "early_exit": null,
+  "truncated": false,
+  "truncation_reason": null,
+  "path_case_folding": "case_sensitive",
+  "stream_merge": "stdout_stderr_interleaved",
+  "raw_log_sha256": "d5990459a10c0b23cb18b59a4f457efe048179475c22ac129df646839df3c389",
+  "adapter_candidates": [
+    {
+      "id": "jest",
+      "version": "jest@0.1.0",
+      "kind": "runner",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "argv": [
+    "npx",
+    "--yes",
+    "--package",
+    "jest@30.4",
+    "jest",
+    "--ci",
+    "--runInBand",
+    "--reporters=default",
+    "--colors=false",
+    "--no-coverage",
+    "--testLocationInResults=false"
+  ]
+}

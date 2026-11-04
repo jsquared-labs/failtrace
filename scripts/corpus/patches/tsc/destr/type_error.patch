@@ -1,0 +1,13 @@
+diff --git a/src/index.ts b/src/index.ts
+index 8a32589..1d8a435 100644
+--- a/src/index.ts
++++ b/src/index.ts
+@@ -15,7 +15,7 @@ function jsonParseTransform(key: string, value: any): any {
+       typeof value === "object" &&
+       "prototype" in value)
+   ) {
+-    warnKeyDropped(key);
++    warnKeyDropped(42);
+     return;
+   }
+   return value;

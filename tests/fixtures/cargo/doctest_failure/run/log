@@ -1,0 +1,35 @@
+   Compiling doctest_failure v0.1.0 (/Users/dev/failtrace/tests/fixtures/cargo/doctest_failure/source)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running unittests src/lib.rs (target/debug/deps/doctest_failure-0210d91c7341028b)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests doctest_failure
+
+running 1 test
+test src/lib.rs - next (line 3) ... FAILED
+
+failures:
+
+---- src/lib.rs - next (line 3) stdout ----
+Test executable failed (exit status: 101).
+
+stderr:
+
+thread 'main' (6221024) panicked at /var/folders/bg/803wg6dx7798vngz6vzf0cdr0000gn/T/rustdoctestsbyzV6/doctest_bundle_2024.rs:6:1:
+assertion `left == right` failed
+  left: 3
+ right: 4
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+
+failures:
+    src/lib.rs - next (line 3)
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+all doctests ran in 0.30s; merged doctests compilation took 0.12s
+error: doctest failed, to rerun pass `--doc`

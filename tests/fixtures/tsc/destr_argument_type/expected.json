@@ -1,0 +1,77 @@
+{
+  "scenario": "destr_argument_type",
+  "captured_environment": {
+    "tsc_reporter": "default",
+    "platform": "darwin",
+    "upstream_repo": "unjs/destr@b427d55641a7e6e1b22271dd0956a114cb388e2e",
+    "license": "MIT"
+  },
+  "runner_argv": [
+    "bunx",
+    "--bun",
+    "-p",
+    "typescript@5.8.2",
+    "tsc",
+    "--noEmit",
+    "-p",
+    "."
+  ],
+  "exit_code": 2,
+  "hash_inputs": {
+    "schema_version": "1.6",
+    "normative": false,
+    "test_group_id": null,
+    "failures": [
+      {
+        "failure_id": "3d8c7f6f3b89d933",
+        "adapter_id": "tsc",
+        "phase": "typecheck",
+        "kind": "type_error",
+        "runner_test_id": null,
+        "param_id": null,
+        "primary_location": {
+          "file": "src/index.ts",
+          "line": 18,
+          "column": 20
+        },
+        "normalized_message": "TS2345: Argument of type 'number' is not assignable to parameter of type 'string'."
+      }
+    ]
+  },
+  "expected_subset": {
+    "schema_version": "1.6",
+    "document_kind": "analysis_result",
+    "runner_outcome": "typecheck_failed",
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "adapters": [
+      {
+        "id": "tsc",
+        "selected": true
+      }
+    ],
+    "failures": [
+      {
+        "failure_id": "3d8c7f6f3b89d933",
+        "adapter_id": "tsc",
+        "phase": "typecheck",
+        "kind": "type_error",
+        "diagnostic_code": "TS2345",
+        "message": "TS2345: Argument of type 'number' is not assignable to parameter of type 'string'.",
+        "primary_location": {
+          "file": "src/index.ts",
+          "line": 18,
+          "column": 20,
+          "in_user_code": true
+        }
+      }
+    ],
+    "counts": {
+      "tests_run": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "tests_errored": 0,
+      "files_failed": 1
+    }
+  }
+}

@@ -1,0 +1,10 @@
+PASS tests/basic.test.js
+  addition
+    ✓ adds two numbers
+    ✓ adds three numbers
+
+Test Suites: 1 passed, 1 total
+Tests:       2 passed, 2 total
+Snapshots:   0 total
+Time:        0.116 s
+Ran all test suites.

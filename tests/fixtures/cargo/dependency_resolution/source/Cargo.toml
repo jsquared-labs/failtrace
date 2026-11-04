@@ -1,0 +1,7 @@
+[package]
+name = "dependency_resolution"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+serde = "999.0.0"

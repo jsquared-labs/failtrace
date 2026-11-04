@@ -1,0 +1,12 @@
+diff --git a/tests/basic.test.tsx b/tests/basic.test.tsx
+index 6ddfc47..71c2e7a 100644
+--- a/tests/basic.test.tsx
++++ b/tests/basic.test.tsx
+@@ -19,6 +19,7 @@ afterEach(() => {
+ })
+ 
+ it('creates a store hook and api object', () => {
++  expect(1 + 1).toBe(3) // failtrace-corpus injected failure
+   let params
+   const result = create((...args) => {
+     params = args

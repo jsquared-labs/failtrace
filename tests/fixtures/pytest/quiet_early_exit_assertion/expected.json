@@ -1,0 +1,79 @@
+{
+  "scenario": "quiet_early_exit_assertion",
+  "captured_environment": {
+    "pytest_version": "unspecified",
+    "python_version": "3.11.15",
+    "platform": "darwin"
+  },
+  "runner_argv": ["pytest", "--override-ini=filterwarnings=", "--noconftest", "tests/test_status_codes.py::test_status_code_as_int", "-x", "-q"],
+  "exit_code": 1,
+  "hash_inputs": {
+    "schema_version": "1.6",
+    "normative": false,
+    "test_group_id": null,
+    "failures": [
+      {
+        "failure_id": "31e23017a78e7ba0",
+        "adapter_id": "pytest",
+        "phase": "test",
+        "kind": "assertion",
+        "runner_test_id": "tests/test_status_codes.py::test_status_code_as_int",
+        "param_id": null,
+        "primary_location": {"file": "tests/test_status_codes.py", "line": 6},
+        "normalized_message": "AssertionError: assert <codes.NOT_FOUND: <N>> == <N>"
+      }
+    ]
+  },
+  "expected_subset": {
+    "schema_version": "1.6",
+    "emission": {
+      "channel": "file",
+      "mode": "full",
+      "max_failures": null,
+      "failures_emitted": 1,
+      "failures_total": 1,
+      "full_output_path": "<run-dir>/output.json"
+    },
+    "runner_outcome": "failed",
+    "parse_status": "complete",
+    "parse_warnings": ["missing_session_banner"],
+    "determinism_warnings": [],
+    "truncated": false,
+    "truncation_reason": null,
+    "failures_complete": true,
+    "ranking": {"strategy": "first_emitted", "is_stable_across_runs": true},
+    "counts": {
+      "tests_run": 1,
+      "tests_passed": 0,
+      "tests_failed": 1,
+      "tests_errored": 0,
+      "tests_skipped": 0,
+      "tests_not_run": null,
+      "files_failed": 1
+    },
+    "adapters": [
+      {"id": "pytest", "kind": "runner", "selected": true, "selection_reason": "argv_name_match"}
+    ],
+    "failures": [
+      {
+        "failure_id": "31e23017a78e7ba0",
+        "adapter_id": "pytest",
+        "phase": "test",
+        "kind": "assertion",
+        "runner_test_id": "tests/test_status_codes.py::test_status_code_as_int",
+        "test_name": "test_status_code_as_int",
+        "param_id": null,
+        "primary_location": {"file": "tests/test_status_codes.py", "line": 6, "role": "primary"},
+        "message": "AssertionError: assert <codes.NOT_FOUND: 404> == 405",
+        "diagnostic_severity": "error",
+        "raw_log_lines": [6, 18],
+        "cascade_root": null,
+        "cascade_reason": null,
+        "dependent_failure_ids": [],
+        "retries": [],
+        "companion_diagnostics": []
+      }
+    ]
+  },
+  "notes": "Promoted from .failtrace-corpus/out/pytest_httpx_assertion_failure/. Quiet mode strips the pytest banner, so the captured log does not expose pytest_version; captured_environment.pytest_version is recorded as \"unspecified\" and python_version is taken from the log's \"Using CPython 3.11.15\" line. The expected output is post-fix: the adapter recovers the simple function node ID from the FAILURES-block title and clamps inferred passed tests to pytest's final passed count."
+}

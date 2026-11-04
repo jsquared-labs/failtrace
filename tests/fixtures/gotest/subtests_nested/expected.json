@@ -1,0 +1,274 @@
+{
+  "scenario": "subtests_nested",
+  "captured_environment": {
+    "go": "1.26.3",
+    "platform": "darwin",
+    "capture_command": "go test -json ./..."
+  },
+  "runner_argv": [
+    "go",
+    "test",
+    "-json",
+    "./..."
+  ],
+  "exit_code": 1,
+  "hash_inputs": {
+    "schema_version": "1.6",
+    "normative": false,
+    "test_group_id": null,
+    "failure_order_stable": true,
+    "failures": [
+      {
+        "adapter_id": "gotest",
+        "phase": "test",
+        "kind": "assertion",
+        "runner_test_id": "corpus/subtests_nested::TestOuter/Alpha/Inner2_with_spaces",
+        "param_id": null,
+        "primary_location": {
+          "file": "sub_test.go",
+          "line": 11,
+          "column": null
+        },
+        "normalized_message": "inner2 fails",
+        "failure_id": "5e121b10d91447c9"
+      },
+      {
+        "adapter_id": "gotest",
+        "phase": "test",
+        "kind": "assertion",
+        "runner_test_id": "corpus/subtests_nested::TestOuter/Beta/with/slash",
+        "param_id": null,
+        "primary_location": {
+          "file": "sub_test.go",
+          "line": 15,
+          "column": null
+        },
+        "normalized_message": "beta forced fatal",
+        "failure_id": "0898492714c06806"
+      }
+    ]
+  },
+  "expected_subset": {
+    "schema_version": "1.6",
+    "document_kind": "analysis_result",
+    "failtrace_version": "0.1.0",
+    "emission": {
+      "channel": "file",
+      "mode": "full",
+      "max_failures": null,
+      "failures_emitted": 2,
+      "failures_total": 2,
+      "full_output_path": "<run-dir>/output.json"
+    },
+    "command": "go test -json ./...",
+    "cwd": "/Users/dev/failtrace/tests/fixtures/gotest/subtests_nested/source",
+    "started_at": "2026-05-15T12:00:00Z",
+    "duration_ms": 100,
+    "exit_code": 1,
+    "signal": null,
+    "runner_outcome": "failed",
+    "early_exit": null,
+    "adapters": [
+      {
+        "id": "gotest",
+        "version": "gotest@0.1.0",
+        "kind": "runner",
+        "selected": true,
+        "selection_reason": "argv_name_match"
+      }
+    ],
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "determinism_warnings": [],
+    "truncated": false,
+    "truncation_reason": null,
+    "failures_complete": true,
+    "failures": [
+      {
+        "failure_id": "5e121b10d91447c9",
+        "adapter_id": "gotest",
+        "phase": "test",
+        "kind": "assertion",
+        "runner_package_id": "corpus/subtests_nested",
+        "runner_test_id": "corpus/subtests_nested::TestOuter/Alpha/Inner2_with_spaces",
+        "test_segments": [
+          "TestOuter",
+          "Alpha",
+          "Inner2_with_spaces"
+        ],
+        "test_name": "TestOuter/Alpha/Inner2_with_spaces",
+        "param_id": null,
+        "test_group_id": null,
+        "primary_location": {
+          "file": "sub_test.go",
+          "line": 11,
+          "column": null,
+          "end_line": 11,
+          "end_column": null,
+          "role": "primary",
+          "in_user_code": true
+        },
+        "extra_locations": [],
+        "message": "inner2 fails",
+        "diagnostic_code": null,
+        "diagnostic_severity": "error",
+        "details": {
+          "type": "assertion",
+          "expected": null,
+          "actual": null,
+          "diff": null
+        },
+        "raw_log_lines": [
+          12,
+          12
+        ],
+        "evidence": {
+          "byte_range": {
+            "start": 1596,
+            "end": 1783
+          },
+          "excerpts": [
+            {
+              "source": "runner_structured_event",
+              "kind": "failure_block",
+              "byte_range": {
+                "start": 1596,
+                "end": 1783
+              },
+              "text": "    sub_test.go:11: inner2 fails\n",
+              "ansi_stripped": false,
+              "truncated": false
+            }
+          ]
+        },
+        "cascade_root": null,
+        "cascade_reason": null,
+        "dependent_failure_ids": [],
+        "retries": [],
+        "companion_diagnostics": [],
+        "extensions": {}
+      },
+      {
+        "failure_id": "0898492714c06806",
+        "adapter_id": "gotest",
+        "phase": "test",
+        "kind": "assertion",
+        "runner_package_id": "corpus/subtests_nested",
+        "runner_test_id": "corpus/subtests_nested::TestOuter/Beta/with/slash",
+        "test_segments": [
+          "TestOuter",
+          "Beta",
+          "with",
+          "slash"
+        ],
+        "test_name": "TestOuter/Beta/with/slash",
+        "param_id": null,
+        "test_group_id": null,
+        "primary_location": {
+          "file": "sub_test.go",
+          "line": 15,
+          "column": null,
+          "end_line": 15,
+          "end_column": null,
+          "role": "primary",
+          "in_user_code": true
+        },
+        "extra_locations": [],
+        "message": "beta forced fatal",
+        "diagnostic_code": null,
+        "diagnostic_severity": "error",
+        "details": {
+          "type": "assertion",
+          "expected": null,
+          "actual": null,
+          "diff": null
+        },
+        "raw_log_lines": [
+          19,
+          19
+        ],
+        "evidence": {
+          "byte_range": {
+            "start": 2752,
+            "end": 2935
+          },
+          "excerpts": [
+            {
+              "source": "runner_structured_event",
+              "kind": "failure_block",
+              "byte_range": {
+                "start": 2752,
+                "end": 2935
+              },
+              "text": "    sub_test.go:15: beta forced fatal\n",
+              "ansi_stripped": false,
+              "truncated": false
+            }
+          ]
+        },
+        "cascade_root": null,
+        "cascade_reason": null,
+        "dependent_failure_ids": [],
+        "retries": [],
+        "companion_diagnostics": [],
+        "extensions": {
+          "go": {
+            "subtest_name_ambiguous": true
+          }
+        }
+      }
+    ],
+    "ranking": {
+      "strategy": "first_emitted",
+      "is_stable_across_runs": true
+    },
+    "counts": {
+      "tests_run": 5,
+      "tests_passed": 1,
+      "tests_failed": 2,
+      "tests_errored": 0,
+      "tests_skipped": 0,
+      "tests_not_run": null,
+      "files_failed": 1
+    },
+    "raw_log_path": "<run-dir>/log",
+    "raw_log_sha256": "07c8bcd70e1275d247ee073e2428b4a209d89bf739761eb4a6882f699bf96acf",
+    "suggested_next_commands": [
+      {
+        "argv": [
+          "go",
+          "test",
+          "-json",
+          "corpus/subtests_nested",
+          "-run",
+          "^TestOuter/Alpha/Inner2_with_spaces$"
+        ],
+        "command": "go test -json corpus/subtests_nested -run ^TestOuter/Alpha/Inner2_with_spaces$",
+        "cwd": "/Users/dev/failtrace/tests/fixtures/gotest/subtests_nested/source",
+        "intent": "rerun_isolated",
+        "interactive": false,
+        "mutates_workspace": false,
+        "uses_network": false,
+        "requires_approval": false
+      },
+      {
+        "argv": [
+          "go",
+          "test",
+          "-json",
+          "corpus/subtests_nested",
+          "-run",
+          "^TestOuter/Beta/with/slash$"
+        ],
+        "command": "go test -json corpus/subtests_nested -run ^TestOuter/Beta/with/slash$",
+        "cwd": "/Users/dev/failtrace/tests/fixtures/gotest/subtests_nested/source",
+        "intent": "rerun_isolated",
+        "interactive": false,
+        "mutates_workspace": false,
+        "uses_network": false,
+        "requires_approval": false
+      }
+    ],
+    "extensions": {}
+  }
+}

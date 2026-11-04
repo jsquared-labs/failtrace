@@ -1,0 +1,310 @@
+# Failtrace adapter gauntlet manifest.
+#
+# Each scenario clones a pinned external repo, applies mutation patches that
+# create a known failure shape, and runs failtrace against the result. The
+# captured artifact lands under .failtrace-corpus/out/<scenario_id>/ for a
+# human to inspect and (selectively) promote into tests/fixtures/.
+#
+# See scripts/corpus/README.md for the contract.
+
+schema_version: 1
+
+scenarios:
+  - id: pytest_httpx_assertion_failure
+    adapter: pytest
+    description: >
+      Single test in tests/test_status_codes.py asserts the wrong integer.
+      Exercises pytest's plain-assertion failure shape against a real
+      third-party project.
+    repo:
+      owner: encode
+      name: httpx
+      sha: 26d48e0634e6ee9cdc0533996db289ce4b430177
+    requires:
+      - uv
+      - git
+    patches:
+      - patches/pytest/httpx/assertion.patch
+    # uv run --with installs ephemerally; faster than `uv pip install -e .` for
+    # tests whose patch lives in the test file itself rather than in package
+    # code. Scenarios that mutate package code must switch to an editable
+    # install — see README.md.
+    # The two pytest flags neutralize httpx's repo-level test scaffolding so we
+    # capture the bare-assert failure shape rather than the third-party
+    # project's setup peculiarities:
+    #   --override-ini=filterwarnings=   bypasses pyproject.toml's `trio:...`
+    #                                    warning filter (trio not installed)
+    #   --noconftest                     skips tests/conftest.py (imports
+    #                                    trustme et al.)
+    # The patched test is a pure-function integer comparison and needs neither.
+    command:
+      - uv
+      - run
+      - --with
+      - httpx
+      - --with
+      - pytest
+      - pytest
+      - --override-ini=filterwarnings=
+      - --noconftest
+      - tests/test_status_codes.py::test_status_code_as_int
+      - -x
+      - -q
+    expected:
+      runner_outcome: failed
+      adapter_id: pytest
+      # Threshold floor (not exact match): `complete` is now expected because
+      # missing_session_banner is advisory in schema v1.6. If the adapter later
+      # emits a contract-affecting warning, the captured value drops and the
+      # runner reports an anomaly.
+      min_parse_status: complete
+    # Observations worth following up separately, NOT scenario regressions.
+    # The runner parses this list and surfaces it under "follow-ups (manifest)"
+    # in the per-scenario block of the Markdown report so notes don't get lost
+    # in YAML.
+    follow_ups:
+      - "pytest taxonomy contradiction (deferred to post-v1.6 schema decision): pytest's terminal summary counts test-body exceptions under `failed`, but failtrace's schema invariant 11 maps phase=Test + kind=Exception to Errored (src/schema/invariants.rs::final_outcome, docs/schema.md). Adapter-level counts cannot honestly contradict the invariant while it is locked. Locked-in-tests via tests/pytest_adapter.rs::pytest_test_body_exception_is_errored_per_schema_invariant_not_pytest_taxonomy. (Phase 1 Finding A — the original `tests_passed: 1 despite failure` symptom — is already closed on current main; tests/pytest_adapter.rs::recover_runner_test_id_attributes_quiet_mode_failure_correctly locks the recovered behavior.)"
+
+  - id: cargo_clap_assertion_failure
+    adapter: cargo
+    description: >
+      Single assertion in clap's tests/macros.rs::arg::name_explicit asserts the
+      wrong arg id. Exercises cargo test's runtime-assertion failure shape
+      against a real third-party Rust workspace.
+    repo:
+      owner: clap-rs
+      name: clap
+      sha: 3030224d254dec52f5380592a8c8363081294aa2
+    requires:
+      - cargo
+      - git
+    patches:
+      - patches/cargo/clap/assertion.patch
+    # cargo handles deps via the lockfile in-repo; no separate install step
+    # needed. --test macros scopes to the workspace-root integration test;
+    # the exact function path narrows compile + run to one binary.
+    command:
+      - cargo
+      - test
+      - --test
+      - macros
+      - --
+      - --test-threads=1
+      - arg::name_explicit
+    expected:
+      runner_outcome: failed
+      # The captured adapter id is `cargo-test` (the binary's adapter identity
+      # for cargo's `cargo test` shape), not `cargo`. The corpus manifest's
+      # `adapter_id` check matches against `adapters[].id`.
+      adapter_id: cargo-test
+
+  - id: gotest_testify_assertion_failure
+    adapter: gotest
+    description: >
+      Inverted condition in testify's assert/assertion_compare_test.go::TestGreater
+      makes the "Greater should return true" branch fail. Exercises gotest's
+      t.Error failure shape against a real third-party Go module.
+    repo:
+      owner: stretchr
+      name: testify
+      sha: bb548d0473d4e1c9b7bbfd6602c7bf12f7a84dd2
+    requires:
+      - go
+      - git
+    patches:
+      - patches/gotest/testify/assertion.patch
+    command:
+      - go
+      - test
+      - -json
+      - -run
+      - TestGreater
+      - ./assert/...
+    expected:
+      runner_outcome: failed
+      adapter_id: gotest
+
+  - id: tsc_destr_type_error
+    adapter: tsc
+    description: >
+      Call site in destr's src/index.ts passes a number where a string parameter
+      is required. Exercises tsc's TS2345 (argument type mismatch) shape against
+      a real third-party TypeScript library. tsconfig.json's `include` covers
+      only src/index.ts, so a single-file tsc --noEmit run surfaces the error
+      without dragging in test files.
+    repo:
+      owner: unjs
+      name: destr
+      sha: b427d55641a7e6e1b22271dd0956a114cb388e2e
+    requires:
+      - bunx
+      - git
+    patches:
+      - patches/tsc/destr/type_error.patch
+    # bunx fetches typescript ephemerally; no project install needed because
+    # destr's tsconfig has no path mappings or compiler plugins. `--noEmit`
+    # is the type-check-only invocation the tsc adapter parses.
+    command:
+      - bunx
+      - --bun
+      - -p
+      - typescript@5.8.2
+      - tsc
+      - --noEmit
+      - -p
+      - .
+    expected:
+      # tsc is typecheck-only: it never produces runtime test results, only
+      # typecheck-phase diagnostics.
+      runner_outcome: typecheck_failed
+      adapter_id: tsc
+
+  - id: vitest_zustand_assertion_failure
+    adapter: vitest
+    description: >
+      Injected failing assertion (expect(1 + 1).toBe(3)) at the top of zustand's
+      tests/basic.test.tsx::"creates a store hook and api object". Wraps the
+      pnpm-install + pnpm-exec-vitest steps in `bash -c "..."` so the captured
+      shape exercises the v1.5 composite-runtime-deferred path: failtrace
+      detects vitest as a single recognized candidate alongside an
+      unrecognized install segment, marks it unselected, and emits
+      `parse_status: unsupported_command` with `parse_warnings:
+      [composite_runtime_deferred]`. The scenario therefore locks the
+      composite-defer contract end-to-end against a real third-party repo,
+      not the in-the-runner vitest assertion shape.
+    repo:
+      owner: pmndrs
+      name: zustand
+      sha: 88809a2fdbee0a85722278d1f70ae91f7b0e1de8
+    requires:
+      - bash
+      - pnpm
+      - git
+    patches:
+      - patches/vitest/zustand/assertion.patch
+    # pnpm install populates node_modules from the committed lockfile; the
+    # global pnpm content-addressable store at ~/Library/pnpm survives the
+    # runner's git clean -fdx so re-runs are cache-warm. --reporter=default
+    # is explicit so a future ~/.vitestrc cannot move us off the default
+    # reporter we target.
+    command:
+      - bash
+      - -c
+      - >
+        pnpm install --frozen-lockfile --silent --config.strict-peer-dependencies=false
+        2>&1 | tail -3
+        && pnpm exec vitest run --reporter=default tests/basic.test.tsx
+    expected:
+      # `bash -c` composite commands are deferred by the CLI (CandidatePlan +
+      # CandidateSource). The captured shape is the deferred-composite document:
+      # runner_outcome echoes the wrapped process exit (here `harness_crashed`
+      # since the assertion-failing vitest invocation exits non-zero), and
+      # parse_status is `unsupported_command` with no selected adapter.
+      # `adapter_id` is intentionally absent — the contract is that NO adapter
+      # is selected for an ambiguous composite.
+      runner_outcome: harness_crashed
+      parse_status: unsupported_command
+
+  - id: vitest_zustand_direct_assertion_failure
+    adapter: vitest
+    description: >
+      Same injected failing assertion as vitest_zustand_assertion_failure,
+      but dependency installation runs as setup_commands and the failtrace-
+      wrapped command is direct `pnpm exec vitest`. This exercises the vitest
+      parser shape instead of the v1.5 composite-runtime-deferred path.
+    repo:
+      owner: pmndrs
+      name: zustand
+      sha: 88809a2fdbee0a85722278d1f70ae91f7b0e1de8
+    requires:
+      - pnpm
+      - git
+    patches:
+      - patches/vitest/zustand/assertion.patch
+      - patches/vitest/zustand/no_project_name.patch
+    setup_commands:
+      - - pnpm
+        - install
+        - --frozen-lockfile
+        - --silent
+        - --config.strict-peer-dependencies=false
+    command:
+      - pnpm
+      - exec
+      - vitest
+      - run
+      - --reporter=default
+      - tests/basic.test.tsx
+    expected:
+      runner_outcome: failed
+      adapter_id: vitest
+      min_parse_status: complete
+
+  - id: jest_jestmonorepo_assertion_failure
+    adapter: jest
+    description: >
+      Injected failing assertion (expect(1 + 1).toBe(3)) at the top of jest's own
+      packages/jest-validate/src/__tests__/validate.test.ts. Wraps the
+      corepack-enabled yarn-install + yarn-jest steps in `bash -c "..."` so
+      the captured shape exercises the v1.5 composite-runtime-deferred path the
+      same way the vitest_zustand_assertion_failure scenario does. Skipped on
+      hosts where corepack is not on PATH.
+    repo:
+      owner: jestjs
+      name: jest
+      sha: 746f2a0f57c56e3bba555280f0587d40f3db95c0
+    requires:
+      - bash
+      - corepack
+      - git
+    patches:
+      - patches/jest/jest/assertion.patch
+    command:
+      - bash
+      - -c
+      - >
+        corepack enable 2>/dev/null
+        && yarn install --immutable 2>&1 | tail -3
+        && yarn jest packages/jest-validate
+    expected:
+      # Same composite-deferred contract as vitest_zustand_assertion_failure
+      # — bash -c with one recognized runner + one unrecognized install
+      # segment routes to unsupported_command, no selected adapter.
+      runner_outcome: harness_crashed
+      parse_status: unsupported_command
+
+  - id: jest_swr_direct_assertion_failure
+    adapter: jest
+    description: >
+      Injected failing assertion (expect(1 + 1).toBe(3)) in SWR's
+      test/use-swr-devtools.test.tsx. Dependency installation runs via
+      corepack-managed pnpm in setup_commands; the failtrace-wrapped command is
+      direct `pnpm exec jest` so the existing jest detector selects the parser
+      instead of the composite-runtime-deferred path.
+    repo:
+      owner: vercel
+      name: swr
+      sha: 5fa29522f196db2ad9d2083193c3b63214256c19
+    requires:
+      - node
+      - corepack
+      - git
+    patches:
+      - patches/jest/swr/assertion.patch
+    setup_commands:
+      - - corepack
+        - enable
+      - - corepack
+        - pnpm
+        - install
+        - --frozen-lockfile
+    command:
+      - pnpm
+      - exec
+      - jest
+      - test/use-swr-devtools.test.tsx
+      - --reporters=default
+    expected:
+      runner_outcome: failed
+      adapter_id: jest
+      min_parse_status: complete

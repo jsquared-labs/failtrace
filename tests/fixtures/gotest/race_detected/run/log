@@ -1,0 +1,44 @@
+{"Time":"2026-05-15T10:59:21.576826-04:00","Action":"start","Package":"corpus/race_detected"}
+{"Time":"2026-05-15T10:59:21.752234-04:00","Action":"run","Package":"corpus/race_detected","Test":"TestRaceyMap"}
+{"Time":"2026-05-15T10:59:21.75229-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"=== RUN   TestRaceyMap\n"}
+{"Time":"2026-05-15T10:59:21.752498-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"==================\n"}
+{"Time":"2026-05-15T10:59:21.752504-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"WARNING: DATA RACE\n"}
+{"Time":"2026-05-15T10:59:21.752507-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"Write at 0x00c00008d170 by goroutine 10:\n"}
+{"Time":"2026-05-15T10:59:21.752511-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"  runtime.mapaccess2_fast64()\n"}
+{"Time":"2026-05-15T10:59:21.752514-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"      /opt/homebrew/Cellar/go/1.26.3/libexec/src/internal/runtime/maps/runtime_fast64.go:85 +0x26c\n"}
+{"Time":"2026-05-15T10:59:21.752521-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"  corpus/race_detected.TestRaceyMap.func1()\n"}
+{"Time":"2026-05-15T10:59:21.752524-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"      /tmp/ft-gocorpus/race_detected/race_test.go:16 +0x80\n"}
+{"Time":"2026-05-15T10:59:21.752528-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"\n"}
+{"Time":"2026-05-15T10:59:21.752531-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"Previous write at 0x00c00008d170 by goroutine 7:\n"}
+{"Time":"2026-05-15T10:59:21.752533-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"  runtime.mapaccess2_fast64()\n"}
+{"Time":"2026-05-15T10:59:21.752535-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"      /opt/homebrew/Cellar/go/1.26.3/libexec/src/internal/runtime/maps/runtime_fast64.go:85 +0x26c\n"}
+{"Time":"2026-05-15T10:59:21.752537-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"  corpus/race_detected.TestRaceyMap.func1()\n"}
+{"Time":"2026-05-15T10:59:21.75254-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"      /tmp/ft-gocorpus/race_detected/race_test.go:16 +0x80\n"}
+{"Time":"2026-05-15T10:59:21.752542-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"\n"}
+{"Time":"2026-05-15T10:59:21.752547-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"Goroutine 10 (running) created at:\n"}
+{"Time":"2026-05-15T10:59:21.75255-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"  corpus/race_detected.TestRaceyMap()\n"}
+{"Time":"2026-05-15T10:59:21.752552-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"      /tmp/ft-gocorpus/race_detected/race_test.go:14 +0x70\n"}
+{"Time":"2026-05-15T10:59:21.752554-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"  testing.tRunner()\n"}
+{"Time":"2026-05-15T10:59:21.752556-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"      /opt/homebrew/Cellar/go/1.26.3/libexec/src/testing/testing.go:2036 +0x164\n"}
+{"Time":"2026-05-15T10:59:21.75256-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"  testing.(*T).Run.gowrap1()\n"}
+{"Time":"2026-05-15T10:59:21.752562-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"      /opt/homebrew/Cellar/go/1.26.3/libexec/src/testing/testing.go:2101 +0x34\n"}
+{"Time":"2026-05-15T10:59:21.752572-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"\n"}
+{"Time":"2026-05-15T10:59:21.752581-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"Goroutine 7 (finished) created at:\n"}
+{"Time":"2026-05-15T10:59:21.752583-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"  corpus/race_detected.TestRaceyMap()\n"}
+{"Time":"2026-05-15T10:59:21.752584-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"      /tmp/ft-gocorpus/race_detected/race_test.go:14 +0x70\n"}
+{"Time":"2026-05-15T10:59:21.752586-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"  testing.tRunner()\n"}
+{"Time":"2026-05-15T10:59:21.752588-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"      /opt/homebrew/Cellar/go/1.26.3/libexec/src/testing/testing.go:2036 +0x164\n"}
+{"Time":"2026-05-15T10:59:21.752589-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"  testing.(*T).Run.gowrap1()\n"}
+{"Time":"2026-05-15T10:59:21.752591-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"      /opt/homebrew/Cellar/go/1.26.3/libexec/src/testing/testing.go:2101 +0x34\n"}
+{"Time":"2026-05-15T10:59:21.752593-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"==================\n"}
+{"Time":"2026-05-15T10:59:21.752594-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"fatal error: concurrent map writes\n"}
+{"Time":"2026-05-15T10:59:21.76142-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"\n"}
+{"Time":"2026-05-15T10:59:21.761431-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"goroutine 44 [running]:\n"}
+{"Time":"2026-05-15T10:59:21.761436-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"internal/runtime/maps.fatal({0x1048f90bf?, 0x0?})\n"}
+{"Time":"2026-05-15T10:59:21.761439-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"\t/opt/homebrew/Cellar/go/1.26.3/libexec/src/runtime/panic.go:1181 +0x20\n"}
+{"Time":"2026-05-15T10:59:21.761441-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"corpus/race_detected.TestRaceyMap.func1()\n"}
+{"Time":"2026-05-15T10:59:21.76145-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"\t/tmp/ft-gocorpus/race_detected/race_test.go:16 +0x84\n"}
+{"Time":"2026-05-15T10:59:21.761453-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"created by corpus/race_detected.TestRaceyMap in goroutine 3\n"}
+{"Time":"2026-05-15T10:59:21.761455-04:00","Action":"output","Package":"corpus/race_detected","Test":"TestRaceyMap","Output":"\t/tmp/ft-gocorpus/race_detected/race_test.go:14 +0x74\n"}
+{"Time":"2026-05-15T10:59:21.762191-04:00","Action":"output","Package":"corpus/race_detected","Output":"FAIL\tcorpus/race_detected\t0.185s\n"}
+{"Time":"2026-05-15T10:59:21.762199-04:00","Action":"fail","Package":"corpus/race_detected","Elapsed":0.185}

@@ -1,0 +1,42 @@
+{
+  "meta_schema_version": "1.2",
+  "schema_version": "1.6",
+  "failtrace_version": "0.1.0",
+  "adapters": [
+    {
+      "id": "tsc",
+      "version": "tsc@0.1.0",
+      "kind": "typechecker",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "command": "tsc --project tsconfig.json --pretty true",
+  "cwd": "/Users/dev/failtrace/tests/fixtures/tsc/pretty_ansi_codeframe/source",
+  "started_at": "2026-05-15T12:00:00Z",
+  "duration_ms": 100,
+  "exit_code": 2,
+  "signal": null,
+  "early_exit": null,
+  "truncated": false,
+  "truncation_reason": null,
+  "path_case_folding": "case_sensitive",
+  "stream_merge": "stdout_stderr_interleaved",
+  "raw_log_sha256": "e92ace0c276cd1c33589d5a05748c96e3bd7a0d94b5e8f89a583c5196da57127",
+  "adapter_candidates": [
+    {
+      "id": "tsc",
+      "version": "tsc@0.1.0",
+      "kind": "typechecker",
+      "selected": true,
+      "selection_reason": "argv_name_match"
+    }
+  ],
+  "argv": [
+    "tsc",
+    "--project",
+    "tsconfig.json",
+    "--pretty",
+    "true"
+  ]
+}

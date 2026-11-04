@@ -1,0 +1,18 @@
+/target
+.DS_Store
+
+# Python (pytest fixture sources under tests/fixtures/pytest/)
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# JavaScript fixture sources keep captured logs, not vendored installs.
+node_modules/
+
+# Failtrace per-project run directories from `failtrace run --here` (raw logs may contain secrets)
+.failtrace/
+.failtrace-baseline/
+
+# Adapter gauntlet working tree: cloned external repos + captured candidate artifacts
+.failtrace-corpus/

@@ -1,0 +1,26 @@
+{"Time":"2026-05-15T10:59:06.781065-04:00","Action":"start","Package":"corpus/subtests_nested"}
+{"Time":"2026-05-15T10:59:06.9466-04:00","Action":"run","Package":"corpus/subtests_nested","Test":"TestOuter"}
+{"Time":"2026-05-15T10:59:06.946659-04:00","Action":"output","Package":"corpus/subtests_nested","Test":"TestOuter","Output":"=== RUN   TestOuter\n"}
+{"Time":"2026-05-15T10:59:06.946686-04:00","Action":"run","Package":"corpus/subtests_nested","Test":"TestOuter/Alpha"}
+{"Time":"2026-05-15T10:59:06.946696-04:00","Action":"output","Package":"corpus/subtests_nested","Test":"TestOuter/Alpha","Output":"=== RUN   TestOuter/Alpha\n"}
+{"Time":"2026-05-15T10:59:06.946712-04:00","Action":"run","Package":"corpus/subtests_nested","Test":"TestOuter/Alpha/Inner1"}
+{"Time":"2026-05-15T10:59:06.946718-04:00","Action":"output","Package":"corpus/subtests_nested","Test":"TestOuter/Alpha/Inner1","Output":"=== RUN   TestOuter/Alpha/Inner1\n"}
+{"Time":"2026-05-15T10:59:06.946731-04:00","Action":"output","Package":"corpus/subtests_nested","Test":"TestOuter/Alpha/Inner1","Output":"--- PASS: TestOuter/Alpha/Inner1 (0.00s)\n"}
+{"Time":"2026-05-15T10:59:06.946739-04:00","Action":"pass","Package":"corpus/subtests_nested","Test":"TestOuter/Alpha/Inner1","Elapsed":0}
+{"Time":"2026-05-15T10:59:06.946745-04:00","Action":"run","Package":"corpus/subtests_nested","Test":"TestOuter/Alpha/Inner2_with_spaces"}
+{"Time":"2026-05-15T10:59:06.946749-04:00","Action":"output","Package":"corpus/subtests_nested","Test":"TestOuter/Alpha/Inner2_with_spaces","Output":"=== RUN   TestOuter/Alpha/Inner2_with_spaces\n"}
+{"Time":"2026-05-15T10:59:06.946762-04:00","Action":"output","Package":"corpus/subtests_nested","Test":"TestOuter/Alpha/Inner2_with_spaces","Output":"    sub_test.go:11: inner2 fails\n"}
+{"Time":"2026-05-15T10:59:06.946767-04:00","Action":"output","Package":"corpus/subtests_nested","Test":"TestOuter/Alpha/Inner2_with_spaces","Output":"--- FAIL: TestOuter/Alpha/Inner2_with_spaces (0.00s)\n"}
+{"Time":"2026-05-15T10:59:06.946772-04:00","Action":"fail","Package":"corpus/subtests_nested","Test":"TestOuter/Alpha/Inner2_with_spaces","Elapsed":0}
+{"Time":"2026-05-15T10:59:06.946779-04:00","Action":"output","Package":"corpus/subtests_nested","Test":"TestOuter/Alpha","Output":"--- FAIL: TestOuter/Alpha (0.00s)\n"}
+{"Time":"2026-05-15T10:59:06.946785-04:00","Action":"fail","Package":"corpus/subtests_nested","Test":"TestOuter/Alpha","Elapsed":0}
+{"Time":"2026-05-15T10:59:06.946792-04:00","Action":"run","Package":"corpus/subtests_nested","Test":"TestOuter/Beta/with/slash"}
+{"Time":"2026-05-15T10:59:06.946798-04:00","Action":"output","Package":"corpus/subtests_nested","Test":"TestOuter/Beta/with/slash","Output":"=== RUN   TestOuter/Beta/with/slash\n"}
+{"Time":"2026-05-15T10:59:06.946804-04:00","Action":"output","Package":"corpus/subtests_nested","Test":"TestOuter/Beta/with/slash","Output":"    sub_test.go:15: beta forced fatal\n"}
+{"Time":"2026-05-15T10:59:06.94681-04:00","Action":"output","Package":"corpus/subtests_nested","Test":"TestOuter/Beta/with/slash","Output":"--- FAIL: TestOuter/Beta/with/slash (0.00s)\n"}
+{"Time":"2026-05-15T10:59:06.946818-04:00","Action":"fail","Package":"corpus/subtests_nested","Test":"TestOuter/Beta/with/slash","Elapsed":0}
+{"Time":"2026-05-15T10:59:06.946823-04:00","Action":"output","Package":"corpus/subtests_nested","Test":"TestOuter","Output":"--- FAIL: TestOuter (0.00s)\n"}
+{"Time":"2026-05-15T10:59:06.946828-04:00","Action":"fail","Package":"corpus/subtests_nested","Test":"TestOuter","Elapsed":0}
+{"Time":"2026-05-15T10:59:06.946832-04:00","Action":"output","Package":"corpus/subtests_nested","Output":"FAIL\n"}
+{"Time":"2026-05-15T10:59:06.947346-04:00","Action":"output","Package":"corpus/subtests_nested","Output":"FAIL\tcorpus/subtests_nested\t0.166s\n"}
+{"Time":"2026-05-15T10:59:06.947365-04:00","Action":"fail","Package":"corpus/subtests_nested","Elapsed":0.166}

@@ -1,0 +1,11 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test -project ExampleApp.xcodeproj -scheme ExampleApp
+
+2026-01-01 00:00:00.000 xcodebuild[1000:2000] [MT] IDELaunchReport: Failed to install or launch the test runner.
+2026-01-01 00:00:00.001 xcodebuild[1000:2000] Mach error -308 - (ipc/mig) server died
+
+Testing failed:
+	The operation could not be completed. (Mach error -308 - (ipc/mig) server died)
+	ExampleApp encountered an error (Failed to install or launch the test runner.)
+
+** TEST FAILED **

@@ -1,0 +1,234 @@
+{
+  "scenario": "build_failure",
+  "captured_environment": {
+    "go": "1.26.3",
+    "platform": "darwin",
+    "capture_command": "go test -json ./..."
+  },
+  "runner_argv": [
+    "go",
+    "test",
+    "-json",
+    "./..."
+  ],
+  "exit_code": 1,
+  "hash_inputs": {
+    "schema_version": "1.6",
+    "normative": false,
+    "test_group_id": null,
+    "failure_order_stable": true,
+    "failures": [
+      {
+        "adapter_id": "gotest",
+        "phase": "build",
+        "kind": "type_error",
+        "runner_test_id": null,
+        "param_id": null,
+        "primary_location": {
+          "file": "broken_test.go",
+          "line": 6,
+          "column": 14
+        },
+        "normalized_message": "cannot use \"this is not an int\" (untyped string constant) as int value in variable declaration",
+        "failure_id": "7da73ab1f3304027"
+      },
+      {
+        "adapter_id": "gotest",
+        "phase": "build",
+        "kind": "missing_symbol",
+        "runner_test_id": null,
+        "param_id": null,
+        "primary_location": {
+          "file": "broken_test.go",
+          "line": 7,
+          "column": 6
+        },
+        "normalized_message": "undefined: undefinedSymbol",
+        "failure_id": "a410d793c91ca82b"
+      }
+    ]
+  },
+  "expected_subset": {
+    "schema_version": "1.6",
+    "document_kind": "analysis_result",
+    "failtrace_version": "0.1.0",
+    "emission": {
+      "channel": "file",
+      "mode": "full",
+      "max_failures": null,
+      "failures_emitted": 2,
+      "failures_total": 2,
+      "full_output_path": "<run-dir>/output.json"
+    },
+    "command": "go test -json ./...",
+    "cwd": "/Users/dev/failtrace/tests/fixtures/gotest/build_failure/source",
+    "started_at": "2026-05-15T12:00:00Z",
+    "duration_ms": 100,
+    "exit_code": 1,
+    "signal": null,
+    "runner_outcome": "pre_test_failed",
+    "early_exit": null,
+    "adapters": [
+      {
+        "id": "gotest",
+        "version": "gotest@0.1.0",
+        "kind": "runner",
+        "selected": true,
+        "selection_reason": "argv_name_match"
+      }
+    ],
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "determinism_warnings": [],
+    "truncated": false,
+    "truncation_reason": null,
+    "failures_complete": true,
+    "failures": [
+      {
+        "failure_id": "7da73ab1f3304027",
+        "adapter_id": "gotest",
+        "phase": "build",
+        "kind": "type_error",
+        "runner_package_id": "corpus/build_failure [corpus/build_failure.test]",
+        "runner_test_id": null,
+        "test_segments": [],
+        "test_name": null,
+        "param_id": null,
+        "test_group_id": null,
+        "primary_location": {
+          "file": "broken_test.go",
+          "line": 6,
+          "column": 14,
+          "end_line": 6,
+          "end_column": 15,
+          "role": "primary",
+          "in_user_code": true
+        },
+        "extra_locations": [],
+        "message": "cannot use \"this is not an int\" (untyped string constant) as int value in variable declaration",
+        "diagnostic_code": null,
+        "diagnostic_severity": "error",
+        "details": {
+          "type": "type_error",
+          "spans": [
+            {
+              "file": "broken_test.go",
+              "line": 6,
+              "column": 14,
+              "end_line": 6,
+              "end_column": 15,
+              "role": "primary",
+              "note": null
+            }
+          ],
+          "explanation_command": null
+        },
+        "raw_log_lines": [
+          2,
+          2
+        ],
+        "evidence": {
+          "byte_range": {
+            "start": 154,
+            "end": 377
+          },
+          "excerpts": [
+            {
+              "source": "runner_structured_event",
+              "kind": "failure_block",
+              "byte_range": {
+                "start": 154,
+                "end": 377
+              },
+              "text": "./broken_test.go:6:14: cannot use \"this is not an int\" (untyped string constant) as int value in variable declaration\n",
+              "ansi_stripped": false,
+              "truncated": false
+            }
+          ]
+        },
+        "cascade_root": null,
+        "cascade_reason": null,
+        "dependent_failure_ids": [],
+        "retries": [],
+        "companion_diagnostics": [],
+        "extensions": {}
+      },
+      {
+        "failure_id": "a410d793c91ca82b",
+        "adapter_id": "gotest",
+        "phase": "build",
+        "kind": "missing_symbol",
+        "runner_package_id": "corpus/build_failure [corpus/build_failure.test]",
+        "runner_test_id": null,
+        "test_segments": [],
+        "test_name": null,
+        "param_id": null,
+        "test_group_id": null,
+        "primary_location": {
+          "file": "broken_test.go",
+          "line": 7,
+          "column": 6,
+          "end_line": 7,
+          "end_column": 7,
+          "role": "primary",
+          "in_user_code": true
+        },
+        "extra_locations": [],
+        "message": "undefined: undefinedSymbol",
+        "diagnostic_code": null,
+        "diagnostic_severity": "error",
+        "details": {
+          "type": "missing_symbol",
+          "symbol": "undefinedSymbol",
+          "import_chain": []
+        },
+        "raw_log_lines": [
+          3,
+          3
+        ],
+        "evidence": {
+          "byte_range": {
+            "start": 377,
+            "end": 529
+          },
+          "excerpts": [
+            {
+              "source": "runner_structured_event",
+              "kind": "failure_block",
+              "byte_range": {
+                "start": 377,
+                "end": 529
+              },
+              "text": "./broken_test.go:7:6: undefined: undefinedSymbol\n",
+              "ansi_stripped": false,
+              "truncated": false
+            }
+          ]
+        },
+        "cascade_root": null,
+        "cascade_reason": null,
+        "dependent_failure_ids": [],
+        "retries": [],
+        "companion_diagnostics": [],
+        "extensions": {}
+      }
+    ],
+    "ranking": {
+      "strategy": "compile_before_runtime",
+      "is_stable_across_runs": true
+    },
+    "counts": {
+      "tests_run": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "tests_errored": 0,
+      "tests_skipped": 0,
+      "tests_not_run": null,
+      "files_failed": 1
+    },
+    "raw_log_path": "<run-dir>/log",
+    "raw_log_sha256": "ce2b19df65b8d660d951a21764070771c6eb62073b304780ef1dcfe4b6992ce9",
+    "suggested_next_commands": [],
+    "extensions": {}
+  }
+}

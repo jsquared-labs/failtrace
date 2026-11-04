@@ -1,0 +1,192 @@
+{
+  "scenario": "trait_resolution_e0277",
+  "captured_environment": {
+    "cargo_reporter": "default",
+    "platform": "darwin"
+  },
+  "runner_argv": [
+    "cargo",
+    "test",
+    "--color",
+    "never"
+  ],
+  "exit_code": 101,
+  "hash_inputs": {
+    "schema_version": "1.6",
+    "normative": false,
+    "test_group_id": null,
+    "failures": [
+      {
+        "failure_id": "52410b235114d751",
+        "adapter_id": "cargo-test",
+        "phase": "build",
+        "kind": "type_error",
+        "runner_test_id": null,
+        "param_id": null,
+        "primary_location": {
+          "file": "src/lib.rs",
+          "line": 8,
+          "column": 19
+        },
+        "normalized_message": "E0277: `NotDisplay` doesn't implement `std::fmt::Display`"
+      }
+    ]
+  },
+  "expected_subset": {
+    "schema_version": "1.6",
+    "document_kind": "analysis_result",
+    "failtrace_version": "0.1.0",
+    "emission": {
+      "channel": "file",
+      "mode": "full",
+      "max_failures": null,
+      "failures_emitted": 1,
+      "failures_total": 1,
+      "full_output_path": "<run-dir>/output.json"
+    },
+    "command": "cargo test --color never",
+    "cwd": "/Users/dev/failtrace/tests/fixtures/cargo/trait_resolution_e0277/source",
+    "started_at": "2026-05-14T12:00:00Z",
+    "duration_ms": 100,
+    "exit_code": 101,
+    "signal": null,
+    "runner_outcome": "pre_test_failed",
+    "early_exit": null,
+    "adapters": [
+      {
+        "id": "cargo-test",
+        "version": "cargo-test@0.1.0",
+        "kind": "runner",
+        "selected": true,
+        "selection_reason": "argv_name_match"
+      }
+    ],
+    "parse_status": "complete",
+    "parse_warnings": [],
+    "determinism_warnings": [],
+    "truncated": false,
+    "truncation_reason": null,
+    "failures_complete": true,
+    "failures": [
+      {
+        "failure_id": "52410b235114d751",
+        "adapter_id": "cargo-test",
+        "phase": "build",
+        "kind": "type_error",
+        "runner_package_id": null,
+        "runner_test_id": null,
+        "test_segments": [],
+        "test_name": null,
+        "param_id": null,
+        "test_group_id": null,
+        "primary_location": {
+          "file": "src/lib.rs",
+          "line": 8,
+          "column": 19,
+          "end_line": 8,
+          "end_column": 29,
+          "role": "primary",
+          "in_user_code": true
+        },
+        "extra_locations": [],
+        "message": "E0277: `NotDisplay` doesn't implement `std::fmt::Display`",
+        "diagnostic_code": "E0277",
+        "diagnostic_severity": "error",
+        "details": {
+          "type": "type_error",
+          "spans": [
+            {
+              "file": "src/lib.rs",
+              "line": 8,
+              "column": 19,
+              "end_line": 8,
+              "end_column": 29,
+              "role": "primary",
+              "note": "unsatisfied trait bound"
+            },
+            {
+              "file": "src/lib.rs",
+              "line": 1,
+              "column": 1,
+              "end_line": 1,
+              "end_column": 18,
+              "role": "primary",
+              "note": null
+            },
+            {
+              "file": "src/lib.rs",
+              "line": 3,
+              "column": 21,
+              "end_line": 3,
+              "end_column": 38,
+              "role": "primary",
+              "note": "required by this bound in `needs_display`"
+            }
+          ],
+          "explanation_command": "rustc --explain E0277"
+        },
+        "raw_log_lines": [
+          2,
+          20
+        ],
+        "evidence": {
+          "byte_range": {
+            "start": 117,
+            "end": 725
+          },
+          "excerpts": [
+            {
+              "source": "raw_log",
+              "kind": "failure_block",
+              "byte_range": {
+                "start": 117,
+                "end": 725
+              },
+              "text": "error[E0277]: `NotDisplay` doesn't implement `std::fmt::Display`\n --> src/lib.rs:8:19\n  |\n8 |     needs_display(NotDisplay)\n  |     ------------- ^^^^^^^^^^ unsatisfied trait bound\n  |     |\n  |     required by a bound introduced by this call\n  |\nhelp: the trait `std::fmt::Display` is not implemented for `NotDisplay`\n --> src/lib.rs:1:1\n  |\n1 | struct NotDisplay;\n  | ^^^^^^^^^^^^^^^^^\nnote: required by a bound in `needs_display`\n --> src/lib.rs:3:21\n  |\n3 | fn needs_display<T: std::fmt::Display>(value: T) -> String {\n  |                     ^^^^^^^^^^^^^^^^^ required by this bound in `needs_display`\n\n",
+              "ansi_stripped": false,
+              "truncated": false
+            }
+          ]
+        },
+        "cascade_root": null,
+        "cascade_reason": null,
+        "dependent_failure_ids": [],
+        "retries": [],
+        "companion_diagnostics": [],
+        "extensions": {}
+      }
+    ],
+    "ranking": {
+      "strategy": "compile_before_runtime",
+      "is_stable_across_runs": true
+    },
+    "counts": {
+      "tests_run": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "tests_errored": 0,
+      "tests_skipped": 0,
+      "tests_not_run": null,
+      "files_failed": null
+    },
+    "raw_log_path": "<run-dir>/log",
+    "raw_log_sha256": "575038109e6c1f9043790cbd699856cfabe86f3a84c8c9f1ecc700b12fcfb876",
+    "suggested_next_commands": [
+      {
+        "argv": [
+          "rustc",
+          "--explain",
+          "E0277"
+        ],
+        "command": "rustc --explain E0277",
+        "cwd": "/Users/dev/failtrace/tests/fixtures/cargo/trait_resolution_e0277/source",
+        "intent": "explain_diagnostic",
+        "interactive": false,
+        "mutates_workspace": false,
+        "uses_network": false,
+        "requires_approval": false
+      }
+    ],
+    "extensions": {}
+  }
+}
