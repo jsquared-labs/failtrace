@@ -8,7 +8,7 @@ disable-model-invocation: true
 # Looking after pull requests in failtrace
 
 ## Before pushing a fix
-- `cargo fmt --all -- --check && cargo clippy --all-targets --all-features --locked -- -D warnings && cargo test --all-features --locked && python3 scripts/verify_fixtures.py` (minimum Rust 1.88).
+- The full "Required check suite" in AGENTS.md: `cargo fmt --all -- --check`, `cargo clippy --all-targets --all-features --locked -- -D warnings`, `cargo build --locked`, `target/debug/failtrace run -- cargo test --all-features --locked`, `python3 scripts/verify_fixtures.py`, and the six `python3 scripts/test-*.py` / `check-agents-skill-sync.py` checks listed there (minimum Rust 1.88). Bare `cargo test` is CI's bootstrap exception only; local runs go through the built binary.
 - CI must pass: `Test (ubuntu-latest)`, `Test (macos-15)`, `Test (macos-15-intel)`, `Format`, `Clippy`, `MSRV (1.88)` and `Fixture hash verification`. The `main` ruleset requires these jobs, so nothing lands on `main` without them.
 
 ## Leave to Rob
