@@ -976,6 +976,8 @@ fn parse_block(block_lines: &[LogLine], path_case_folding: PathCaseFolding) -> O
         .iter()
         .rev()
         .find_map(|line| failure_location(&line.stripped, phase, path_case_folding))?;
+    let exception_type =
+        exception_type(&stripped_message).or_else(|| location_exception_type(block_lines));
     let first = block_lines.first()?;
     let last = block_lines.last()?;
 
@@ -983,9 +985,9 @@ fn parse_block(block_lines: &[LogLine], path_case_folding: PathCaseFolding) -> O
         title,
         outcome,
         phase,
-        kind: kind_for_message(&stripped_message),
+        kind: kind_for_exception(exception_type.as_deref()),
         primary_location: location,
-        exception_type: exception_type(&stripped_message),
+        exception_type,
         message: stripped_message,
         raw_log_lines: [first.number, last.number],
         byte_range: ByteRange {
@@ -1076,7 +1078,11 @@ fn strip_error_prefix(line: &str) -> Option<String> {
 // vitest/jest combine both into a single classify(rest, message). The future shared trait can either
 // expose a unified classify or keep the split.
 fn kind_for_message(message: &str) -> FailureKind {
-    match exception_type(message).as_deref() {
+    kind_for_exception(exception_type(message).as_deref())
+}
+
+fn kind_for_exception(name: Option<&str>) -> FailureKind {
+    match name {
         Some("AssertionError") => FailureKind::Assertion,
         Some("ModuleNotFoundError") | Some("ImportError") => FailureKind::MissingSymbol,
         Some("TypeError") => FailureKind::TypeError,
@@ -1090,6 +1096,15 @@ fn exception_type(message: &str) -> Option<String> {
     exception_regex()
         .captures(message)
         .map(|captures| captures["name"].to_owned())
+}
+
+/// A failing `assert` without a message prints `E   assert 3 == 0`, so the
+/// exception type appears only on the section's `path:line: AssertionError` line.
+fn location_exception_type(block_lines: &[LogLine]) -> Option<String> {
+    block_lines.iter().rev().find_map(|line| {
+        let captures = location_regex().captures(&line.stripped)?;
+        exception_type(&captures["tail"])
+    })
 }
 
 fn missing_symbol(message: &str) -> Option<String> {
@@ -1354,6 +1369,18 @@ mod tests {
             "AssertionError: expected 2 to equal 3"
         );
         assert!(parsed.failure_blocks[0].message_ansi_stripped);
+    }
+
+    #[test]
+    fn assert_without_message_takes_its_type_from_the_location_line() {
+        let log = b"============================= test session starts ==============================\nplatform darwin -- Python 3.11.15, pytest-9.0.3, pluggy-1.6.0\ncollected 2 items\n=================================== FAILURES ===================================\n______________________________ test_plain_assert _______________________________\n\n    def test_plain_assert() -> None:\n>       assert 3 == 0\nE       assert 3 == 0\n\ntests/test_shapes.py:5: AssertionError\n________________________________ test_in_helper ________________________________\n\n    def test_in_helper() -> None:\n>       check(1)\n\ntests/test_shapes.py:12: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n    def check(value: int) -> None:\n>       assert value == 2\nE       assert 1 == 2\n\ntests/test_shapes.py:8: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_shapes.py::test_plain_assert - assert 3 == 0\nFAILED tests/test_shapes.py::test_in_helper - assert 1 == 2\n============================== 2 failed in 0.01s ===============================\n";
+        let parsed = PytestParse::from_log(log);
+        assert_eq!(parsed.failure_blocks.len(), 2);
+        for block in &parsed.failure_blocks {
+            assert_eq!(block.kind, FailureKind::Assertion, "{}", block.title);
+            assert_eq!(block.exception_type.as_deref(), Some("AssertionError"));
+            assert!(block.message.starts_with("assert "), "{}", block.message);
+        }
     }
 
     #[test]

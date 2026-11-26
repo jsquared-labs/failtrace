@@ -13,6 +13,7 @@ use serde_json::Value;
 
 const SCENARIOS: &[&str] = &[
     "basic_assertion",
+    "bare_assertion",
     "collection_error",
     "parameterized",
     "quiet_early_exit_assertion",
@@ -74,11 +75,13 @@ fn pytest_adapter_reproduces_fixture_hashes_and_valid_documents() {
     assert_eq!(
         reproduced,
         [
+            "1942838f516c7795",
             "29dc8e69aeb2978d",
             "31e23017a78e7ba0",
             "49507ef118ce763f",
             "4b78b28e9378f472",
             "58af4b4b1fcb1036",
+            "5cc9dc695bffd340",
             "6f4cda653abb2c1c",
             "a28a10bf9c212128",
             "c345c28f273400ef",

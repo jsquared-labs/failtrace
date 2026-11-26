@@ -68,6 +68,7 @@ EXPECTED_FIXTURE_PATHS = [
         "tests/fixtures/tsc/syntax_error/expected.json",
         "tests/fixtures/pytest/banner_only_no_summary/expected.json",
         "tests/fixtures/pytest/basic_assertion/expected.json",
+        "tests/fixtures/pytest/bare_assertion/expected.json",
         "tests/fixtures/pytest/collection_error/expected.json",
         "tests/fixtures/pytest/sqlite_foreign_key_error/expected.json",
         "tests/fixtures/pytest/green_summary_nonzero_exit/expected.json",

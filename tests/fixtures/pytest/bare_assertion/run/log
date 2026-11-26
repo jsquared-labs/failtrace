@@ -1,0 +1,35 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.15, pytest-8.4.2, pluggy-1.6.0
+rootdir: /Users/dev/failtrace/tests/fixtures/pytest
+configfile: pyproject.toml
+collected 2 items
+
+tests/test_bare.py FF                                                    [100%]
+
+=================================== FAILURES ===================================
+______________________________ test_plain_assert _______________________________
+
+    def test_plain_assert() -> None:
+>       assert 2 + 2 == 5
+E       assert (2 + 2) == 5
+
+tests/test_bare.py:6: AssertionError
+____________________________ test_assert_in_helper _____________________________
+
+    def test_assert_in_helper() -> None:
+>       check_total(4)
+
+tests/test_bare.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+value = 4
+
+    def check_total(value: int) -> None:
+>       assert value == 3
+E       assert 4 == 3
+
+tests/test_bare.py:2: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_bare.py::test_plain_assert - assert (2 + 2) == 5
+FAILED tests/test_bare.py::test_assert_in_helper - assert 4 == 3
+============================== 2 failed in 0.01s ===============================
