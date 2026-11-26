@@ -78,6 +78,8 @@ A verified structured green requires an understood `schema_version`, `runner_out
 | `unsupported_command` | No adapter owns the composite/ambiguous command. Rerun supported segments separately or use the normal bare command. |
 | `failures_complete: false` | Treat structured failures as leads; the pre-budget list may be short. Inspect the raw log. |
 
+A green result can cover less than you meant. Before treating it as a gate, compare `counts.tests_run` and `counts.tests_skipped` with the tests you intended to run: a filter or selector that matched nothing passes while executing nothing, and skips that grew on the tests guarding a change shrink what "passing" covers.
+
 Valid JSON means Failtrace completed analysis, regardless of exit code. A nonzero exit usually belongs to the wrapped runner. No valid JSON means Failtrace itself failed; inspect stderr rather than inferring a test result.
 
 If Failtrace or the underlying executable is missing, use the repository-native environment or package runner already declared by the project, such as `uv run`, an in-repo virtual environment, or `npx`. Do not install global dependencies or loop through the same failing shim. If Failtrace remains unavailable, state the fallback and run the project's normal command directly.
