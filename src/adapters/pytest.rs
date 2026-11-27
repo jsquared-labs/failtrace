@@ -1100,11 +1100,14 @@ fn exception_type(message: &str) -> Option<String> {
 
 /// A failing `assert` without a message prints `E   assert 3 == 0`, so the
 /// exception type appears only on the section's `path:line: AssertionError` line.
+/// Only the last location line counts: earlier ones can belong to a chained
+/// exception that is not the one that failed the test.
 fn location_exception_type(block_lines: &[LogLine]) -> Option<String> {
-    block_lines.iter().rev().find_map(|line| {
-        let captures = location_regex().captures(&line.stripped)?;
-        exception_type(&captures["tail"])
-    })
+    let captures = block_lines
+        .iter()
+        .rev()
+        .find_map(|line| location_regex().captures(&line.stripped))?;
+    exception_type(&captures["tail"])
 }
 
 fn missing_symbol(message: &str) -> Option<String> {
@@ -1381,6 +1384,26 @@ mod tests {
             assert_eq!(block.exception_type.as_deref(), Some("AssertionError"));
             assert!(block.message.starts_with("assert "), "{}", block.message);
         }
+    }
+
+    #[test]
+    fn location_fallback_reads_only_the_final_location_line() {
+        let log = b"============================= test session starts ==============================\nplatform darwin -- Python 3.11.15, pytest-9.0.3, pluggy-1.6.0\ncollected 2 items\n=================================== FAILURES ===================================\n_______________________________ test_chained ________________________________\n\n    def test_chained() -> None:\n        try:\n>           assert 1 == 2\nE           assert 1 == 2\n\ntests/test_x.py:5: AssertionError\n\nDuring handling of the above exception, another exception occurred:\n\n    def test_chained() -> None:\n        try:\n            assert 1 == 2\n        except AssertionError:\n>           raise GateRefused(\"denied\")\nE           GateRefused: denied\n\ntests/test_x.py:7: GateRefused\n=================================== ERRORS ====================================\n__________________________ ERROR at teardown of test_t __________________________\n\n    @pytest.fixture\n    def resource():\n        yield 1\n>       assert 1 == 2\nE       assert 1 == 2\n\ntests/test_x.py:12: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_x.py::test_chained - GateRefused: denied\nERROR tests/test_x.py::test_t - assert 1 == 2\n==================== 1 failed, 1 passed, 1 error in 0.01s =====================\n";
+        let parsed = PytestParse::from_log(log);
+        let chained = parsed
+            .failure_blocks
+            .iter()
+            .find(|block| block.title == "test_chained")
+            .expect("chained block");
+        assert_eq!(chained.kind, FailureKind::Unknown);
+        assert_eq!(chained.exception_type, None);
+        let teardown = parsed
+            .failure_blocks
+            .iter()
+            .find(|block| block.phase == Phase::Teardown)
+            .expect("teardown block");
+        assert_eq!(teardown.kind, FailureKind::Assertion);
+        assert_eq!(teardown.exception_type.as_deref(), Some("AssertionError"));
     }
 
     #[test]
