@@ -86,11 +86,15 @@ failtrace: run-dir=<abs> output=<abs>/output.json
 
 Stdout contains exactly one single-line JSON document. Keep stdout and stderr
 separate: do not pipe through `2>&1`, `tee`, `head`, or `tail`. If a projection
-is useful, preserve stderr independently and include both trust signals:
+is useful, preserve stderr independently, in a file of its own for each run
+(a fixed path such as `/tmp/failtrace.err` mixes concurrent sessions'
+breadcrumbs), and include both trust signals:
 
 ```sh
-failtrace run -- pytest 2>>/tmp/failtrace.err \
+err=$(mktemp "${TMPDIR:-/tmp}/failtrace-err.XXXXXX")
+failtrace run -- pytest 2>"$err" \
   | jq -c '{schema_version, runner_outcome, parse_status, failures_complete, determinism_warnings, emitted:.emission.failures_emitted, total:.emission.failures_total, first:.failures[0].message}'
+echo "stderr: $err" >&2
 ```
 
 Branch first on `schema_version`. Always interpret `runner_outcome`,

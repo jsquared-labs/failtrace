@@ -78,6 +78,8 @@ A verified structured green requires an understood `schema_version`, `runner_out
 | `unsupported_command` | No adapter owns the composite/ambiguous command. Rerun supported segments separately or use the normal bare command. |
 | `failures_complete: false` | Treat structured failures as leads; the pre-budget list may be short. Inspect the raw log. |
 
+A green result can cover less than you meant. Before treating it as a gate, compare `counts.tests_run` and `counts.tests_skipped` with the tests you intended to run: a filter or selector that matched nothing passes while executing nothing, and skips that grew on the tests guarding a change shrink what "passing" covers.
+
 Valid JSON means Failtrace completed analysis, regardless of exit code. A nonzero exit usually belongs to the wrapped runner. No valid JSON means Failtrace itself failed; inspect stderr rather than inferring a test result.
 
 If Failtrace or the underlying executable is missing, use the repository-native environment or package runner already declared by the project, such as `uv run`, an in-repo virtual environment, or `npx`. Do not install global dependencies or loop through the same failing shim. If Failtrace remains unavailable, state the fallback and run the project's normal command directly.
@@ -106,11 +108,13 @@ Prefer these structured suggestions over hand-built rerun patterns only after ap
 
 Keep stdout and stderr separate. Do not pipe through `2>&1`, `tee`, `head`, or `tail`; merged or truncated streams can hide the breadcrumb or corrupt the JSON document. Agent runtimes may present both streams in one tool result, but do not merge them yourself.
 
-For a projection, preserve stderr independently:
+For a projection, preserve stderr independently, in a file of its own for each run; a fixed path such as `/tmp/failtrace.err` mixes concurrent sessions' breadcrumbs:
 
 ```sh
-failtrace run -- pytest 2>>/tmp/failtrace.err \
+err=$(mktemp "${TMPDIR:-/tmp}/failtrace-err.XXXXXX")
+failtrace run -- pytest 2>"$err" \
   | jq -c '{schema_version, runner_outcome, parse_status, failures_complete, determinism_warnings, first:.failures[0].message}'
+echo "stderr: $err" >&2
 ```
 
 For durable capture, redirect each stream separately:
