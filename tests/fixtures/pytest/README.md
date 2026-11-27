@@ -46,6 +46,7 @@ Top-level fields:
 |---|---|---|
 | `collection_error` | yes (`a28a10bf9c212128`) | `phase: collect`, `kind: missing_symbol`, null `runner_test_id`, `runner_outcome: pre_test_failed`, `tests_run: 0` |
 | `basic_assertion` | no | standard `E   AssertionError: ...` extraction path, `phase: test`, `kind: assertion` |
+| `bare_assertion` | no | asserts without a message (`E   assert ...`), in the test body and in a helper frame; `kind: assertion` from the `path:line: AssertionError` line, counted in `tests_failed` (#4) |
 | `parameterized` | yes (`58af4b4b1fcb1036` / `b0782aebe12ab236` / `1bbb49abdd90e17e`, group `49507ef118ce763f`) | `param_id`, `test_group_id` derivation, `first_emitted` ranking, 3-of-17 progress |
 | `quiet_early_exit_assertion` | no | gauntlet-promoted `pytest -q -x` assertion where the short summary is suppressed; simple function node ID recovery and passed-count clamp |
 | `teardown_exception` | no | `phase: teardown`, `kind: exception`, `counts.tests_errored`, invariant 9 (final-outcome classification) |
@@ -72,7 +73,7 @@ present.
 cd tests/fixtures/pytest
 uv sync
 
-for scenario in collection_error basic_assertion parameterized teardown_exception; do
+for scenario in collection_error basic_assertion bare_assertion parameterized teardown_exception; do
   cd "$scenario/source"
   uv run --project ../.. --quiet pytest --color=no -p no:cacheprovider tests/ > ../run/log 2>&1
   cd ../..

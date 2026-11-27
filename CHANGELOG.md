@@ -2,6 +2,12 @@
 
 All notable public changes to Failtrace will be documented here. Binary versions follow semantic versioning; emitted schema versions evolve independently and are documented in [docs/schema.md](docs/schema.md).
 
+## [Unreleased]
+
+### Fixed
+
+- pytest: a failing `assert` without a message is now `kind: assertion` and counts in `tests_failed`; it was `kind: unknown` and counted in `tests_errored` ([#4](https://github.com/jsquared-labs/failtrace/issues/4)). Such failures get new `failure_id` values, because `kind` is a hash input.
+
 ## [0.1.0] - Unreleased
 
 Initial public alpha.
